@@ -46,6 +46,10 @@ plugins/*
 !mu-plugins/load.php
 !mu-plugins/app/
 
+# Allow Plugins
+!plugins/backupbuddy
+!plugins/classic-editor
+
 # Allow Themes
 !themes/wp-project
 
