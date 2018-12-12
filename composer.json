@@ -42,7 +42,8 @@
 		"wpackagist-plugin/duplicate-post":"3.2.2",
 		"wpackagist-plugin/fareharbor":"3.5",
 		"wpackagist-plugin/wufoo-shortcode":"1.43",
-		"wpackagist-plugin/wp-fastest-cache":"0.8.8.8"
+		"wpackagist-plugin/wp-fastest-cache":"0.8.8.8",
+		"wpackagist-plugin/redirection":"3.6.3"
 
 	}
 }

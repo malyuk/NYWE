@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe26e3086f25852709d7ba7d31cbff46",
+    "content-hash": "30de286930ff12c808350bda8fb4bbe4",
     "packages": [
         {
             "name": "a7/autoload",
@@ -350,6 +350,33 @@
             "type": "wordpress-plugin",
             "notification-url": "https://repo.packagist.com/zeek/downloads/",
             "homepage": "https://wordpress.org/plugins/fareharbor/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "3.6.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/3.6.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.3.6.3.zip",
+                "reference": null,
+                "shasum": null,
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/wp-fastest-cache",
