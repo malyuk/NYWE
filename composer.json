@@ -1,0 +1,42 @@
+{
+	"name": "wp-project",
+	"type": "project",
+	"license": "proprietary",
+	"config": {
+		"preferred-install": "dist",
+		"vendor-dir": "mu-plugins/app/vendor"
+	},
+	"extra": {
+		"installer-paths": {
+			"mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"zeekinteractive/advanced-custom-fields-pro"
+			],
+			"plugins/{$name}/": [
+				"type:wordpress-plugin"
+			]
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer", 
+			"url": "https://repo.packagist.com/zeek/"
+		},
+	        {
+			"packagist.org": false
+		}
+	],
+	"require": {
+		"php": ">=7.0",
+		"composer/installers": "^1.5",
+		"a7/autoload": "^2.0.9.1",
+		"sentry/sentry": "^1.9",
+		"arrilot/dotenv-php": "^1.0",
+		
+		"zeek/wp-utils": "^2.1.7",
+		"zeek/php-utils": "^2.1",
+		"zeek/sso-client": "^1",
+
+		"zeekinteractive/advanced-custom-fields-pro": "^5.7"
+	}
+}
