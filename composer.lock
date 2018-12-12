@@ -1,0 +1,511 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "99693fb1e30f36486692e1c687e12581",
+    "packages": [
+        {
+            "name": "a7/autoload",
+            "version": "2.0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a7/autoload.git",
+                "reference": "c1ff4ae98b389164b578793e2d87b2bf6b7f8b15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a7/autoload/zipball/c1ff4ae98b389164b578793e2d87b2bf6b7f8b15",
+                "reference": "c1ff4ae98b389164b578793e2d87b2bf6b7f8b15",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "package.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "A7",
+                    "email": "a7@fastmail.com",
+                    "homepage": "https://github.com/a7"
+                }
+            ],
+            "description": "Automatically and recursively require_once all php files in a given directory.",
+            "time": "2018-02-05T20:00:27+00:00"
+        },
+        {
+            "name": "arrilot/dotenv-php",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arrilot/dotenv-php.git",
+                "reference": "a42a07d3d81672a1ed23545465927502d72d0ca2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arrilot/dotenv-php/zipball/a42a07d3d81672a1ed23545465927502d72d0ca2",
+                "reference": "a42a07d3d81672a1ed23545465927502d72d0ca2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Arrilot\\DotEnv\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nekrasov Ilya",
+                    "email": "nekrasov.ilya90@gmail.com"
+                }
+            ],
+            "homepage": "https://github.com/arrilot/dotenv-php",
+            "keywords": [
+                "dotenv",
+                "production"
+            ],
+            "time": "2017-06-19T23:05:03+00:00"
+        },
+        {
+            "name": "composer/installers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "sentry/sentry",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-php.git",
+                "reference": "b2b8ffe1560b9fb0110b02993594a4b04a511959"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/b2b8ffe1560b9fb0110b02993594a4b04a511959",
+                "reference": "b2b8ffe1560b9fb0110b02993594a4b04a511959",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.3|^7.0"
+            },
+            "conflict": {
+                "raven/raven": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.8.0",
+                "monolog/monolog": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "monolog/monolog": "Automatically capture Monolog events as breadcrumbs"
+            },
+            "bin": [
+                "bin/sentry"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Raven_": "lib/"
+                }
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "A PHP client for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2018-11-09T12:27:19+00:00"
+        },
+        {
+            "name": "zeek/php-utils",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ZeekInteractive/php-utils.git",
+                "reference": "8c23f2349e84fd4d78795af7370bd032fe169332"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZeekInteractive/php-utils/zipball/8c23f2349e84fd4d78795af7370bd032fe169332",
+                "reference": "8c23f2349e84fd4d78795af7370bd032fe169332",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "codeception/codeception": "2.3.9",
+                "mikey179/vfsstream": "^1.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/utils.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@zeek.com",
+                    "homepage": "https://aaronjholbrook.com"
+                },
+                {
+                    "name": "Zeek Interactive",
+                    "email": "info@zeek.com",
+                    "homepage": "https://zeek.com"
+                }
+            ],
+            "description": "A collection of functions that provide basic PHP utility functionality.",
+            "time": "2018-06-26T20:24:39+00:00"
+        },
+        {
+            "name": "zeek/sso-client",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ZeekInteractive/zeek-sso-client.git",
+                "reference": "afc1c5d82017acaa296ed40b54791ed895a2f8ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZeekInteractive/zeek-sso-client/zipball/afc1c5d82017acaa296ed40b54791ed895a2f8ab",
+                "reference": "afc1c5d82017acaa296ed40b54791ed895a2f8ab",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "a7/autoload": "2.0.9.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "package.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@zeek.com",
+                    "homepage": "https://aaronjholbrook.com"
+                },
+                {
+                    "name": "Zeek Interactive",
+                    "email": "info@zeek.com",
+                    "homepage": "https://zeek.com"
+                }
+            ],
+            "description": "SSO client for the Zeek SSO system.",
+            "support": {
+                "source": "https://github.com/ZeekInteractive/zeek-sso-client/tree/1.1",
+                "issues": "https://github.com/ZeekInteractive/zeek-sso-client/issues"
+            },
+            "time": "2018-12-09T02:06:27+00:00"
+        },
+        {
+            "name": "zeek/wp-utils",
+            "version": "2.7.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ZeekInteractive/wp-utils.git",
+                "reference": "4d54079e840b0a08675bbdc2294118f64ae0d7e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/4d54079e840b0a08675bbdc2294118f64ae0d7e3",
+                "reference": "4d54079e840b0a08675bbdc2294118f64ae0d7e3",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "a7/autoload": "2.0.9.1",
+                "arrilot/dotenv-php": "^1.0",
+                "php": ">=7.0",
+                "sentry/sentry": "^1.9"
+            },
+            "require-dev": {
+                "10up/wp_mock": "^0.3.0",
+                "codacy/coverage": "^1.4",
+                "codeception/codeception": "2.3.9",
+                "mockery/mockery": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "package.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Philip Newcomer",
+                    "email": "philip@zeek.com",
+                    "homepage": "https://philipnewcomer.net"
+                },
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@zeek.com",
+                    "homepage": "https://aaronjholbrook.com"
+                },
+                {
+                    "name": "Zeek Interactive",
+                    "email": "info@zeek.com",
+                    "homepage": "https://zeek.com"
+                }
+            ],
+            "description": "A collection of functions that provide utility functionality for WordPress.",
+            "support": {
+                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.7.1",
+                "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
+            },
+            "time": "2018-12-04T18:55:53+00:00"
+        },
+        {
+            "name": "zeekinteractive/advanced-custom-fields-pro",
+            "version": "5.7.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.7",
+                "reference": null,
+                "shasum": "730ce74be7d0552ed3e95ad555f4810ed741e483",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "authors": [
+                {
+                    "name": "Elliot Condon",
+                    "homepage": "http://www.elliotcondon.com/"
+                }
+            ],
+            "description": "Customise WordPress with powerful, professional and intuitive fields.",
+            "homepage": "https://www.advancedcustomfields.com/"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0"
+    },
+    "platform-dev": []
+}
