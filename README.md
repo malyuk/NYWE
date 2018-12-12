@@ -1,4 +1,4 @@
-# WP Project
+# New York Wine Events
 [http://wp-project.zeeklabs.com](http://wp-project.zeeklabs.com)
 
 ## URLs
