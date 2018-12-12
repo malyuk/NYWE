@@ -1,0 +1,57 @@
+form.wufoo{
+    font-size: 1.25em;
+    padding: 0% 4%;        
+}
+
+form.wufoo header#header{
+    display: none;
+}
+
+form.wufoo h1,
+form.wufoo h2,
+form.wufoo h3,
+form.wufoo h4,
+form.wufoo h5,
+form.wufoo h6 {
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;    
+}
+
+form.wufoo label {
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;  
+    text-transform: uppercase  
+}
+
+
+form.wufoo li.focused{
+    background: -moz-linear-gradient(left, rgba(243,238,249,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(left, rgba(243,238,249,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(243,238,249,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3eef9', endColorstr='#00ffffff',GradientType=1 );    
+}
+
+/*
+form.wufoo input{
+    padding: 0.75em;
+}
+
+form.wufoo textarea{
+    padding: 0.75em;
+}
+
+form.wufoo input[type="submit"]{ 
+    border: 2px solid #305f93;
+    background: #fff;
+    color: #305f93;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    padding: 0.25em 2em;
+}
+
+form.wufoo input[type="submit"]:hover{
+    background: #305f93;
+    color: #fff;
+}
+*/

@@ -50,6 +50,6 @@ plugins/*
 !plugins/classic-editor
 
 # Allow Themes
-!themes/wp-project
+!themes/NYWE_2018_v4_01
 
 # Allow Specific Plugins (use only if they can't be managed via composer)
