@@ -47,7 +47,6 @@ plugins/*
 !mu-plugins/app/
 
 # Allow Plugins
-!plugins/backupbuddy
 !plugins/classic-editor
 
 # Allow Themes

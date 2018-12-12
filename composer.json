@@ -37,6 +37,12 @@
 		"zeek/php-utils": "^2.1",
 		"zeek/sso-client": "^1",
 
-		"zeekinteractive/advanced-custom-fields-pro": "^5.7"
+		"zeekinteractive/advanced-custom-fields-pro": "^5.7",
+
+		"wpackagist-plugin/duplicate-post":"3.2.2",
+		"wpackagist-plugin/fareharbor":"3.5",
+		"wpackagist-plugin/wufoo-shortcode":"1.43",
+		"wpackagist-plugin/wp-fastest-cache":"0.8.8.8"
+
 	}
 }
