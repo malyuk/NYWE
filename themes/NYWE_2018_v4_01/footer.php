@@ -38,13 +38,15 @@
 
 		<div class="footer_section">
 			<h3>ABOUT US</h3>
-			<a href="<?php bloginfo( 'url' ); ?>/about">About New York Wine Events</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/advertise-with-nywe">Sponsorship &amp; Advertisement</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/faq">FAQ</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/careers">Careers</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/press">Press</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Returns</a><br/>
-			<a href="<?php bloginfo( 'url' ); ?>/accessibility">Accessibility</a>
+
+			<?php wp_nav_menu( array(
+				'theme_location' => 'footer_about_us',
+				'container'      => '',    // removes auto generated bounding box.
+				'depth'          => 1, // 0 is infinite.
+				'reverse'        => false,
+				'menu_class'     => 'footer_about_us'
+			) ); ?>
+			
 		</div><!-- footer section -->
 
 		<a id="footer_up_arrow" href="#header">Back to top</a>

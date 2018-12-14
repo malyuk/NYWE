@@ -1303,6 +1303,14 @@ hr {
     color: #999;
 }
 
+#menu-footer-about-us,
+#menu-footer-about-us li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
 a#linkLove {
     position: relative;
     display: block;
