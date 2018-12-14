@@ -31,9 +31,9 @@ function daytrip_post() {
 			/* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon'           => get_stylesheet_directory_uri() . '/post-types/images/custom-post-icon.png',
 			'rewrite'             => true,
-			'hierarchical'        => false,
+			'hierarchical'        => true,
 			'has_archive'         => true,
-			'capability_type'     => array( 'admin', 'admins' ),
+			'capability_type'     => 'page',
 			// 'capability_type' => 'post',
 			'map_meta_cap'        => true,
 			/* 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky') */
