@@ -15,12 +15,6 @@
 	<!-- CSS -->
 	<link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico"/>
 
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet">
-
-	<!-- JQUERY -->
-	<?php wp_enqueue_script( 'jquery' ); ?>
-
 	<!-- JAVASCRIPT CORE -->
 	<?php include( TEMPLATEPATH . '/core-scripts.php' ); ?>
 

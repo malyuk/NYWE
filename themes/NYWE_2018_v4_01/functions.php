@@ -113,14 +113,24 @@ function my_gutenberg_can_edit_post_types( $can_edit, $post_type ) {
 /* End Functions.php */
 
 
-add_action( 'wp_enqueue_scripts', function() {
+add_action( 'wp_enqueue_scripts', function () {
+
+	$version = '2';
+
+	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_style(
 		'style',
 		get_stylesheet_directory_uri() . '/style.css',
-		'',
+		false,
 		$version
 	);
 
-});
+	wp_enqueue_style(
+		'wpb-google-fonts',
+		'https://fonts.googleapis.com/css?family=Oswald:400,300',
+		false
+	);
+
+} );
 
