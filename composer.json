@@ -19,7 +19,7 @@
 	},
 	"repositories": [
 		{
-			"type": "composer", 
+			"type": "composer",
 			"url": "https://repo.packagist.com/zeek/"
 		},
 	        {
@@ -32,7 +32,7 @@
 		"a7/autoload": "^2.0.9.1",
 		"sentry/sentry": "^1.9",
 		"arrilot/dotenv-php": "^1.0",
-		
+
 		"zeek/wp-utils": "^2.1.7",
 		"zeek/php-utils": "^2.1",
 		"zeek/sso-client": "^1",
@@ -43,7 +43,8 @@
 		"wpackagist-plugin/fareharbor":"3.5",
 		"wpackagist-plugin/wufoo-shortcode":"1.43",
 		"wpackagist-plugin/wp-fastest-cache":"0.8.8.8",
-		"wpackagist-plugin/redirection":"3.6.3"
+		"wpackagist-plugin/redirection":"3.6.3",
+        "wpackagist-plugin/userway-accessibility-widget":"1.2"
 
 	}
 }

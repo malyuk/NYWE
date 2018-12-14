@@ -8,6 +8,7 @@
 if (function_exists("register_sidebar")) {
     register_sidebar(
         array(
+            'id' => 'sidebar-1',
             'name' => 'sidebar-1',
         )
     );

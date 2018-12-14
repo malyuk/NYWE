@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30de286930ff12c808350bda8fb4bbe4",
+    "content-hash": "55a82407e753b683519de971d1426be1",
     "packages": [
         {
             "name": "a7/autoload",
@@ -379,6 +379,33 @@
             "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
+            "name": "wpackagist-plugin/userway-accessibility-widget",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/userway-accessibility-widget/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/userway-accessibility-widget.zip?timestamp=1544559551",
+                "reference": null,
+                "shasum": null,
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "homepage": "https://wordpress.org/plugins/userway-accessibility-widget/"
+        },
+        {
             "name": "wpackagist-plugin/wp-fastest-cache",
             "version": "0.8.8.8",
             "source": {
@@ -605,12 +632,12 @@
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
-            "version": "5.7.7",
+            "version": "5.7.8",
             "dist": {
                 "type": "zip",
-                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.7",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.8",
                 "reference": null,
-                "shasum": "730ce74be7d0552ed3e95ad555f4810ed741e483",
+                "shasum": "287440f0b5e2bede8b542ad5685e301789ca484e",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -629,7 +656,7 @@
                     "homepage": "http://www.elliotcondon.com/"
                 }
             ],
-            "description": "Customise WordPress with powerful, professional and intuitive fields.",
+            "description": "Customize WordPress with powerful, professional and intuitive fields.",
             "homepage": "https://www.advancedcustomfields.com/"
         }
     ],

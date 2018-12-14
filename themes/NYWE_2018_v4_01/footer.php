@@ -21,7 +21,7 @@
           <p>
           <strong>We’d love to hear from you!</strong>
           <br/> If you have a comment you’d like to share, would like advertising or sponsorship information about events, or want to recommend a wine, 
-          <br/> please <strong><a href="http://winship.staging.wpengine.com/contact">Contact Us</a></strong>
+          <br/> please <strong><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></strong>
           </p>
         <?php /*
           <h3>WINE EVENTS IN..</h3>
