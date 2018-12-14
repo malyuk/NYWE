@@ -46,7 +46,7 @@
 				'reverse'        => false,
 				'menu_class'     => 'footer_about_us'
 			) ); ?>
-			
+
 		</div><!-- footer section -->
 
 		<a id="footer_up_arrow" href="#header">Back to top</a>

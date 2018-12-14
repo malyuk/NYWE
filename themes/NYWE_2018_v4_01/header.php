@@ -14,8 +14,6 @@
 
 	<!-- CSS -->
 	<link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'template_url' ); ?>/style.css"/>
-	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo( 'template_url' ); ?>/print.css"/>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet">
