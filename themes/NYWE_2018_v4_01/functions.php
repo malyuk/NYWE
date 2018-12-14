@@ -20,6 +20,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		array(
 			'header_main_menu' => 'Header Main Menu',
 			'header_sub_menu'  => 'Header Sub Menu',
+			'footer_about_us'  => 'Footer: About Us',
 		)
 	);
 }
