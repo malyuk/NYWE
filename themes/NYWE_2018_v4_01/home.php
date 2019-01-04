@@ -185,7 +185,7 @@ Template Name: Homepage
         jQuery('.home_sub_testimonial').hide().eq(random).show();        
       });
       </script>
-      <a id="sub_featured_testimonial_more" href="<?php bloginfo('url'); ?>/about">Read more guest reviews &rightarrow;</a>
+      <a id="sub_featured_testimonial_more" href="<?php bloginfo('url'); ?>/new-york-wine-events-reviews/">Read more guest reviews &rightarrow;</a>
   </div><!-- cell -->
   <div id="home_sub_featured_cell_right">
       <!-- TASTE VIP -->
