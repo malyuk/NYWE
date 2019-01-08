@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55a82407e753b683519de971d1426be1",
+    "content-hash": "524dd0d759b95920b3b6a3b45bf8abcf",
     "packages": [
         {
             "name": "a7/autoload",
@@ -406,33 +406,6 @@
             "homepage": "https://wordpress.org/plugins/userway-accessibility-widget/"
         },
         {
-            "name": "wpackagist-plugin/wp-fastest-cache",
-            "version": "0.8.8.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-fastest-cache/",
-                "reference": "tags/0.8.8.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-fastest-cache.0.8.8.8.zip",
-                "reference": null,
-                "shasum": null,
-                "mirrors": [
-                    {
-                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://repo.packagist.com/zeek/downloads/",
-            "homepage": "https://wordpress.org/plugins/wp-fastest-cache/"
-        },
-        {
             "name": "wpackagist-plugin/wufoo-shortcode",
             "version": "1.43",
             "source": {
@@ -566,16 +539,16 @@
         },
         {
             "name": "zeek/wp-utils",
-            "version": "2.7.1",
+            "version": "2.9.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/wp-utils.git",
-                "reference": "4d54079e840b0a08675bbdc2294118f64ae0d7e3"
+                "reference": "73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/4d54079e840b0a08675bbdc2294118f64ae0d7e3",
-                "reference": "4d54079e840b0a08675bbdc2294118f64ae0d7e3",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e",
+                "reference": "73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -625,19 +598,19 @@
             ],
             "description": "A collection of functions that provide utility functionality for WordPress.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.7.1",
+                "source": "https://github.com/ZeekInteractive/wp-utils/tree/master",
                 "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
             },
-            "time": "2018-12-04T18:55:53+00:00"
+            "time": "2019-01-07T12:29:39+00:00"
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
-            "version": "5.7.8",
+            "version": "5.7.9",
             "dist": {
                 "type": "zip",
-                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.8",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.9",
                 "reference": null,
-                "shasum": "287440f0b5e2bede8b542ad5685e301789ca484e",
+                "shasum": "7d16c30519e1f8f752579d58c21e835b9ef67858",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
