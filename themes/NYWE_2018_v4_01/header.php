@@ -49,6 +49,8 @@
 <!--[if lt IE 9]>  <a id="obsolete_browser_warning" href="http://www.firefox.com">You are using an outdated browser. For
 	a safer &amp; modern experience please upgrade for free. Click to continue.</a> <![endif]-->
 
+<?php do_action('after_body_open_tag'); ?>
+
 <!-- HEADER -->
 <div id="header" <?php if ( is_home() ) {
 	echo 'class="home"';
