@@ -102,5 +102,5 @@ leandroarts_create_post();
 // REDIRECT:
 // -------------------------
 // header("Location: http://winship.staging.wpengine.com/wp-content/themes/NYWE_2018_v4_01/library/wufoo_form/demo.php");
-header("Location: http://winship.staging.wpengine.com/dev-wufoo-demo/");
+header("Location: http://newyorkwineevents.com/dev-wufoo-demo/");
 die();
