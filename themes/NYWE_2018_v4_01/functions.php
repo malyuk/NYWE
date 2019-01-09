@@ -134,3 +134,27 @@ add_action( 'wp_enqueue_scripts', function () {
 
 } );
 
+function get_signup_form() {
+
+	ob_start();
+
+	?>
+
+	<!-- SIGN UP FORM -->
+	<div id="about_signup">
+		<h2 id="about_signup_heading">SIGN UP</h2>
+		<p id="about_signup_intro">
+			Dont miss new event updates, reports and discount offers from New York Wine Events - sign up now!
+		</p>
+
+		<!-- SUBSCRIBE -->
+		<a class="button"
+		   href="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&id=d6c5ffde20" target="_blank">Sign Up</a>
+
+	</div><!-- signup -->
+
+	<?php
+
+	return ob_get_clean();
+
+}

@@ -50,19 +50,7 @@ Template Name: Careers
         
     </div><!-- cms intro -->
 
-
-
-    <!-- SIGN UP FORM -->
-    <div id="about_signup">
-        <h2 id="about_signup_heading">SIGN UP</h2>
-        <p id="about_signup_intro">
-            Dont miss new event updates, reports and discount offers from New York Wine Events - sign up now!                                                        
-        </p>
-        <form id="about_signup_form" action="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&id=d6c5ffde20" method="get" name="about_signup_form">
-            <input type="submit" value="SIGN UP">
-        </form>
-    </div><!-- signup -->
-
+	<?php echo get_signup_form(); ?>
 
     <!-- CONTACT US FORM -->
     <div id="about_contact">
