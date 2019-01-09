@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "524dd0d759b95920b3b6a3b45bf8abcf",
+    "content-hash": "3e301bc6133404f1fe271221b9284886",
     "packages": [
         {
             "name": "a7/autoload",
@@ -296,6 +296,33 @@
                 "logging"
             ],
             "time": "2018-11-09T12:27:19+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/amp",
+            "version": "0.7.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/amp/",
+                "reference": "tags/0.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/amp.0.7.2.zip",
+                "reference": null,
+                "shasum": null,
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "homepage": "https://wordpress.org/plugins/amp/"
         },
         {
             "name": "wpackagist-plugin/duplicate-post",

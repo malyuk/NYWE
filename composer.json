@@ -39,6 +39,7 @@
 
 		"zeekinteractive/advanced-custom-fields-pro": "^5.7",
 
+		"wpackagist-plugin/amp": "^0.7",
 		"wpackagist-plugin/duplicate-post":"3.2.2",
 		"wpackagist-plugin/fareharbor":"3.5",
 		"wpackagist-plugin/wufoo-shortcode":"1.43",
