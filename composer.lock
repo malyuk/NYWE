@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0cac743874b1fff7b594765763682fb",
+    "content-hash": "99910bce654a138b29e6ff711c69ed5f",
     "packages": [
         {
             "name": "a7/autoload",
