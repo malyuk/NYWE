@@ -418,6 +418,68 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 		<?php endif; ?>
 
 
+			<!-- ADDITIONAL INTRODUCTION MODULE (4) -->
+		<?php
+		$trigger = get_post_custom_values( 'eventIntro4Heading' );
+		if ( is_array( $trigger ) && end( $trigger ) != '' ) :
+		?>
+			<div id="event_intro4">
+				<!-- content -->
+				<div id="event_intro4_content">
+					<!-- Introduction heading -->
+					<h3 id="event_intro4_heading"><?php $eventIntro4Heading = get_post_custom_values( 'eventIntro4Heading' );
+						if ( is_array( $eventIntro4Heading ) && end( $eventIntro4Heading ) != '' ) {
+							echo end( $eventIntro4Heading );
+						} ?></h3>
+					<!-- Introduction text -->
+					<div id="event_intro4_text"><?php $eventContinuedIntroText4 = get_post_custom_values( 'eventContinuedIntroText4' );
+						if ( is_array( $eventContinuedIntroText4 ) && end( $eventContinuedIntroText4 ) != '' ) {
+							echo end( $eventContinuedIntroText4 );
+						} ?></div>
+				</div><!-- content -->
+				<!-- Image right -->
+				<img id="event_intro4_image" src="
+                        <?php
+				$eventIntro4Image = get_post_custom_values( 'eventIntro4Image' );
+				if ( is_array( $eventIntro4Image ) && end( $eventIntro4Image ) != '' ) {
+					echo end( $eventIntro4Image );
+				}
+				?>" alt="New York Wine Events"/>
+			</div><!-- intro4 module-->
+		<?php endif; ?>
+
+
+			<!-- ADDITIONAL INTRODUCTION MODULE (5) -->
+		<?php
+		$trigger = get_post_custom_values( 'eventIntro5Heading' );
+		if ( is_array( $trigger ) && end( $trigger ) != '' ) :
+		?>
+			<div id="event_intro5">
+				<!-- content -->
+				<div id="event_intro5_content">
+					<!-- Introduction heading -->
+					<h3 id="event_intro5_heading"><?php $eventIntro5Heading = get_post_custom_values( 'eventIntro5Heading' );
+						if ( is_array( $eventIntro5Heading ) && end( $eventIntro5Heading ) != '' ) {
+							echo end( $eventIntro5Heading );
+						} ?></h3>
+					<!-- Introduction text -->
+					<div id="event_intro5_text"><?php $eventContinuedIntroText5 = get_post_custom_values( 'eventContinuedIntroText5' );
+						if ( is_array( $eventContinuedIntroText5 ) && end( $eventContinuedIntroText5 ) != '' ) {
+							echo end( $eventContinuedIntroText5 );
+						} ?></div>
+				</div><!-- content -->
+				<!-- Image right -->
+				<img id="event_intro5_image" src="
+                        <?php
+				$eventIntro5Image = get_post_custom_values( 'eventIntro5Image' );
+				if ( is_array( $eventIntro5Image ) && end( $eventIntro5Image ) != '' ) {
+					echo end( $eventIntro5Image );
+				}
+				?>" alt="New York Wine Events"/>
+			</div><!-- intro5 module-->
+		<?php endif; ?>
+
+
 			<!-- MAP -->
 		<?php
 		$trigger = get_post_custom_values( 'eventMap' );

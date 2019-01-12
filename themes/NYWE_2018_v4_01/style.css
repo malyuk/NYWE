@@ -3389,6 +3389,172 @@ img.daytrip_slide_large {
 }
 
 
+/* Event Additional Description intro (4) */
+#event_intro4 {
+	position: relative;
+	margin: 0 8% 12%;
+	padding: 0;
+	overflow: hidden;
+}
+
+@media (max-width: 800px) {
+	#event_intro4 {
+		text-align: center;
+	}
+
+	#event_intro4 ul,
+	#event_intro4 ol {
+		text-align: left;
+	}
+}
+
+@media (max-width: 600px) {
+	#event_intro4 {
+		font-size: 0.8em;
+	}
+}
+
+#event_intro4_content {
+	float: right;
+	width: 40%;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1200px) {
+	#event_intro4_content {
+		width: 62%;
+	}
+}
+
+@media (max-width: 800px) {
+	#event_intro4_content {
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#event_intro4_image {
+	float: left;
+	width: 45%;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1200px) {
+	#event_intro4_image {
+		width: 25%;
+	}
+}
+
+@media (max-width: 800px) {
+	#event_intro4_image {
+		width: 100%;
+		margin: 0 0 8% 0;
+	}
+}
+
+#event_intro4_heading {
+	color: #444;
+	font-size: 3.8em;
+	margin: 0 0 8% 0;
+}
+
+#event_intro4_text {
+	color: #444;
+	font-size: 1.5em;
+	line-height: 1.35em;
+	margin: 0 0 8%;
+}
+
+
+
+/* Event Additional Description intro (5) */
+#event_intro5 {
+	position: relative;
+	margin: 0 8% 12%;
+	padding: 0;
+	overflow: hidden;
+}
+
+@media (max-width: 800px) {
+	#event_intro5 {
+		text-align: center;
+	}
+
+	#event_intro5 ul,
+	#event_intro5 ol {
+		text-align: left;
+	}
+}
+
+@media (max-width: 600px) {
+	#event_intro5 {
+		font-size: 0.8em;
+	}
+}
+
+#event_intro5_content {
+	float: right;
+	width: 40%;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1200px) {
+	#event_intro5_content {
+		width: 62%;
+	}
+}
+
+@media (max-width: 800px) {
+	#event_intro5_content {
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#event_intro5_image {
+	float: left;
+	width: 45%;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1200px) {
+	#event_intro5_image {
+		width: 25%;
+	}
+}
+
+@media (max-width: 800px) {
+	#event_intro5_image {
+		width: 100%;
+		margin: 0 0 8% 0;
+	}
+}
+
+#event_intro5_heading {
+	color: #444;
+	font-size: 3.8em;
+	margin: 0 0 8% 0;
+}
+
+#event_intro5_text {
+	color: #444;
+	font-size: 1.5em;
+	line-height: 1.35em;
+	margin: 0 0 8%;
+}
+
+
+
+
+
 /* Event Map */
 #event_map {
 	margin: 0 0 10% 0;
