@@ -184,17 +184,17 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 
 					$sponsors = get_field( 'field_5c3f69ffba470', get_the_ID(), true );
 					foreach ( $sponsors as $sponsor ) {
-						$sponsor_image = $sponsor['image'];
+						$sponsor_image = wp_get_attachment_url( $sponsor['image'], 'medium' );
 						$sponsor_url   = $sponsor['url'];
 
-						if ( $sponsor_image ) {
-							if ( $sponsor_url ) {
-								echo '<a href="' . $sponsor_url . '" target="_blank">';
+						if ( ! empty( $sponsor_image ) ) {
+							if ( ! empty( $sponsor_url ) ) {
+								echo '<a href="' . esc_url( $sponsor_url ) . '" target="_blank">';
 							}
 
-							echo '<img src="' . $sponsor_image . '" alt="New York Wine Events Sponsor" />';
+							echo '<img src="' . esc_url( $sponsor_image ) . '" alt="New York Wine Events Sponsor" />';
 
-							if ( $sponsor_url ) {
+							if ( ! empty( $sponsor_url ) ) {
 								echo '</a>';
 							}
 						}
