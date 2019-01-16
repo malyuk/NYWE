@@ -184,17 +184,17 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 
 					$sponsors = get_field( 'field_5c3f69ffba470', get_the_ID(), true );
 					foreach ( $sponsors as $sponsor ) {
-						$sponsor_image = $sponsor['image'];
+						$sponsor_image = wp_get_attachment_url( $sponsor['image'], 'medium' );
 						$sponsor_url   = $sponsor['url'];
 
-						if ( $sponsor_image ) {
-							if ( $sponsor_url ) {
-								echo '<a href="' . $sponsor_url . '" target="_blank">';
+						if ( ! empty( $sponsor_image ) ) {
+							if ( ! empty( $sponsor_url ) ) {
+								echo '<a href="' . esc_url( $sponsor_url ) . '" target="_blank">';
 							}
 
-							echo '<img src="' . $sponsor_image . '" alt="New York Wine Events Sponsor" />';
+							echo '<img src="' . esc_url( $sponsor_image ) . '" alt="New York Wine Events Sponsor" />';
 
-							if ( $sponsor_url ) {
+							if ( ! empty( $sponsor_url ) ) {
 								echo '</a>';
 							}
 						}
@@ -202,48 +202,6 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 
 					?>
 				</div><!-- grid -->
-				<a id="event_sponsor_more" href="#"><img src="<?php bloginfo( 'template_url' ); ?>/images/menu3.png"/>
-					Show all sponsors</a>
-				<script type="text/javascript">
-					jQuery( function () {
-						// LOGIC:
-						var sponsor = jQuery( '#event_sponsors_grid a' );
-						// RANDOMIZE:
-						jQuery.fn.shuffle = function () {
-							var j;
-							for ( var i = 0; i < this.length; i ++ ) {
-								j = Math.floor( Math.random() * this.length );
-								jQuery( this[i] ).before( jQuery( this[j] ) );
-							}
-							return this;
-						};
-						sponsor.shuffle();
-
-						// If ONLY 1:
-						var count = sponsor.length;
-						if ( count === 1 ) {
-							jQuery( '#event_sponsors_grid' ).addClass( 'single' );
-						}
-
-						// HIDE MORE THAN 4:
-						sponsor.each( function () {
-							var item = jQuery( this );
-							if ( item.is( ':visible' ) ) {
-								item.addClass( 'visibleSponsor' );
-							}
-						} );
-						jQuery( '.visibleSponsor' ).slice( 4 ).addClass( 'visibleSponsorMore' );
-						jQuery( '.visibleSponsorMore' ).hide();
-						// SHOW MORE THAN 4 ON CLICK:
-						jQuery( '#event_sponsor_more' ).click(
-							function ( e ) {
-								e.preventDefault();
-								jQuery( '.visibleSponsorMore' ).slideDown();
-								jQuery( '#event_sponsor_more' ).fadeOut();
-							}
-						);
-					} ); // end
-				</script>
 			</div><!-- sponsors -->
 		<?php endif; ?>
 

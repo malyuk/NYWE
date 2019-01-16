@@ -2991,11 +2991,8 @@ img.daytrip_slide_large {
 
 #event_sponsors_grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	grid-column: auto;
-	grid-row: auto;
-	grid-gap: 5%;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 40px;
 	text-align: center;
 }
 
