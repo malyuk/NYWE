@@ -759,7 +759,15 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 			<h2 id="events_related_heading">RELATED EVENTS</h2>
 			<div id="events_related_grid">
 				<?php
-				$events_list = new WP_Query( array( 'post_type' => 'events', 'posts_per_page' => 25 ) );
+				$events_list = new WP_Query( array(
+					'post_type'      => 'events',
+					'posts_per_page' => 25,
+					'post_status'    => 'publish',
+					'order'          => 'ASC',
+					'date_query'     => array(
+						'after' => date( 'F j, Y' )
+					)
+				));
 				while ( $events_list->have_posts() ) : $events_list->the_post();
 					?>
 					<div class="related_list_cell" id="<?php the_ID(); ?>">
@@ -816,39 +824,8 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 						}
 					}
 				);
-				// 1) Hide Expired:
-				// HIDE PAST EVENTS:
-				var events = jQuery( '.related_list_cell' );
-				events.each( function () {
-					// Process date:
-					var date = jQuery( this ).find( 'span.related_list_cell_publish_date' ).text();
-					var date = Date.parse( date );
-					var date = date.toString();
-					var date = date.slice( 0, 6 );
-					// Process today:
-					var today = new Date();
-					var dd = today.getDate();
-					var mm = today.getMonth() + 1; //January is 0!
-					var yyyy = today.getFullYear();
-					if ( dd < 10 ) {
-						dd = '0' + dd
-					}
-					if ( mm < 10 ) {
-						mm = '0' + mm
-					}
-					var today = mm + '/' + dd + '/' + yyyy;
-					var today = Date.parse( today );
-					var today = today.toString();
-					var today = today.slice( 0, 6 );
-					// Compare:
-					if ( date < today ) {
-						jQuery( this ).hide();
-					}
-				} );
-				// 2) Reverse Order:
-				jQuery.fn.reverse = [].reverse;
-				jQuery( '.related_list_cell' ).reverse().prependTo( '#events_related_grid' );
 				// 3) Show 2:
+				var events = jQuery( '.related_list_cell' );
 				events.each( function ( index, value ) {
 					var item = jQuery( this );
 					if ( item.is( ':visible' ) ) {
