@@ -181,19 +181,25 @@ if ( is_array( $advertHead ) && end( $advertHead ) != '' ) {
 			<div id="event_sponsors">
 				<div id="event_sponsors_grid">
 					<?php
-					for ( $x = 0; $x <= 60; $x ++ ) {
-						$custom_sponsors_url = get_post_custom_values( 'custom_sponsors_url_' . $x );
-						$custom_sponsors     = get_post_custom_values( 'custom_sponsors_' . $x );
-						if ( is_array( $custom_sponsors ) && end( $custom_sponsors ) != '' ) {
-							echo '<a href="' . end( $custom_sponsors_url ) . '">';
+
+					$sponsors = get_field( 'field_5c3f69ffba470', get_the_ID(), true );
+					foreach ( $sponsors as $sponsor ) {
+						$sponsor_image = $sponsor['image'];
+						$sponsor_url   = $sponsor['url'];
+
+						if ( $sponsor_image ) {
+							if ( $sponsor_url ) {
+								echo '<a href="' . $sponsor_url . '" target="_blank">';
+							}
+
+							echo '<img src="' . $sponsor_image . '" alt="New York Wine Events Sponsor" />';
+
+							if ( $sponsor_url ) {
+								echo '</a>';
+							}
 						}
-						if ( is_array( $custom_sponsors ) && end( $custom_sponsors ) != '' ) {
-							echo '<img src="' . end( $custom_sponsors ) . '" alt="New York Wine Events Sponsor" />';
-						}
-						if ( is_array( $custom_sponsors ) && end( $custom_sponsors ) != '' ) {
-							echo '</a>';
-						}
-					} // end for
+					}
+
 					?>
 				</div><!-- grid -->
 				<a id="event_sponsor_more" href="#"><img src="<?php bloginfo( 'template_url' ); ?>/images/menu3.png"/>
