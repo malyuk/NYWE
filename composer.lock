@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99910bce654a138b29e6ff711c69ed5f",
+    "content-hash": "5ab641eec6be4b390537ad466e9a4d47",
     "packages": [
+        {
+            "name": "a7/admin-notices",
+            "version": "0.1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a7/admin-notices.git",
+                "reference": "54937e9912478763689a82956fe663bc22222a97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a7/admin-notices/zipball/54937e9912478763689a82956fe663bc22222a97",
+                "reference": "54937e9912478763689a82956fe663bc22222a97",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "load.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "A7",
+                    "email": "a7@fastmail.com",
+                    "homepage": "https://github.com/a7"
+                }
+            ],
+            "description": "Quickly and easily add admin notices to WordPress.",
+            "time": "2018-02-05T22:03:05+00:00"
+        },
         {
             "name": "a7/autoload",
             "version": "2.0.9.1",
@@ -48,6 +91,40 @@
             ],
             "description": "Automatically and recursively require_once all php files in a given directory.",
             "time": "2018-02-05T20:00:27+00:00"
+        },
+        {
+            "name": "a7/seeder",
+            "version": "2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a7/seeder.git",
+                "reference": "b20764e2ce603e29133db45bb3dd4dd7eb095f09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a7/seeder/zipball/b20764e2ce603e29133db45bb3dd4dd7eb095f09",
+                "reference": "b20764e2ce603e29133db45bb3dd4dd7eb095f09",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "a7/admin-notices": "^0.1",
+                "a7/autoload": "^2.0.9"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "seeder.php"
+                ]
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "description": "Perform heavy and/or infrequent actions in a controlled manner",
+            "time": "2017-11-24T21:28:13+00:00"
         },
         {
             "name": "arrilot/dotenv-php",
@@ -593,16 +670,16 @@
         },
         {
             "name": "zeek/wp-utils",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/wp-utils.git",
-                "reference": "73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e"
+                "reference": "3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e",
-                "reference": "73329ff9bd4cf6e6eb0cce2f0d8aa45f67395e6e",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e",
+                "reference": "3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -652,10 +729,10 @@
             ],
             "description": "A collection of functions that provide utility functionality for WordPress.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/wp-utils/tree/master",
+                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.9.3",
                 "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
             },
-            "time": "2019-01-07T12:29:39+00:00"
+            "time": "2019-01-14T19:13:48+00:00"
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",

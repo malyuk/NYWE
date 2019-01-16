@@ -31,6 +31,7 @@
     "php": ">=7.0",
     "composer/installers": "^1.5",
     "a7/autoload": "^2.0.9.1",
+    "a7/seeder": "^2.3",
     "sentry/sentry": "^1.9",
     "arrilot/dotenv-php": "^1.0",
 
