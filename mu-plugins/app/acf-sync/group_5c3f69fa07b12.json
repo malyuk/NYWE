@@ -1,10 +1,34 @@
 {
     "key": "group_5c3f69fa07b12",
-    "title": "Sponsors",
+    "title": "Event",
     "fields": [
         {
+            "key": "field_5c3fb7611d655",
+            "label": "Event Image",
+            "name": "event_image",
+            "type": "image",
+            "instructions": "Recommended image size of 1920 x 720 pixels.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5c3f69ffba470",
-            "label": "",
+            "label": "Sponsors",
             "name": "sponsors",
             "type": "repeater",
             "instructions": "",
@@ -81,5 +105,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1547667553
+    "modified": 1547679618
 }
