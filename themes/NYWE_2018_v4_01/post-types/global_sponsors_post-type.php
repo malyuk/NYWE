@@ -73,6 +73,7 @@ function global_sponsor_meta_box_cb( $post ) {
 add_action( 'save_post', 'global_sponsor_meta_box_save' );
 function global_sponsor_meta_box_save( $post_id )
 {
+	return;
   // Bail if we're doing an auto save
   if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
   

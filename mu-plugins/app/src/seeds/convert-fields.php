@@ -123,13 +123,37 @@ add_seed([
 					$val = $image;
 				}
 
-				$acf = get_field( $old_key_map[$key], $event->ID );
-				update_field( $old_key_map[$key], $val, $event->ID );
-				
+				if ( is_array( $old_key_map[$key] ) ) {
+					update_repeater_fields( $old_key_map[$key], $event->ID );
+				} else {
+					update_field( $old_key_map[$key], $val, $event->ID );
+				}
+
 			}
 		}
 	}
 ]);
+
+function update_repeater_fields( $meta = [], $id = 0 ) {
+
+	if ( empty( $meta ) || empty( $id ) ) {
+		return false;
+	}
+
+	foreach( $meta['old_keys'] as $index => $field ) {
+
+		$values = [];
+		foreach ( $field as $old_key => $new_key ) {
+			$val = get_post_meta( $id, $old_key, true );
+			if ( ! empty( $val ) ) {
+				$values[ $new_key ] = $val;
+			}
+		}
+
+		update_row( $meta['name'], $index + 1, $values, $id );
+
+	}
+}
 
 function get_image_id( $image_url ) {
 
@@ -159,22 +183,55 @@ function get_old_event_key_map() {
 		'eventIntroImage' => 'event_intro_image',
 		'eventIntroHeading' => 'event_intro_heading',
 		'eventIntroText' => 'event_intro_text',
-		'eventIntroItem1_heading' => 'repeater_event_intro_item',
-		'eventIntroItem1_text' => 'repeater_event_intro_item',
-		'eventIntroItem2_heading' => 'repeater_event_intro_item',
-		'eventIntroItem2_text' => 'repeater_event_intro_item',
-		'eventFeedback_heading_1' => 'repeater_event_feedback',
-		'eventFeedback_client_1' => 'repeater_event_feedback',
-		'eventFeedback_date_1' => 'repeater_event_feedback',
-		'eventFeedback_excerpt_1' => 'repeater_event_feedback',
-		'eventFeedback_heading_2' => 'repeater_event_feedback',
-		'eventFeedback_client_2' => 'repeater_event_feedback',
-		'eventFeedback_date_2' => 'repeater_event_feedback',
-		'eventFeedback_excerpt_2' => 'repeater_event_feedback',
-		'eventFeedback_heading_3' => 'repeater_event_feedback',
-		'eventFeedback_client_3' => 'repeater_event_feedback',
-		'eventFeedback_date_3' => 'repeater_event_feedback',
-		'eventFeedback_excerpt_3' => 'repeater_event_feedback',
+		'eventIntroItem1_heading' => [
+			'key'      => 'field_5c40ac6f1e8d3',
+			'name'     => 'repeater_event_intro_item',
+			'old_keys' => [
+				[
+					'eventIntroItem1_heading' => 'heading',
+					'eventIntroItem1_text' => 'text'
+				],
+				[
+					'eventIntroItem2_heading' => 'heading',
+					'eventIntroItem2_text' => 'text'
+				]
+			]
+		],
+		'eventFeedback_heading_1' => [
+			'key'      => '',
+			'name'     => 'repeater_event_feedback',
+			'old_keys' => [
+				[
+					'eventFeedback_heading_1' => 'heading',
+					'eventFeedback_client_1' => 'client',
+					'eventFeedback_date_1' => 'date',
+					'eventFeedback_excerpt_1' => 'excerpt',
+				],
+				[
+					'eventFeedback_heading_2' => 'heading',
+					'eventFeedback_client_2' => 'client',
+					'eventFeedback_date_2' => 'date',
+					'eventFeedback_excerpt_2' => 'excerpt',
+				],
+				[
+					'eventFeedback_heading_3' => 'heading',
+					'eventFeedback_client_3' => 'client',
+					'eventFeedback_date_3' => 'date',
+					'eventFeedback_excerpt_3' => 'excerpt',
+				]
+			]
+		],
+//		'eventFeedback_client_1' => 'repeater_event_feedback',
+//		'eventFeedback_date_1' => 'repeater_event_feedback',
+//		'eventFeedback_excerpt_1' => 'repeater_event_feedback',
+//		'eventFeedback_heading_2' => 'repeater_event_feedback',
+//		'eventFeedback_client_2' => 'repeater_event_feedback',
+//		'eventFeedback_date_2' => 'repeater_event_feedback',
+//		'eventFeedback_excerpt_2' => 'repeater_event_feedback',
+//		'eventFeedback_heading_3' => 'repeater_event_feedback',
+//		'eventFeedback_client_3' => 'repeater_event_feedback',
+//		'eventFeedback_date_3' => 'repeater_event_feedback',
+//		'eventFeedback_excerpt_3' => 'repeater_event_feedback',
 //		'eventVideo',
 //		'eventIntro2Image',
 //		'eventIntro2Heading',

@@ -264,7 +264,7 @@
                 {
                     "key": "field_5c40ac871e8d4",
                     "label": "Heading",
-                    "name": "eventIntroItem_heading",
+                    "name": "heading",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -283,7 +283,7 @@
                 {
                     "key": "field_5c40ac961e8d5",
                     "label": "Text",
-                    "name": "eventIntroItem_text",
+                    "name": "text",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -323,7 +323,7 @@
                 {
                     "key": "field_5c40ada81e8d7",
                     "label": "Heading",
-                    "name": "eventFeedback_heading",
+                    "name": "heading",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -342,7 +342,7 @@
                 {
                     "key": "field_5c40adb01e8d8",
                     "label": "Client",
-                    "name": "eventFeedback_client",
+                    "name": "client",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -361,7 +361,7 @@
                 {
                     "key": "field_5c40adbe1e8d9",
                     "label": "Date",
-                    "name": "eventFeedback_date",
+                    "name": "date",
                     "type": "date_picker",
                     "instructions": "",
                     "required": 0,
@@ -378,7 +378,7 @@
                 {
                     "key": "field_5c40adcc1e8da",
                     "label": "Excerpt",
-                    "name": "eventFeedback_excerpt",
+                    "name": "excerpt",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -399,8 +399,8 @@
         {
             "key": "field_5c40adea1e8db",
             "label": "Video Embed",
-            "name": "eventVideo",
-            "type": "oembed",
+            "name": "event_video",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -409,15 +409,18 @@
                 "class": "",
                 "id": ""
             },
-            "width": 1280,
-            "height": 670
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5c40ae181e8dc",
-            "label": "Second Event Intro Image",
-            "name": "eventIntro2Image",
-            "type": "image",
-            "instructions": "Recommended image size of 740 x 740 pixels.",
+            "label": "Continued Introductions",
+            "name": "repeater_continued_intros",
+            "type": "repeater",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -425,7 +428,71 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Introduction",
+            "sub_fields": [
+                {
+                    "key": "field_5c4210ccd534d",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Recommended image size of 740 x 740 pixels.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5c4210f0d534e",
+                    "label": "Introduction Text",
+                    "name": "introduction_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5c42169fb33e0",
+            "label": "Event Map",
+            "name": "event_map",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -435,6 +502,215 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5c4216aab33e1",
+            "label": "Event Map URL",
+            "name": "event_map_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c421700b33e2",
+            "label": "Event Ticket Cards",
+            "name": "repeater_event_ticket_cards",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5c421721b33e4",
+                    "label": "Heading",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c421711b33e3",
+                    "label": "Subheading",
+                    "name": "subheading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c42172eb33e5",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5c42177db33e6",
+                    "label": "Price",
+                    "name": "price",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5c421793b33e7",
+                    "label": "Purchase Link",
+                    "name": "purchase_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5c4217acb33e8",
+                    "label": "Includes",
+                    "name": "includes",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c421830b33e9",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_5c421977ed441",
+            "label": "Advert Override (Body Embed)",
+            "name": "advert_body",
+            "type": "textarea",
+            "instructions": "- If left blank, the template will load the Global Advert (#3). \r\n- If filled in, it will override and show this Post specific one instead. \r\n- For the override to work, you must also enter the Advert Head script below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c4219a0ed442",
+            "label": "Advert Override (Head Embed)",
+            "name": "advert_head",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5c3f69ffba470",
@@ -530,5 +806,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1547749409
+    "modified": 1548097694
 }
