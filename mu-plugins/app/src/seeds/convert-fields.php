@@ -134,7 +134,7 @@ add_seed([
 	}
 ]);
 
-function update_repeater_fields( $meta = [], $id = 0 ) {
+function update_repeater_fields( $meta = [], $id = 0, $parent = '', $current_index = '' ) {
 
 	if ( empty( $meta ) || empty( $id ) ) {
 		return false;
@@ -142,17 +142,57 @@ function update_repeater_fields( $meta = [], $id = 0 ) {
 
 	foreach( $meta['old_keys'] as $index => $field ) {
 
-		$values = [];
-		foreach ( $field as $old_key => $new_key ) {
-			$val = get_post_meta( $id, $old_key, true );
-			if ( ! empty( $val ) ) {
-				$values[ $new_key ] = $val;
+		// Check for nested values.
+		foreach( $field as $old_key => $new_key ) {
+			if ( is_array( $new_key ) ) {
+				update_repeater_fields( $new_key, $id, $meta['name'], $index );
 			}
 		}
 
-		update_row( $meta['name'], $index + 1, $values, $id );
+		$values = get_repeater_values( $field, $id );
+
+		if ( ! empty( $values ) ) {
+
+			if ( empty( $parent ) && empty( $current_index) ) {
+				update_row( $meta['name'], $index + 1, $values, $id );
+			} else {
+				update_sub_row( [$parent, $current_index + 1, $meta['name']], $index + 1, $values, $id );
+			}
+		}
 
 	}
+}
+
+function get_repeater_values( $field = [], $id = 0 ) {
+
+	if ( empty( $field ) || empty( $id ) ) {
+		return false;
+	}
+
+	$values = [];
+
+	foreach( $field as $old_key => $new_key ) {
+
+		if ( is_array( $new_key ) ) {
+			continue;
+		}
+
+		$val = get_post_meta( $id, $old_key, true );
+		if ( ! empty( $val ) ) {
+
+			// Convert to image ID.
+			$image = get_image_id( $val );
+			if ( $image ) {
+				$val = $image;
+			}
+
+			$values[$new_key] = $val;
+		}
+
+	}
+
+	return $values;
+
 }
 
 function get_image_id( $image_url ) {
@@ -184,7 +224,6 @@ function get_old_event_key_map() {
 		'eventIntroHeading' => 'event_intro_heading',
 		'eventIntroText' => 'event_intro_text',
 		'eventIntroItem1_heading' => [
-			'key'      => 'field_5c40ac6f1e8d3',
 			'name'     => 'repeater_event_intro_item',
 			'old_keys' => [
 				[
@@ -198,7 +237,6 @@ function get_old_event_key_map() {
 			]
 		],
 		'eventFeedback_heading_1' => [
-			'key'      => '',
 			'name'     => 'repeater_event_feedback',
 			'old_keys' => [
 				[
@@ -221,60 +259,83 @@ function get_old_event_key_map() {
 				]
 			]
 		],
-//		'eventFeedback_client_1' => 'repeater_event_feedback',
-//		'eventFeedback_date_1' => 'repeater_event_feedback',
-//		'eventFeedback_excerpt_1' => 'repeater_event_feedback',
-//		'eventFeedback_heading_2' => 'repeater_event_feedback',
-//		'eventFeedback_client_2' => 'repeater_event_feedback',
-//		'eventFeedback_date_2' => 'repeater_event_feedback',
-//		'eventFeedback_excerpt_2' => 'repeater_event_feedback',
-//		'eventFeedback_heading_3' => 'repeater_event_feedback',
-//		'eventFeedback_client_3' => 'repeater_event_feedback',
-//		'eventFeedback_date_3' => 'repeater_event_feedback',
-//		'eventFeedback_excerpt_3' => 'repeater_event_feedback',
-//		'eventVideo',
-//		'eventIntro2Image',
-//		'eventIntro2Heading',
-//		'eventContinuedIntroText',
-//		'eventIntro3Image',
-//		'eventIntro3Heading',
-//		'eventContinuedIntroText3',
-//		'eventIntro4Image',
-//		'eventIntro4Heading',
-//		'eventContinuedIntroText4',
-//		'eventIntro5Image',
-//		'eventIntro5Heading',
-//		'eventContinuedIntroText5',
-//		'eventMap',
-//		'eventMapUrl',
-//		'eventTicketsCard_1_subHeading',
-//		'eventTicketsCard_1_heading',
-//		'eventTicketsCard_1_text',
-//		'eventTicketsCard_1_price',
-//		'eventTicketsCard_1_purchase',
-//		'eventTicketsCard_1_also_1',
-//		'eventTicketsCard_1_also_2',
-//		'eventTicketsCard_1_also_3',
-//		'eventTicketsCard_1_also_4',
-//		'eventTicketsCard_2_subHeading',
-//		'eventTicketsCard_2_heading',
-//		'eventTicketsCard_2_text',
-//		'eventTicketsCard_2_price',
-//		'eventTicketsCard_2_purchase',
-//		'eventTicketsCard_2_also_1',
-//		'eventTicketsCard_2_also_2',
-//		'eventTicketsCard_2_also_3',
-//		'eventTicketsCard_2_also_4',
-//		'eventTicketsCard_3_subHeading',
-//		'eventTicketsCard_3_heading',
-//		'eventTicketsCard_3_text',
-//		'eventTicketsCard_3_price',
-//		'eventTicketsCard_3_purchase',
-//		'eventTicketsCard_3_also_1',
-//		'eventTicketsCard_3_also_2',
-//		'eventTicketsCard_3_also_3',
-//		'eventTicketsCard_3_also_4',
-//		'advert',
-//		'advertHead',
+		'eventVideo' => 'event_video',
+		'eventIntro2Image' => [
+			'name' => 'repeater_continued_intros',
+			'old_keys' => [
+				[
+					'eventIntro2Image' => 'image',
+					'eventIntro2Heading' => 'heading',
+					'eventContinuedIntroText' => 'introduction_text',
+				],
+				[
+					'eventIntro3Image' => 'image',
+					'eventIntro3Heading' => 'heading',
+					'eventContinuedIntroText3' => 'introduction_text',
+				],
+				[
+					'eventIntro5Image' => 'image',
+					'eventIntro5Heading' => 'heading',
+					'eventContinuedIntroText5' => 'introduction_text',
+				]
+			]
+		],
+		'eventMap' => 'event_map',
+		'eventMapUrl' => 'event_map_url',
+		'eventTicketsCard_1_subHeading' => [
+			'name' => 'repeater_event_ticket_cards',
+			'old_keys' => [
+				[
+					'eventTicketsCard_1_subHeading' => 'subheading',
+					'eventTicketsCard_1_heading' => 'heading',
+					'eventTicketsCard_1_text' => 'text',
+					'eventTicketsCard_1_price' => 'price',
+					'eventTicketsCard_1_purchase' => 'purchase_link',
+					'eventTicketsCard_1_also_1' => [
+						'name' => 'includes',
+						'old_keys' => [
+							['eventTicketsCard_1_also_1' => 'text'],
+							['eventTicketsCard_1_also_2' => 'text'],
+							['eventTicketsCard_1_also_3' => 'text'],
+							['eventTicketsCard_1_also_4' => 'text'],
+						]
+					],
+				],
+				[
+					'eventTicketsCard_2_subHeading' => 'subheading',
+					'eventTicketsCard_2_heading' => 'heading',
+					'eventTicketsCard_2_text' => 'text',
+					'eventTicketsCard_2_price' => 'price',
+					'eventTicketsCard_2_purchase' => 'purchase_link',
+					'eventTicketsCard_2_also_1' => [
+						'name' => 'includes',
+						'old_keys' => [
+							['eventTicketsCard_2_also_1' => 'text'],
+							['eventTicketsCard_2_also_2' => 'text'],
+							['eventTicketsCard_2_also_3' => 'text'],
+							['eventTicketsCard_2_also_4' => 'text'],
+						]
+					]
+				],
+				[
+					'eventTicketsCard_3_subHeading' => 'subheading',
+					'eventTicketsCard_3_heading' => 'heading',
+					'eventTicketsCard_3_text' => 'text',
+					'eventTicketsCard_3_price' => 'price',
+					'eventTicketsCard_3_purchase' => 'purchase_link',
+					'eventTicketsCard_3_also_1' => [
+						'name' => 'includes',
+						'old_keys' => [
+							['eventTicketsCard_3_also_1' => 'text'],
+							['eventTicketsCard_3_also_2' => 'text'],
+							['eventTicketsCard_3_also_3' => 'text'],
+							['eventTicketsCard_3_also_4' => 'text'],
+						]
+					]
+				]
+			]
+		],
+		'advert' => 'advert_body',
+		'advertHead' => 'advert_head',
 	];
 }

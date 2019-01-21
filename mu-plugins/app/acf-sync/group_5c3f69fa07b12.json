@@ -459,6 +459,25 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5c461b3c73086",
+                    "label": "Heading",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5c4210f0d534e",
                     "label": "Introduction Text",
                     "name": "introduction_text",
@@ -806,5 +825,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1548097694
+    "modified": 1548098561
 }
