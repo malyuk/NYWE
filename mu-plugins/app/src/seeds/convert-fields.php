@@ -126,6 +126,7 @@ add_seed([
 				if ( is_array( $old_key_map[$key] ) ) {
 					update_repeater_fields( $old_key_map[$key], $event->ID );
 				} else {
+					$val     = apply_filters( 'seeder_migrate_before_update', $val, $old_key_map[$key], $data );
 					$updated = update_field( $old_key_map[$key], $val, $event->ID );
 				}
 
@@ -133,6 +134,16 @@ add_seed([
 		}
 	}
 ]);
+
+add_filter( 'seeder_migrate_before_update', function( $val, $map ) {
+	if ( in_array( $meta, [
+		'event_sold_out'
+	] ) ) {
+		return $val === 'off' ? 0 : 1;
+	}
+
+	return $val;
+}, 10, 2 );
 
 function update_repeater_fields( $meta = [], $id = 0, $parent = '', $current_index = '' ) {
 
@@ -185,6 +196,8 @@ function get_repeater_values( $field = [], $id = 0 ) {
 			if ( $image ) {
 				$val = $image;
 			}
+
+			$val = apply_filters( 'seeder_migrate_before_update', $val, $field );
 
 			$values[$new_key] = $val;
 		}

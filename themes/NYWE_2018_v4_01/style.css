@@ -3221,6 +3221,7 @@ img.daytrip_slide_large {
 }
 
 /* Event Continued Description intro */
+#event_intro1,
 #event_intro2 {
 	position: relative;
 	margin: 0 8% 12%;
@@ -3229,10 +3230,13 @@ img.daytrip_slide_large {
 }
 
 @media (max-width: 800px) {
+	#event_intro1,
 	#event_intro2 {
 		text-align: center;
 	}
 
+	#event_intro1 ul,
+	#event_intro1 ol,
 	#event_intro2 ul,
 	#event_intro2 ol {
 		text-align: left;
@@ -3240,11 +3244,13 @@ img.daytrip_slide_large {
 }
 
 @media (max-width: 600px) {
+	#event_intro1,
 	#event_intro2 {
 		font-size: 0.8em;
 	}
 }
 
+#event_intro1_content,
 #event_intro2_content {
 	float: left;
 	clear: right;
@@ -3254,12 +3260,14 @@ img.daytrip_slide_large {
 }
 
 @media (max-width: 1200px) {
+	#event_intro1_content,
 	#event_intro2_content {
 		width: 62%;
 	}
 }
 
 @media (max-width: 800px) {
+	#event_intro1_content,
 	#event_intro2_content {
 		clear: both;
 		width: 100%;
@@ -3268,6 +3276,7 @@ img.daytrip_slide_large {
 	}
 }
 
+#event_intro1_image,
 #event_intro2_image {
 	float: left;
 	clear: right;
@@ -3277,24 +3286,28 @@ img.daytrip_slide_large {
 }
 
 @media (max-width: 1200px) {
+	#event_intro1_image,
 	#event_intro2_image {
 		width: 25%;
 	}
 }
 
 @media (max-width: 800px) {
+	#event_intro1_image,
 	#event_intro2_image {
 		width: 100%;
 		margin: 0 0 8% 0;
 	}
 }
 
+#event_intro1_heading,
 #event_intro2_heading {
 	color: #444;
 	font-size: 3.8em;
 	margin: 0 0 8% 0;
 }
 
+#event_intro1_text,
 #event_intro2_text {
 	color: #444;
 	font-size: 1.5em;
