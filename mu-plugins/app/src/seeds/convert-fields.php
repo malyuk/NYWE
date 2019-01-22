@@ -136,7 +136,7 @@ add_seed([
 ]);
 
 add_filter( 'seeder_migrate_before_update', function( $val, $map ) {
-	if ( in_array( $meta, [
+	if ( in_array( $map, [
 		'event_sold_out'
 	] ) ) {
 		return $val === 'off' ? 0 : 1;
