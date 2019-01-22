@@ -126,7 +126,7 @@ add_seed([
 				if ( is_array( $old_key_map[$key] ) ) {
 					update_repeater_fields( $old_key_map[$key], $event->ID );
 				} else {
-					update_field( $old_key_map[$key], $val, $event->ID );
+					$updated = update_field( $old_key_map[$key], $val, $event->ID );
 				}
 
 			}
@@ -152,7 +152,6 @@ function update_repeater_fields( $meta = [], $id = 0, $parent = '', $current_ind
 		$values = get_repeater_values( $field, $id );
 
 		if ( ! empty( $values ) ) {
-
 			if ( empty( $parent ) && empty( $current_index) ) {
 				update_row( $meta['name'], $index + 1, $values, $id );
 			} else {
@@ -161,6 +160,7 @@ function update_repeater_fields( $meta = [], $id = 0, $parent = '', $current_ind
 		}
 
 	}
+
 }
 
 function get_repeater_values( $field = [], $id = 0 ) {
