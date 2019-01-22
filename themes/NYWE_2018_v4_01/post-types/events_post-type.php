@@ -921,9 +921,8 @@ function v4_event_meta_box_cb( $post ) {
 // v4 SAVE:
 // ------------------------
 
-add_action( 'save_post', 'v4_event_meta_box_save' );
+//add_action( 'save_post', 'v4_event_meta_box_save' );
 function v4_event_meta_box_save( $post_id ) {
-	return;
 	// Setup:
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
