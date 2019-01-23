@@ -86,22 +86,24 @@ add_seed( [
 
 add_seed([
 	'name'        => 'Migrate Events to ACF',
-	'description' => 'Migrates all meta box data on the Event custom post type to the correct ACF fields.',
+	'description' => 'Migrates all meta box data on the Event custom post type to the correct ACF fields (batches 200 events at a time).',
 	'callback'    => function() {
+
+		$offset = get_transient( 'events-to-acf-offset' );
+		if ( empty( $offset ) ) {
+			$offset = 0;
+		}
 
 		$events = get_posts([
 			'post_type'      => 'events',
 			'post_status'    => 'publish',
-			'posts_per_page' => -1
+			'posts_per_page' => 200,
+			'offset'         => absint( $offset )
 		]);
 
 		$old_key_map = get_old_event_key_map();
 
 		foreach( $events as $event ) {
-
-			if ( $event->ID !== 24338 ) {
-				continue;
-			}
 
 			// Get all metadata.
 			$data = get_metadata( 'post', $event->ID, '' );
@@ -132,6 +134,17 @@ add_seed([
 
 			}
 		}
+
+		// Update offset
+		$new_offset = absint( $offset ) + count( $events );
+		set_transient( 'events-to-acf-offset', $new_offset );
+
+		if ( $new_offset - $offset < 200 ) {
+			echo 'All done!';
+		} {
+			echo "Updated events {$offset} - {$new_offset}. Run it again!";
+		}
+
 	}
 ]);
 
