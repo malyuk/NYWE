@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ab641eec6be4b390537ad466e9a4d47",
+    "content-hash": "34b588c129d36dd6a8a353bf33daedf9",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -456,8 +456,35 @@
             "homepage": "https://wordpress.org/plugins/fareharbor/"
         },
         {
+            "name": "wpackagist-plugin/lazy-load",
+            "version": "0.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/lazy-load/",
+                "reference": "tags/0.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/lazy-load.0.6.1.zip",
+                "reference": null,
+                "shasum": null,
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "homepage": "https://wordpress.org/plugins/lazy-load/"
+        },
+        {
             "name": "wpackagist-plugin/optinmonster",
-            "version": "1.5.3",
+            "version": "1.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/optinmonster/",
@@ -465,7 +492,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1544816185",
+                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1547838147",
                 "reference": null,
                 "shasum": null,
                 "mirrors": [
@@ -670,16 +697,16 @@
         },
         {
             "name": "zeek/wp-utils",
-            "version": "2.9.3",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/wp-utils.git",
-                "reference": "3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e"
+                "reference": "25999ea8e7b0e9bf57f3181a05afd7f862a4fe05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e",
-                "reference": "3e44032fd9988c3ad32b8ecd991af1dbc2fc4b1e",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/25999ea8e7b0e9bf57f3181a05afd7f862a4fe05",
+                "reference": "25999ea8e7b0e9bf57f3181a05afd7f862a4fe05",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -729,10 +756,10 @@
             ],
             "description": "A collection of functions that provide utility functionality for WordPress.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.9.3",
+                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.10.0",
                 "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
             },
-            "time": "2019-01-14T19:13:48+00:00"
+            "time": "2019-01-22T19:10:40+00:00"
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",

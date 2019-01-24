@@ -46,7 +46,8 @@
     "wpackagist-plugin/wufoo-shortcode": "1.43",
     "wpackagist-plugin/redirection": "3.6.3",
     "wpackagist-plugin/userway-accessibility-widget": "1.2",
-    "wpackagist-plugin/optinmonster": "^1"
+    "wpackagist-plugin/optinmonster": "^1",
+    "wpackagist-plugin/lazy-load": "^0.6"
 
   }
 }

@@ -91,9 +91,11 @@ if ( ! empty( $advertHead ) ) {
 					);
 				}
 
-				printf( '<img class="event_presenting_sponsor_image" src="%s" srcset="%s" alt="Event Sponsor">',
-					wp_get_attachment_image_url( $event_presenting_sponsor_img, 'large' ),
-					wp_get_attachment_image_srcset( $event_presenting_sponsor_img )
+				echo \NYWE\generate_lazy_load_params(
+					sprintf( '<img class="event_presenting_sponsor_image" src="%s" srcset="%s" alt="Event Sponsor">',
+						wp_get_attachment_image_url( $event_presenting_sponsor_img, 'large' ),
+						wp_get_attachment_image_srcset( $event_presenting_sponsor_img )
+					)
 				);
 
 				if ( ! empty( $event_presenting_sponsor_url ) ) {
@@ -115,9 +117,11 @@ if ( ! empty( $advertHead ) ) {
 			<div id="event_intro">
 				<!-- Image left -->
 				<?php
-				printf( '<img id="event_intro_image" src="%s" srcset="%s" alt="New York Wine Events">',
-					wp_get_attachment_image_url( $event_intro_image, 'large' ),
-					wp_get_attachment_image_srcset( $event_intro_image )
+				echo \NYWE\generate_lazy_load_params(
+					sprintf( '<img id="event_intro_image" src="%s" srcset="%s" alt="New York Wine Events">',
+						wp_get_attachment_image_url( $event_intro_image, 'large' ),
+						wp_get_attachment_image_srcset( $event_intro_image )
+					)
 				); ?>
 				<!-- content -->
 				<div id="event_intro_content">
@@ -194,9 +198,11 @@ if ( ! empty( $advertHead ) ) {
 							);
 						}
 
-						printf( '<img src="%s" srcset="%s" alt="New York Wine Events Sponsor">',
-							esc_url( $sponsor_image ),
-							wp_get_attachment_image_srcset( $sponsor_image )
+						echo \NYWE\generate_lazy_load_params(
+							sprintf( '<img src="%s" srcset="%s" alt="New York Wine Events Sponsor">',
+								esc_url( $sponsor_image ),
+								wp_get_attachment_image_srcset( $sponsor_image )
+							)
 						);
 
 						if ( ! empty( $sponsor_url ) ) {
@@ -306,10 +312,12 @@ if ( ! empty( $advertHead ) ) {
 					}
 
 					if ( ! empty( $intro['image'] ) ) {
-						printf( '<img id="event_intro%s_image" src="%s" srcset="%s" alt="New York Wine Events">',
-							$count,
-							wp_get_attachment_image_url( $intro['image'], 'large' ),
-							wp_get_attachment_image_srcset( $intro['image'] )
+						echo \NYWE\generate_lazy_load_params(
+							sprintf( '<img id="event_intro%s_image" src="%s" srcset="%s" alt="New York Wine Events">',
+								$count,
+								wp_get_attachment_image_url( $intro['image'], 'large' ),
+								wp_get_attachment_image_srcset( $intro['image'] )
+							)
 						);
 					}
 				echo '</div>';
@@ -331,9 +339,11 @@ if ( ! empty( $advertHead ) ) {
 					);
 				}
 
-				printf( '<img id="event_map_image" src="%s" srcset="%s">',
-					wp_get_attachment_image_url( $event_map, 'full' ),
-					wp_get_attachment_image_srcset( $event_map )
+				echo \NYWE\generate_lazy_load_params(
+					sprintf( '<img id="event_map_image" src="%s" srcset="%s">',
+						wp_get_attachment_image_url( $event_map, 'full' ),
+						wp_get_attachment_image_srcset( $event_map )
+					)
 				);
 
 				if ( ! empty( $event_map_url ) ) {
@@ -458,27 +468,27 @@ if ( ! empty( $advertHead ) ) {
 						<span class="related_list_cell_publish_date"
 						      style="display: none;"><?php the_time( 'F j, Y' ); ?></span>
 						<!-- Event image (featured) -->
-						<img class="related_list_cell_image" src="
-                            <?php
-						$related_list_cell_image = get_post_custom_values( 'events_list_cell_image' );
-						if ( is_array( $related_list_cell_image ) && end( $related_list_cell_image ) != '' ) {
-							echo end( $related_list_cell_image );
-						} else {
-							echo bloginfo( 'template_url' ) . '/images/events_default_image.jpg';
-						}
-						?>" alt="New York Wine Events"/>
+						<?php
+						$event_image = get_field( 'event_image' );
+						if ( ! empty( $event_image ) ) {
+							echo \NYWE\generate_lazy_load_params(
+								sprintf( '<img class="related_list_cell_image" src="%s" srcset="%s" alt="New York Wine Events">',
+									wp_get_attachment_image_url( $event_image, 'large' ),
+									wp_get_attachment_image_srcset( $event_image )
+								)
+							);
+						} ?>
 						<!-- Content -->
 						<div class="related_list_cell_content">
 							<!-- Date and Time Overlay -->
 							<div class="related_list_cell_image_overlay">
-								<h3 class="related_list_cell_image_overlay_date"><?php $relatedDate = get_post_custom_values( 'eventDate' );
-									if ( is_array( $relatedDate ) && end( $relatedDate ) != '' ) {
-										echo end( $relatedDate );
-									} ?></h3>
-								<h4 class="related_list_cell_image_overlay_time"><?php $relatedTimePreview = get_post_custom_values( 'eventTimePreview' );
-									if ( is_array( $relatedTimePreview ) && end( $relatedTimePreview ) != '' ) {
-										echo end( $relatedTimePreview );
-									} ?></h4>
+								<?php
+								$event_date = get_field( 'event_date' );
+								if ( ! empty( $event_date ) ) {
+									printf( '<h3 class="related_list_cell_image_overlay_date">%s</h3>',
+										esc_html( $event_date )
+									);
+								} ?>
 							</div><!-- overlay -->
 							<div class="related_list_cell_card">
 								<h2 class="related_list_cell_card_title"><a
