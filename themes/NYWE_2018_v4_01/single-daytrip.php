@@ -53,7 +53,7 @@
 			if ( $embed ) : ?>
 				<div class="callout-box" id="discount">
 					<form action="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&amp;id=462f8355e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate callout-box__content" target="_blank" novalidate>
-						<h2 class="callout-box__title">Get an Exclusive Discount!</h2>
+						<h2 class="callout-box__title">Get an Exclusive Discount Emailed to You Now!</h2>
 
 						<input type="email" value="" placeholder="Email address..." name="EMAIL" class="required email" id="mce-EMAIL">
 						<input type="text" value="" placeholder="First name..." name="FNAME" class="" id="mce-FNAME">
@@ -64,7 +64,7 @@
 							<div class="response" id="mce-success-response" style="display:none"></div>
 						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_da778b0b532a20f59d31779a3_462f8355e6" tabindex="-1" value=""></div>
-						<div class="clear"><input type="submit" value="GET AN EXCLUSIVE DISCOUNT EMAILED TO YOU NOW!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+						<div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 					</form>
 				</div>
 				<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='zip';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
