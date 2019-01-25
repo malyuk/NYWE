@@ -4123,6 +4123,10 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	position: relative;
 }
 
+.callout-box * {
+	box-sizing: border-box;
+}
+
 .callout-box .response {
 	font-size: 1.3em;
 }
@@ -4132,6 +4136,13 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	border: 0;
 	padding: 20px;
 	font-size: 1.3em;
+}
+
+@media (max-width: 800px) {
+	.callout-box input {
+		margin: 0 0 10px;
+		width: 100%;
+	}
 }
 
 .callout-box .button {
@@ -4148,6 +4159,7 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	font-weight: bold;
 	font-size: 2.0em;
 	line-height: 1.35em;
+	white-space: pre-wrap;
 }
 
 .callout-box .button:focus,
