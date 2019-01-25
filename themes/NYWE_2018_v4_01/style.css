@@ -4111,6 +4111,66 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 }
 
 /* DAYTRIP SINGLE */
+
+/* Callout Box */
+.callout-box {
+	background: #370782;
+	border-radius: 4px;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto 10%;
+	z-index: 10;
+	position: relative;
+}
+
+.callout-box .response {
+	font-size: 1.3em;
+}
+
+.callout-box input {
+	box-shadow: none;
+	border: 0;
+	padding: 20px;
+	font-size: 1.3em;
+}
+
+.callout-box .button {
+	background: transparent;
+	clear: both;
+	display: block;
+	color: #fff;
+	border: 2px solid #fff;
+	text-align: center;
+	padding: 0.8em 1em;
+	margin: 20px auto 0;
+	min-width: 300px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	font-size: 2.0em;
+	line-height: 1.35em;
+}
+
+.callout-box .button:focus,
+.callout-box .button:hover {
+	background: #ef1c17;
+	border-color: #ef1c17;
+	color: #fff;
+}
+
+.callout-box__content {
+	padding: 5%;
+}
+
+.callout-box,
+.callout-box__title {
+	color: #fff;
+}
+
+.callout-box__title {
+	margin-top: 0;
+	font-size: 3.8em;
+}
+
 /* Events List */
 #daytrip_list {
 	position: relative;
@@ -4835,7 +4895,8 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	font-size: 1.15em;
 }
 
-#daytrip_ticket_purchase {
+#daytrip_ticket_purchase,
+#daytrip_ticket_discount {
 	width: 28%;
 	float: left;
 	clear: right;
@@ -4847,8 +4908,14 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	border-radius: 6px;
 }
 
+#daytrip_ticket_discount {
+	background: #f5f5f5;
+	color: #000;
+}
+
 @media (max-width: 1200px) {
-	#daytrip_ticket_purchase {
+	#daytrip_ticket_purchase,
+	#daytrip_ticket_discount {
 		width: 86%;
 		float: none;
 		clear: both;
@@ -4858,6 +4925,11 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 		color: #fff;
 		text-align: center;
 		border-radius: 6px;
+	}
+
+	#daytrip_ticket_discount {
+		background: #f5f5f5;
+		color: #000;
 	}
 }
 
@@ -4896,7 +4968,9 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 
 #daytrip_ticket_purchase_button:hover {
 	text-decoration: none;
-	opacity: 0.85;
+	background: #ef1c17;
+	border-color: #ef1c17;
+	color: #fff;
 }
 
 @media (max-width: 600px) {
@@ -4918,16 +4992,11 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 	font-size: 1.15em;
 }
 
-#daytrip_ticket_promo h5 {
-	color: #fff;
-}
-
 #daytrip_ticket_promo p {
 	opacity: 0.8;
 }
 
 #daytrip_ticket_promo a {
-	color: #fff;
 	font-weight: bold;
 }
 
