@@ -53,7 +53,7 @@
 			if ( $embed ) : ?>
 				<div class="callout-box" id="discount">
 					<form action="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&amp;id=462f8355e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate callout-box__content" target="_blank" novalidate>
-						<h2 class="callout-box__title">Get an Exclusive Discount Emailed to You Now!</h2>
+						<h2 class="callout-box__title">Get an Exclusive Discount Emailed to You!</h2>
 
 						<input type="email" value="" placeholder="Email address..." name="EMAIL" class="required email" id="mce-EMAIL">
 						<input type="text" value="" placeholder="First name..." name="FNAME" class="" id="mce-FNAME">
