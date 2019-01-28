@@ -4923,6 +4923,7 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 #daytrip_ticket_discount {
 	background: #f5f5f5;
 	color: #000;
+	float: right;
 }
 
 @media (max-width: 1200px) {
