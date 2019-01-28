@@ -51,7 +51,7 @@ add_action( 'init', 'event_post' );
 // v4 EVENT UI MODULE
 // ===========================
 // REGISTER:
-add_action( 'add_meta_boxes', 'v4_event_meta_box_add' );
+//add_action( 'add_meta_boxes', 'v4_event_meta_box_add' );
 // CONFIG:
 function v4_event_meta_box_add() {
 	add_meta_box( 'v4-event-id', 'v4 Event UI', 'v4_event_meta_box_cb', 'events', 'normal', 'high' );
