@@ -184,6 +184,7 @@ if ( ! empty( $advertHead ) ) {
 			<div id="event_sponsors">
 				<div id="event_sponsors_grid">
 					<?php
+					shuffle( $sponsors );
 					foreach ( $sponsors as $sponsor ) {
 
 						$sponsor_image = wp_get_attachment_image_url( $sponsor['image'], 'medium' );
@@ -211,21 +212,13 @@ if ( ! empty( $advertHead ) ) {
 
 					} ?>
 				</div>
+				<a id="event_sponsor_more" href="#"><img src="<?php bloginfo( 'template_url' ); ?>/images/menu3.png"/>
+					Show all sponsors</a>
 			</div>
 			<script type="text/javascript">
 				jQuery( function () {
 					// LOGIC:
 					var sponsor = jQuery( '#event_sponsors_grid a' );
-					// RANDOMIZE:
-					jQuery.fn.shuffle = function () {
-						var j;
-						for ( var i = 0; i < this.length; i ++ ) {
-							j = Math.floor( Math.random() * this.length );
-							jQuery( this[i] ).before( jQuery( this[j] ) );
-						}
-						return this;
-					};
-					sponsor.shuffle();
 
 					// If ONLY 1:
 					var count = sponsor.length;
@@ -233,15 +226,16 @@ if ( ! empty( $advertHead ) ) {
 						jQuery( '#event_sponsors_grid' ).addClass( 'single' );
 					}
 
-					// HIDE MORE THAN 4:
+					// HIDE MORE THAN 6:
 					sponsor.each( function () {
 						var item = jQuery( this );
 						if ( item.is( ':visible' ) ) {
 							item.addClass( 'visibleSponsor' );
 						}
 					} );
-					jQuery( '.visibleSponsor' ).slice( 4 ).addClass( 'visibleSponsorMore' );
+					jQuery( '.visibleSponsor' ).slice( 5 ).addClass( 'visibleSponsorMore' );
 					jQuery( '.visibleSponsorMore' ).hide();
+
 					// SHOW MORE THAN 4 ON CLICK:
 					jQuery( '#event_sponsor_more' ).click(
 						function ( e ) {
