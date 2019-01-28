@@ -212,6 +212,46 @@ if ( ! empty( $advertHead ) ) {
 					} ?>
 				</div>
 			</div>
+			<script type="text/javascript">
+				jQuery( function () {
+					// LOGIC:
+					var sponsor = jQuery( '#event_sponsors_grid a' );
+					// RANDOMIZE:
+					jQuery.fn.shuffle = function () {
+						var j;
+						for ( var i = 0; i < this.length; i ++ ) {
+							j = Math.floor( Math.random() * this.length );
+							jQuery( this[i] ).before( jQuery( this[j] ) );
+						}
+						return this;
+					};
+					sponsor.shuffle();
+
+					// If ONLY 1:
+					var count = sponsor.length;
+					if ( count === 1 ) {
+						jQuery( '#event_sponsors_grid' ).addClass( 'single' );
+					}
+
+					// HIDE MORE THAN 4:
+					sponsor.each( function () {
+						var item = jQuery( this );
+						if ( item.is( ':visible' ) ) {
+							item.addClass( 'visibleSponsor' );
+						}
+					} );
+					jQuery( '.visibleSponsor' ).slice( 4 ).addClass( 'visibleSponsorMore' );
+					jQuery( '.visibleSponsorMore' ).hide();
+					// SHOW MORE THAN 4 ON CLICK:
+					jQuery( '#event_sponsor_more' ).click(
+						function ( e ) {
+							e.preventDefault();
+							jQuery( '.visibleSponsorMore' ).slideDown();
+							jQuery( '#event_sponsor_more' ).fadeOut();
+						}
+					);
+				} ); // end
+			</script>
 		<?php endif; ?>
 
 
