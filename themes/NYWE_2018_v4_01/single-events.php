@@ -233,7 +233,7 @@ if ( ! empty( $advertHead ) ) {
 							item.addClass( 'visibleSponsor' );
 						}
 					} );
-					jQuery( '.visibleSponsor' ).slice( 5 ).addClass( 'visibleSponsorMore' );
+					jQuery( '.visibleSponsor' ).slice( 6 ).addClass( 'visibleSponsorMore' );
 					jQuery( '.visibleSponsorMore' ).hide();
 
 					// SHOW MORE THAN 4 ON CLICK:
