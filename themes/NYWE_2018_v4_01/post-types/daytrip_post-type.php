@@ -883,9 +883,8 @@ function daytrip_meta_box_cb( $post ) {
 
 // SAVE:
 add_action( 'save_post', 'daytrip_meta_box_save' );
-
 function daytrip_meta_box_save( $post_id ) {
-	return;
+
 	// Setup:
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;

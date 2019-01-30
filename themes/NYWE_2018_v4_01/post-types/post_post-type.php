@@ -135,7 +135,6 @@ function post_banner_meta_box_cb( $post ) {
 // SAVE
 add_action( 'save_post', 'post_banner_meta_box_save' );
 function post_banner_meta_box_save( $post_id ) {
-	return;
     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
     if( !current_user_can( 'edit_post' ) ) return;
