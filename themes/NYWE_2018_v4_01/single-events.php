@@ -38,6 +38,9 @@ if ( ! empty( $advertHead ) ) {
 						<?php
 						$event_date = get_field( 'event_date', false, false );
 						if ( ! empty( $event_date ) ) {
+
+							$event_date = date( 'F d, Y', strtotime( $event_date ) );
+
 							printf( '<h3 class="events_list_cell_image_overlay_date">%s</h3>',
 								esc_html( $event_date )
 							);
