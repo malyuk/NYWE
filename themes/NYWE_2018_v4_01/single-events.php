@@ -24,7 +24,7 @@ if ( ! empty( $advertHead ) ) {
 
 				// Event Logo
 				$event_logo = get_field( 'event_image_logo' );
-				if ( ! empty( $event_image_logo ) ) {
+				if ( ! empty( $event_logo ) ) {
 					printf( '<img class="events_list_cell_image_logo" src="%s" srcset="%s" alt="New York Wine Events"/>',
 						wp_get_attachment_image_url( $event_logo, 'full' ),
 						wp_get_attachment_image_srcset( $event_logo )

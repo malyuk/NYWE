@@ -32,9 +32,20 @@ Template Name: Events v4
             while ( $events_index->have_posts() ) : $events_index->the_post(); 
             ?>
                 <div class="events_index_cell">
-                    <span class="events_index_cell_publish_date" style="display: none;"><?php the_time('F j, Y'); ?></span>            
+                    <span class="events_index_cell_publish_date" style="display: none;">
+	                    <?php the_time('F j, Y'); ?>
+                    </span>
                     <a class="events_index_cell_link" href="#<?php the_ID(); ?>"><?php the_title(); ?></a>
-                    <span class="events_index_cell_date"><?php $eventDate = get_post_custom_values('eventDate'); if ( is_array($eventDate) && end($eventDate) != '' ) { echo end($eventDate); } ?></span>
+                    <span class="events_index_cell_date">
+	                    <?php
+	                    $event_date = get_field( 'event_date', false, false );
+	                    if ( ! empty( $event_date ) ) {
+
+		                    $event_date = date( 'F d, Y', strtotime( $event_date ) );
+		                    echo $event_date;
+		                    
+	                    } ?>
+                    </span>
                 </div><!-- cell -->            
             <?php endwhile; ?> 
             
@@ -109,51 +120,59 @@ Template Name: Events v4
             ?>
             <div class="events_list_cell" id="<?php the_ID(); ?>">
                 <span class="events_list_cell_publish_date" style="display: none;"><?php the_time('F j, Y'); ?></span>            
-                <!-- Event image (featured) --> 
-                <img class="events_list_cell_image" src="
-                            <?php  
-                                $events_list_cell_image = get_post_custom_values('events_list_cell_image');
-                                if ( is_array($events_list_cell_image) && end($events_list_cell_image) != '' ) { 
-                                    echo end($events_list_cell_image); 
-                                } 
-                                else {
-                                    echo bloginfo('template_url') . '/images/events_default_image.jpg';
-                                }
-                            ?>" alt="New York Wine Events" />
-                <!-- Event Logo -->
-                <?php  
-                $events_list_cell_image_logo = get_post_custom_values('events_list_cell_image_logo');
-                if ( is_array($events_list_cell_image_logo) && end($events_list_cell_image_logo) != '' ) { 
-                    ?>
-                    <img class="events_list_cell_image_logo" src="<?php echo end($events_list_cell_image_logo); ?>" alt="New York Wine Events" />
-                    <?php
-                } 
-                ?>         
+                <!-- Event image (featured) -->
+	            <?php
+	            $event_image = get_field( 'event_image' );
+	            if ( ! empty( $event_image ) ) {
+		            echo \NYWE\generate_lazy_load_params(
+			            sprintf( '<img class="events_list_cell_image" src="%s" srcset="%s" alt="New York Wine Events">',
+				            wp_get_attachment_image_url( $event_image, 'large' ),
+				            wp_get_attachment_image_srcset( $event_image )
+			            )
+		            );
+	            } ?>
+
                 <!-- Content -->
                 <div class="events_list_cell_content">
                     <!-- Date and Time Overlay -->
                     <div class="events_list_cell_image_overlay">
-                        <h3 class="events_list_cell_image_overlay_date"><?php $eventDate = get_post_custom_values('eventDate'); if ( is_array($eventDate) && end($eventDate) != '' ) { echo end($eventDate); } ?></h3>
-                        <?php /* <h4 class="events_list_cell_image_overlay_time"><?php $eventTimePreview = get_post_custom_values('eventTimePreview'); if ( is_array($eventTimePreview) && end($eventTimePreview) != '' ) { echo end($eventTimePreview); } ?></h4> */ ?>
-                        <h4 class="events_list_cell_image_overlay_time"><?php $value = get_post_custom_values('eventCity'); if ( is_array($value) && end($value) != '' ) { echo end($value); } ?></h4>
+	                    <?php
+	                    $event_date = get_field( 'event_date', false, false );
+	                    if ( ! empty( $event_date ) ) {
+
+		                    $event_date = date( 'F d, Y', strtotime( $event_date ) );
+
+		                    printf( '<h3 class="events_list_cell_image_overlay_date">%s</h3>',
+			                    esc_html( $event_date )
+		                    );
+	                    }
+
+	                    $event_city = get_field( 'event_city' );
+	                    if ( ! empty( $event_city ) ) {
+		                    printf( '<h4 class="events_list_cell_image_overlay_time">%s</h4>',
+			                    esc_html( $event_city )
+		                    );
+	                    } ?>
                     </div><!-- overlay -->   
                     <div class="events_list_cell_card">                            
                         <h2 class="events_list_cell_card_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <div class="events_list_cell_card_excerpt">
-                            <span><?php $value = get_post_custom_values('eventTime'); if ( is_array($value) && end($value) != '' ) { echo end($value); } ?></span>                            
-                            <hr />
-                            <?php the_excerpt(); ?>
+	                        <?php
+	                        $event_time = get_field( 'event_time' );
+	                        if ( ! empty( $event_time ) ) {
+		                        printf( '<span>%s</span>',
+			                        wp_kses_post( $event_time )
+		                        );
+	                        } ?>
+	                        <?php the_excerpt(); ?>
                         </div>
-                        <?php // SOLD OUT?
-                        $eventSoldout = get_post_custom_values('eventSoldout');
-                        $eventSoldout = $eventSoldout[0];
-                        if ( $eventSoldout == 'on' ) { 
-                            echo '<a class="events_list_cell_card_purchase sold_out" href="' . get_permalink( $post->ID) . '">SOLD OUT</a>'; 
-                        }
-                        else {
-                            echo '<a class="events_list_cell_card_purchase" href="' . get_permalink( $post->ID) . '">PURCHASE TICKETS</a>';
-                        }
-                        ?>                   
+	                    <?php
+	                    $event_sold_out = get_field( 'event_sold_out' );
+	                    if ( $event_sold_out ) {
+		                    echo '<a class="events_list_cell_card_purchase sold_out" href="' . get_the_permalink() . '">SOLD OUT</a>';
+	                    } else {
+		                    echo '<a class="events_list_cell_card_purchase" href="' . get_the_permalink() . '">PURCHASE TICKETS</a>';
+	                    } ?>
                     </div><!-- card -->
                 </div><!-- content -->    
             </div><!-- cell -->                        
