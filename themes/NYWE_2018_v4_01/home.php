@@ -223,12 +223,15 @@ if( $options['global_advert_1']) {
       <div class="home_events_cell">
         <span class="home_event_cell_publish_date" style="display: none;"><?php the_time('F j, Y'); ?></span>
         <div class="home_events_cell_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>     
-        <div class="home_events_cell_date"><?php $eventDate = get_post_custom_values('eventDate'); if ( is_array($eventDate) && end($eventDate) != '' ) { echo end($eventDate); } ?></div>
-        <div class="home_events_cell_city"><?php $eventCity = get_post_custom_values('eventCity'); if ( is_array($eventCity) && end($eventCity) != '' ) { echo end($eventCity); } ?></div>
+        <div class="home_events_cell_date">
+	        <?= date( 'F j, Y', strtotime( get_field( 'event_date', false, false ) ) ); ?>
+        </div>
+        <div class="home_events_cell_city">
+	        <?= get_field( 'event_city' ); ?>
+        </div>
         <?php // SOLD OUT?
-        $eventSoldout = get_post_custom_values('eventSoldout');
-        $eventSoldout = $eventSoldout[0];
-        if ( $eventSoldout == 'on' ) { 
+        $eventSoldout = get_field('event_sold_out');
+        if ( $eventSoldout ) {
           echo '<a class="home_events_cell_button sold_out" href="' . get_permalink( $post->ID) . '">SOLD OUT</a>'; 
         }
         else {
