@@ -133,23 +133,31 @@ else{
         ?>
             <div class="post_related_list_cell" id="<?php the_ID(); ?>">
                 <span class="post_related_list_cell_publish_date" style="display: none;"><?php the_time('F j, Y'); ?></span>            
-                <!-- Event image (featured) --> 
-                <img class="post_related_list_cell_image" src="
-                            <?php  
-                                $related_list_cell_image = get_post_custom_values('events_list_cell_image');
-                                if ( is_array($related_list_cell_image) && end($related_list_cell_image) != '' ) { 
-                                    echo end($related_list_cell_image); 
-                                } 
-                                else {
-                                    echo bloginfo('template_url') . '/images/events_default_image.jpg';
-                                }
-                            ?>" alt="New York Wine Events" />
+                <!-- Event image (featured) -->
+	            <?php
+	            $event_image = get_field( 'event_image' );
+	            if ( ! empty( $event_image ) ) {
+		            echo \NYWE\generate_lazy_load_params(
+			            sprintf( '<img class="post_related_list_cell_image" src="%s" srcset="%s" alt="New York Wine Events">',
+				            wp_get_attachment_image_url( $event_image, 'large' ),
+				            wp_get_attachment_image_srcset( $event_image )
+			            )
+		            );
+	            } ?>
                 <!-- Content -->
                 <div class="post_related_list_cell_content">
                     <!-- Date and Time Overlay -->
                     <div class="post_related_list_cell_image_overlay">
-                        <h3 class="post_related_list_cell_image_overlay_date"><?php $relatedDate = get_post_custom_values('eventDate'); if ( is_array($relatedDate) && end($relatedDate) != '' ) { echo end($relatedDate); } ?></h3>
-                        <h4 class="post_related_list_cell_image_overlay_time"><?php $relatedTimePreview = get_post_custom_values('eventTimePreview'); if ( is_array($relatedTimePreview) && end($relatedTimePreview) != '' ) { echo end($relatedTimePreview); } ?></h4>
+                        <h3 class="post_related_list_cell_image_overlay_date">
+	                        <?= date( 'F j, Y', strtotime( get_field( 'event_date', false, false ) ) ); ?>
+                        </h3>
+	                    <?php
+	                    $event_city = get_field( 'event_city' );
+	                    if ( ! empty( $event_city ) ) {
+		                    printf( '<h4 class="post_related_list_cell_image_overlay_time">%s</h4>',
+			                    esc_html( $event_city )
+		                    );
+	                    } ?>
                     </div><!-- overlay -->   
                     <div class="post_related_list_cell_card">                            
                         <h2 class="post_related_list_cell_card_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
