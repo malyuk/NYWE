@@ -566,7 +566,7 @@ if( $options['global_advert_2']) {
 <!-- SPONSORS -->
 <div id="home_sponsors">
   <div class="home_headings">
-      <h2>2019</h2>
+      <h2><?= date('Y'); ?></h2>
       <h2>SPONSORS</h2>
     </div>
   <div id="home_sponsors_grid" class="center">
