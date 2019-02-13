@@ -1,6 +1,6 @@
 <?php get_header();
 
-$event_purchase_link = get_field( 'event_purchase_link', get_the_ID() );
+$event_purchase_link = get_field( 'event_purchase_link' );
 ?>
 
 	<!-- ADVERT OVERRIDE -->
