@@ -171,7 +171,8 @@ Template Name: Events v4
 	                    if ( $event_sold_out ) {
 		                    echo '<a class="events_list_cell_card_purchase sold_out" href="' . get_the_permalink() . '">SOLD OUT</a>';
 	                    } else {
-		                    echo '<a class="events_list_cell_card_purchase" href="' . get_the_permalink() . '">PURCHASE TICKETS</a>';
+		                    $event_purchase_link = get_field( 'event_purchase_link' );
+		                    echo '<a class="events_list_cell_card_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
 	                    } ?>
                     </div><!-- card -->
                 </div><!-- content -->    

@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$event_purchase_link = get_field( 'event_purchase_link' );
+?>
 
 	<!-- ADVERT OVERRIDE -->
 <?php
@@ -71,7 +74,7 @@ if ( ! empty( $advertHead ) ) {
 						if ( $event_sold_out ) {
 							echo '<a class="events_list_cell_card_purchase sold_out" href="#event_tickets">SOLD OUT</a>';
 						} else {
-							echo '<a class="events_list_cell_card_purchase" href="#event_tickets">PURCHASE TICKETS</a>';
+							echo '<a class="events_list_cell_card_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
 						} ?>
 
 					</div><!-- card -->
@@ -173,7 +176,7 @@ if ( ! empty( $advertHead ) ) {
 					if ( $event_sold_out ) {
 						echo '<a id="event_intro_purchase" href="#event_tickets" style="opacity: 0.25;">SOLD OUT</a>';
 					} else {
-						echo '<a id="event_intro_purchase" href="#event_tickets">PURCHASE TICKETS</a>';
+						echo '<a id="event_intro_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
 					} ?>
 				</div><!-- content -->
 			</div><!-- intro module-->
@@ -295,7 +298,7 @@ if ( ! empty( $advertHead ) ) {
 		if ( $event_sold_out ) {
 			echo '<a id="event_midpage_purchase" href="#event_tickets" style="opacity: 0.25;">SOLD OUT</a>';
 		} else {
-			echo '<a id="event_midpage_purchase" href="#event_tickets">PURCHASE TICKETS</a>';
+			echo '<a id="event_midpage_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
 		}
 
 		// Video embed.
