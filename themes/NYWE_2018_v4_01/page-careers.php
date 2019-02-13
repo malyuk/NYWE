@@ -13,7 +13,14 @@ Template Name: Careers
 <!-- BANNER IMAGE -->
 <div id="about_banner_image" class="page_banner">
     <h1 class="page_banner_title"><?php the_title(); ?></h1>
-    <img src="<?php bloginfo('template_url'); ?>/images/banner_careers.jpg" />
+	<?php
+	if ( has_post_thumbnail( get_the_ID() ) ) {
+		the_post_thumbnail( 'large' );
+	} else {
+		printf( '<img src="%s/images/banner_careers.jpg" />',
+			get_stylesheet_directory_uri()
+		);
+	} ?>
 </div><!-- banner -->
 
 

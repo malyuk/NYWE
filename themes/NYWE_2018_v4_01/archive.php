@@ -11,7 +11,14 @@ Template Name: Archive
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <h1 class="page_banner_title"><?php the_title(); ?></h1>
     <?php endwhile; endif; ?>
-    <img src="<?php bloginfo('template_url'); ?>/images/banner_h.jpg"  alt="banner" />
+	<?php
+	if ( has_post_thumbnail( get_the_ID() ) ) {
+		the_post_thumbnail( 'large' );
+	} else {
+		printf( '<img src="%s/images/banner_h.jpg" />',
+			get_stylesheet_directory_uri()
+		);
+	} ?>
 </div><!-- banner -->
 
    
