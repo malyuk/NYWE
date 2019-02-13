@@ -520,7 +520,7 @@ if ( ! empty( $advertHead ) ) {
 							<!-- Date and Time Overlay -->
 							<div class="related_list_cell_image_overlay">
 								<?php
-								$event_date = get_field( 'event_date' );
+								$event_date = get_field( 'event_date', false, false );
 								if ( ! empty( $event_date ) ) {
 
 									$event_date = date( 'F d, Y', strtotime( $event_date ) );
