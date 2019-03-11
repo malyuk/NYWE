@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34b588c129d36dd6a8a353bf33daedf9",
+    "content-hash": "2bd379e08a745e4a61ce3db8fc4f8fa3",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -484,7 +484,7 @@
         },
         {
             "name": "wpackagist-plugin/optinmonster",
-            "version": "1.6.1",
+            "version": "1.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/optinmonster/",
@@ -492,7 +492,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1547838147",
+                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1551730001",
                 "reference": null,
                 "shasum": null,
                 "mirrors": [
@@ -592,16 +592,16 @@
         },
         {
             "name": "zeek/php-utils",
-            "version": "2.1",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ZeekInteractive/php-utils.git",
-                "reference": "8c23f2349e84fd4d78795af7370bd032fe169332"
+                "reference": "ee6068bde7d5418bfcc5c59d47b915b6556f756a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/php-utils/zipball/8c23f2349e84fd4d78795af7370bd032fe169332",
-                "reference": "8c23f2349e84fd4d78795af7370bd032fe169332",
+                "url": "https://api.github.com/repos/ZeekInteractive/php-utils/zipball/ee6068bde7d5418bfcc5c59d47b915b6556f756a",
+                "reference": "ee6068bde7d5418bfcc5c59d47b915b6556f756a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -641,7 +641,7 @@
                 }
             ],
             "description": "A collection of functions that provide basic PHP utility functionality.",
-            "time": "2018-06-26T20:24:39+00:00"
+            "time": "2019-02-21T14:50:23+00:00"
         },
         {
             "name": "zeek/sso-client",
@@ -763,12 +763,12 @@
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
-            "version": "5.7.9",
+            "version": "5.7.13",
             "dist": {
                 "type": "zip",
-                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.9",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.13",
                 "reference": null,
-                "shasum": "7d16c30519e1f8f752579d58c21e835b9ef67858",
+                "shasum": "59e595a27ea9fbb2595924dc438539c41022f842",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -777,18 +777,43 @@
                 ]
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://repo.packagist.com/zeek/downloads/",
-            "authors": [
-                {
-                    "name": "Elliot Condon",
-                    "homepage": "http://www.elliotcondon.com/"
-                }
-            ],
+            "authors": {
+                "name": "Elliot Condon",
+                "homepage": "http://www.elliotcondon.com/"
+            },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
             "homepage": "https://www.advancedcustomfields.com/"
+        },
+        {
+            "name": "zeekinteractive/instagram-feed-pro",
+            "version": "4.0.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://wpp.zeeklabs.com/satispress/instagram-feed-pro/4.0.9",
+                "reference": null,
+                "shasum": "d7788a0d7c1fbfe825eb5d35ccde617f665396d2",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "authors": {
+                "name": "Smash Balloon",
+                "homepage": "http://smashballoon.com/"
+            },
+            "description": "Add a customizable Instagram feed to your website",
+            "homepage": "http://smashballoon.com/instagram-feed"
         }
     ],
     "packages-dev": [],
