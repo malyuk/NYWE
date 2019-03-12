@@ -294,6 +294,8 @@ if ( ! empty( $advertHead ) ) {
 		<?php
 		endif;
 
+		echo do_shortcode( '[instagram-feed disablelightbox=true]' );
+
 		// Purchase
 		if ( $event_sold_out ) {
 			echo '<a id="event_midpage_purchase" href="#event_tickets" style="opacity: 0.25;">SOLD OUT</a>';
