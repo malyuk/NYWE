@@ -290,11 +290,12 @@ if ( ! empty( $advertHead ) ) {
 						echo '</div>';
 					} ?>
 				</div>
+				<div style="max-width: 80%; margin: 0 auto;">
+					<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
+				</div>
 			</div>
 		<?php
 		endif;
-
-		echo do_shortcode( '[instagram-feed disablelightbox=true]' );
 
 		// Purchase
 		if ( $event_sold_out ) {

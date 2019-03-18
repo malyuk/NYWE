@@ -290,6 +290,9 @@
 								} ?></p>
 						</div><!-- 3 -->
 					</div><!-- grid -->
+					<div style="max-width: 80%; margin: 0 auto;">
+						<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
+					</div>
 				</div><!-- feedback -->
 			<?php endif; ?>
 			<!-- daytrip feedback -->
