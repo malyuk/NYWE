@@ -2797,6 +2797,19 @@ img.daytrip_slide_large {
 	}
 }
 
+/* Instagram Feed */
+.instagram-feed {
+	max-width: 80%;
+	margin: 0 auto;
+	padding-bottom: 8%;
+}
+
+.instagram-feed__title {
+	font-size: 48px;
+	text-align: center;
+	font-weight: bold;
+	color: #444;
+}
 
 /* EVENT SINGLE */
 #event {
