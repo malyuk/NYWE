@@ -5,47 +5,54 @@
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 			<!-- EVENT CARD -->
-			<div class="daytrip_list_cell">
-				<!-- Event image (featured) -->
-				<img class="daytrip_list_cell_image" src="
-                  <?php
-				$daytrip_image = get_post_custom_values( 'daytrip_image' );
-				if ( is_array( $daytrip_image ) && end( $daytrip_image ) != '' ) {
-					echo end( $daytrip_image );
-				} else {
-					echo bloginfo( 'template_url' ) . '/images/events_default_image.jpg';
-				}
-				?>" alt="New York Wine Events"/>
-				<!-- Event Logo -->
-				<?php
-				$daytrip_list_cell_image_logo = get_post_custom_values( 'daytrip_image_logo' );
-				if ( is_array( $daytrip_list_cell_image_logo ) && end( $daytrip_list_cell_image_logo ) != '' ) {
-					?>
-					<img class="daytrip_list_cell_image_logo" src="<?php echo end( $daytrip_list_cell_image_logo ); ?>"
-					     alt="New York Wine Events"/>
+			<div style="background: #f3f3f3; margin-bottom: 8%">
+				<div class="daytrip_list_cell">
+					<!-- Event image (featured) -->
+					<img class="daytrip_list_cell_image" src="
+	                  <?php
+					$daytrip_image = get_post_custom_values( 'daytrip_image' );
+					if ( is_array( $daytrip_image ) && end( $daytrip_image ) != '' ) {
+						echo end( $daytrip_image );
+					} else {
+						echo bloginfo( 'template_url' ) . '/images/events_default_image.jpg';
+					}
+					?>" alt="New York Wine Events"/>
+					<!-- Event Logo -->
 					<?php
-				}
-				?>
-				<!-- Content -->
-				<div class="daytrip_list_cell_content">
-					<!-- Date and Time Overlay -->
-					<div class="daytrip_list_cell_image_overlay">
-						<h3 class="daytrip_list_cell_image_overlay_date"><?php $daytripDate = get_post_custom_values( 'daytripDate' );
-							if ( is_array( $daytripDate ) && end( $daytripDate ) != '' ) {
-								echo end( $daytripDate );
-							} ?></h3>
-						<h4 class="daytrip_list_cell_image_overlay_time"><?php $daytripTimePreview = get_post_custom_values( 'daytripTimePreview' );
-							if ( is_array( $daytripTimePreview ) && end( $daytripTimePreview ) != '' ) {
-								echo end( $daytripTimePreview );
-							} ?></h4>
-					</div><!-- overlay -->
-					<div class="daytrip_list_cell_card">
-						<h2 class="daytrip_list_cell_card_title"><?php the_title(); ?></h2>
-						<div class="daytrip_list_cell_card_excerpt"><?php the_excerpt(); ?></div>
-						<a class="daytrip_list_cell_card_purchase" href="#daytrip_ticket">PURCHASE TICKETS</a>
-					</div><!-- card -->
-				</div><!-- content -->
-			</div><!-- end CARD -->
+					$daytrip_list_cell_image_logo = get_post_custom_values( 'daytrip_image_logo' );
+					if ( is_array( $daytrip_list_cell_image_logo ) && end( $daytrip_list_cell_image_logo ) != '' ) {
+						?>
+						<img class="daytrip_list_cell_image_logo" src="<?php echo end( $daytrip_list_cell_image_logo ); ?>"
+						     alt="New York Wine Events"/>
+						<?php
+					}
+					?>
+					<!-- Content -->
+					<div class="daytrip_list_cell_content">
+						<!-- Date and Time Overlay -->
+						<div class="daytrip_list_cell_image_overlay">
+							<h3 class="daytrip_list_cell_image_overlay_date"><?php $daytripDate = get_post_custom_values( 'daytripDate' );
+								if ( is_array( $daytripDate ) && end( $daytripDate ) != '' ) {
+									echo end( $daytripDate );
+								} ?></h3>
+							<h4 class="daytrip_list_cell_image_overlay_time"><?php $daytripTimePreview = get_post_custom_values( 'daytripTimePreview' );
+								if ( is_array( $daytripTimePreview ) && end( $daytripTimePreview ) != '' ) {
+									echo end( $daytripTimePreview );
+								} ?></h4>
+						</div><!-- overlay -->
+						<div class="daytrip_list_cell_card">
+							<h2 class="daytrip_list_cell_card_title"><?php the_title(); ?></h2>
+							<div class="daytrip_list_cell_card_excerpt"><?php the_excerpt(); ?></div>
+							<a class="daytrip_list_cell_card_purchase" href="#daytrip_ticket">PURCHASE TICKETS</a>
+						</div><!-- card -->
+					</div><!-- content -->
+				</div><!-- end CARD -->
+
+				<div class="instagram-feed">
+					<h3 class="instagram-feed__title">Check Us Out on Instagram</h3>
+					<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
+				</div>
+			</div>
 
 			<!-- Embed form -->
 			<?php
@@ -290,9 +297,6 @@
 								} ?></p>
 						</div><!-- 3 -->
 					</div><!-- grid -->
-					<div style="max-width: 80%; margin: 0 auto;">
-						<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
-					</div>
 				</div><!-- feedback -->
 			<?php endif; ?>
 			<!-- daytrip feedback -->
