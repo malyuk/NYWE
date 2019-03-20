@@ -260,7 +260,10 @@ if ( ! empty( $advertHead ) ) {
 		$event_feedback = get_field( 'repeater_event_feedback' );
 		if ( ! empty( $event_feedback ) ) : ?>
 			<div id="event_feedback">
-				<h2>Guest Feedback</h2>
+				<h2>Guest Experiences</h2>
+				<div class="instagram-feed">
+					<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
+				</div>
 				<div id="event_feedback_grid">
 					<?php
 					foreach( $event_feedback as $index => $feedback ) {
