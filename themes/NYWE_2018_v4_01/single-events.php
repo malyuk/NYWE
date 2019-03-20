@@ -262,7 +262,7 @@ if ( ! empty( $advertHead ) ) {
 			<div id="event_feedback">
 				<h2>Guest Experiences</h2>
 				<div class="instagram-feed">
-					<?= do_shortcode( '[instagram-feed disablelightbox=true]' ); ?>
+					<?= do_shortcode( '[instagram-feed disablelightbox=true type=user]' ); ?>
 				</div>
 				<div id="event_feedback_grid">
 					<?php
