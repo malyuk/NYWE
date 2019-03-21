@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bd379e08a745e4a61ce3db8fc4f8fa3",
+    "content-hash": "d31a5550cb5cda2533620b2b5507c0e4",
     "packages": [
         {
             "name": "a7/admin-notices",
