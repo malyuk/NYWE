@@ -24,7 +24,10 @@ if ( file_exists( __DIR__ . '/.env.php' ) ) {
 /**
  * Add Sentry Error Logging
  */
-// ErrorHandling::init();
+if ( $sentry_url = get_env_value( 'SENTRY_URL' ) ) {
+	$client = new \Raven_Client( get_env_value( 'SENTRY_URL' ) );
+	$client->install();
+}
 
 /**
  * Set the proper constant for ACF Lite
