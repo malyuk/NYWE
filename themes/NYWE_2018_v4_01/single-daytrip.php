@@ -43,7 +43,17 @@
 						<div class="daytrip_list_cell_card">
 							<h2 class="daytrip_list_cell_card_title"><?php the_title(); ?></h2>
 							<div class="daytrip_list_cell_card_excerpt"><?php the_excerpt(); ?></div>
-							<a class="daytrip_list_cell_card_purchase" href="#daytrip_ticket">PURCHASE TICKETS</a>
+							<?php // SOLD OUT?
+							$daytripSoldout = get_post_custom_values( 'daytripSoldout' );
+							$daytripSoldout = $daytripSoldout[0];
+							if ( $daytripSoldout == 'on' ) {
+								echo '<a class="daytrip_list_cell_card_purchase" href="#">SOLD OUT</a>';
+							} else {
+								$link = get_post_custom_values( 'daytripTicket' );
+								if ( is_array( $link ) && end( $link ) != '' ) {
+									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+								}
+							} ?>
 						</div><!-- card -->
 					</div><!-- content -->
 				</div><!-- end CARD -->
@@ -126,7 +136,17 @@
 								} ?></p>
 						</div>
 						<!-- Puchase -->
-						<a id="daytrip_intro_purchase" href="#daytrip_ticket">PURCHASE TICKETS</a>
+						<?php // SOLD OUT?
+						$daytripSoldout = get_post_custom_values( 'daytripSoldout' );
+						$daytripSoldout = $daytripSoldout[0];
+						if ( $daytripSoldout == 'on' ) {
+							echo '<a id="daytrip_intro_purchase" href="#">SOLD OUT</a>';
+						} else {
+							$link = get_post_custom_values( 'daytripTicket' );
+							if ( is_array( $link ) && end( $link ) != '' ) {
+								echo '<a id="daytrip_intro_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+							}
+						} ?>
 					</div><!-- content -->
 				</div><!-- intro module-->
 			<?php endif; ?>
@@ -220,7 +240,17 @@
 						</div><!-- cell -->
 					</div><!-- grid -->
 					<!-- Puchase -->
-					<a id="daytrip_tickets_include_purchase" href="#daytrip_ticket">PURCHASE TICKETS</a>
+					<?php // SOLD OUT?
+					$daytripSoldout = get_post_custom_values( 'daytripSoldout' );
+					$daytripSoldout = $daytripSoldout[0];
+					if ( $daytripSoldout == 'on' ) {
+						echo '<a id="daytrip_tickets_include_purchase" href="#">SOLD OUT</a>';
+					} else {
+						$link = get_post_custom_values( 'daytripTicket' );
+						if ( is_array( $link ) && end( $link ) != '' ) {
+							echo '<a id="daytrip_tickets_include_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+						}
+					} ?>
 				</div><!-- tickets include -->
 			<?php endif; ?>
 
