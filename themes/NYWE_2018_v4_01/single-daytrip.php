@@ -74,7 +74,7 @@
 						<div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 					</form>
 				</div>
-			
+
 			<?php endif; ?>
 
 			<!-- INTRODUCTION MODULE -->
