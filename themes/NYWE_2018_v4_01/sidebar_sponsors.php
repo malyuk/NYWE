@@ -3,7 +3,9 @@
 	
 		<h3 class="widgettitle">SPONSORS</h3>
 
-		<?php include(TEMPLATEPATH . '/DFP-advert_tower.php'); ?>
+		<?php
+		// File does not exist, but maybe should. Removed for now to decrease erros.
+//		include(TEMPLATEPATH . '/DFP-advert_tower.php'); ?>
 
 
 		<?php // SPONSOR LOGIC:
