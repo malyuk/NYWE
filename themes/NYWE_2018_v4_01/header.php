@@ -47,9 +47,16 @@
 
 	<!-- Facebook Meta Tags -->
 	<?php
-	if ( has_post_thumbnail() ) {
+	$page_banner = get_post_custom_values('page_banner');
+	if ( is_array($page_banner) && end($page_banner) != '' ) {
+		$page_banner = end($page_banner);
+	} else {
+		$page_banner = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+	}
+
+	if ( ! empty( $page_banner ) ) {
 		printf( '<meta property="og:image" content="%s">',
-			esc_attr( get_the_post_thumbnail_url( get_the_ID(), 'large' ) )
+			esc_url( $page_banner )
 		);
 	} ?>
 
