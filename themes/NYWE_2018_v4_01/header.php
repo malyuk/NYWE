@@ -45,6 +45,14 @@
 
 	<!-- End Facebook Pixel Code -->
 
+	<!-- Facebook Meta Tags -->
+	<?php
+	if ( has_post_thumbnail() ) {
+		printf( '<meta property="og:image" content="%s">',
+			esc_attr( get_the_post_thumbnail_url( get_the_ID(), 'large' ) )
+		);
+	} ?>
+
 	<!-- WORDPRESS CORE -->
 	<?php wp_head(); ?>
 
