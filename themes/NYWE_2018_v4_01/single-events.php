@@ -106,9 +106,42 @@ if ( ! empty( $advertHead ) ) {
 
 				if ( ! empty( $event_presenting_sponsor_url ) ) {
 					echo '</a>';
-				} ?>
+				}
+
+				// Additional Presenting Sponsors
+				$supporting_event_sponsors = get_field( 'supporting_event_sponsors' );
+				if ( ! empty( $supporting_event_sponsors ) ) {
+					foreach ( $supporting_event_sponsors as $supporting_event_sponsor ) {
+						$headline = 'Supporting Sponsor';
+						if ( count( $supporting_event_sponsors ) > 1 ) {
+							$headline = 'Supporting Sponsors';
+						}
+
+						echo "<h2>{$headline}</h2>";
+
+						if ( ! empty( $supporting_event_sponsor['link'] ) ) {
+							printf( '<a class="event_presenting_sponsor_url" href="%s">',
+								esc_url( $supporting_event_sponsor['link'] )
+							);
+						}
+
+						if ( ! empty( $supporting_event_sponsor['image'] ) ) {
+							echo \NYWE\generate_lazy_load_params(
+								sprintf( '<img class="event_presenting_sponsor_image" src="%s" srcset="%s" alt="Event Sponsor">',
+									wp_get_attachment_image_url( $supporting_event_sponsor['image'], 'large' ),
+									wp_get_attachment_image_srcset( $supporting_event_sponsor['image'] )
+								)
+							);
+						}
+
+						if ( ! empty( $supporting_event_sponsor_url ) ) {
+							echo '</a>';
+						}
+					}
+				}?>
 			</div><!-- presenting -->
 		<?php endif; ?><!-- presenting sponsor -->
+
 
 		<!-- CMS -->
 		<div id="event_CMS" class="center">
