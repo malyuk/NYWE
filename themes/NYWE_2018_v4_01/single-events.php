@@ -111,13 +111,15 @@ if ( ! empty( $advertHead ) ) {
 				// Additional Presenting Sponsors
 				$supporting_event_sponsors = get_field( 'supporting_event_sponsors' );
 				if ( ! empty( $supporting_event_sponsors ) ) {
-					foreach ( $supporting_event_sponsors as $supporting_event_sponsor ) {
-						$headline = 'Supporting Sponsor';
-						if ( count( $supporting_event_sponsors ) > 1 ) {
-							$headline = 'Supporting Sponsors';
-						}
 
-						echo "<h2>{$headline}</h2>";
+					$headline = 'Supporting Sponsor';
+					if ( count( $supporting_event_sponsors ) > 1 ) {
+						$headline = 'Supporting Sponsors';
+					}
+
+					echo "<h2>{$headline}</h2>";
+
+					foreach ( $supporting_event_sponsors as $supporting_event_sponsor ) {
 
 						if ( ! empty( $supporting_event_sponsor['link'] ) ) {
 							printf( '<a class="event_presenting_sponsor_url" href="%s">',
