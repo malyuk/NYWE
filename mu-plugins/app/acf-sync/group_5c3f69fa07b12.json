@@ -145,7 +145,7 @@
             "label": "Presenting Sponsor Image",
             "name": "event_presenting_sponsor",
             "type": "image",
-            "instructions": "Example: http:\/\/www.leandroarts.com",
+            "instructions": "Example: http:\/\/www.leandroarts.com. Choose an image at least 600px wide.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -204,7 +204,7 @@
                     "label": "Image",
                     "name": "image",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Choose an image at least 300px wide.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -871,5 +871,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556214766
+    "modified": 1556839062
 }
