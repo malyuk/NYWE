@@ -98,8 +98,8 @@ if ( ! empty( $advertHead ) ) {
 				}
 
 				echo \NYWE\generate_lazy_load_params(
-					sprintf( '<img class="event_presenting_sponsor_image" src="%s" srcset="%s" alt="Event Sponsor">',
-						wp_get_attachment_image_url( $event_presenting_sponsor_img, 'large' ),
+					sprintf( '<img class="event_presenting_sponsor_image" style="max-width: 300px;" src="%s" srcset="%s" alt="Event Sponsor">',
+						wp_get_attachment_image_url( $event_presenting_sponsor_img, 'medium' ),
 						wp_get_attachment_image_srcset( $event_presenting_sponsor_img )
 					)
 				);
@@ -129,8 +129,8 @@ if ( ! empty( $advertHead ) ) {
 
 						if ( ! empty( $supporting_event_sponsor['image'] ) ) {
 							echo \NYWE\generate_lazy_load_params(
-								sprintf( '<img class="event_presenting_sponsor_image" src="%s" srcset="%s" alt="Event Sponsor">',
-									wp_get_attachment_image_url( $supporting_event_sponsor['image'], 'large' ),
+								sprintf( '<img class="event_presenting_sponsor_image"src="%s" srcset="%s" alt="Event Sponsor">',
+									wp_get_attachment_image_url( $supporting_event_sponsor['image'], 'thumbnail' ),
 									wp_get_attachment_image_srcset( $supporting_event_sponsor['image'] )
 								)
 							);
