@@ -53,7 +53,31 @@
 								if ( is_array( $link ) && end( $link ) != '' ) {
 									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
 								}
-							} ?>
+							}
+
+							$primary_sponsor = get_field( 'primary_sponsor' );
+							if ( ! empty( $primary_sponsor ) ) {
+
+								if ( ! empty( $primary_sponsor['url'] ) ) {
+									printf( '<a href="%s">',
+										esc_url( $primary_sponsor['url'] )
+									);
+								}
+
+								if ( ! empty( $primary_sponsor['image'] ) ) {
+									echo \NYWE\generate_lazy_load_params(
+										sprintf( '<img class="daytrip_presenting_sponsor_image" src="%s" srcset="%s" alt="Daytrip Sponsor">',
+											wp_get_attachment_image_url( $primary_sponsor['image'], 'large' ),
+											wp_get_attachment_image_srcset( $primary_sponsor['image'] )
+										)
+									);
+								}
+
+								if ( ! empty( $primary_sponsor['url'] ) ) {
+									echo '</a>';
+								}
+							}
+							?>
 						</div><!-- card -->
 					</div><!-- content -->
 				</div><!-- end CARD -->
