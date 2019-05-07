@@ -66,9 +66,9 @@
 
 								if ( ! empty( $primary_sponsor['image'] ) ) {
 									echo \NYWE\generate_lazy_load_params(
-										sprintf( '<img class="daytrip_presenting_sponsor_image" src="%s" srcset="%s" alt="Daytrip Sponsor">',
-											wp_get_attachment_image_url( $primary_sponsor['image'], 'large' ),
-											wp_get_attachment_image_srcset( $primary_sponsor['image'] )
+										sprintf( '<img style="max-width: 150px;" class="daytrip_presenting_sponsor_image" src="%s" srcset="%s" alt="Daytrip Sponsor">',
+											wp_get_attachment_image_url( $primary_sponsor['image'], 'medium' ),
+											wp_get_attachment_image_srcset( $primary_sponsor['image'], 'medium' )
 										)
 									);
 								}
