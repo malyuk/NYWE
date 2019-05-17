@@ -136,7 +136,7 @@ if ( ! empty( $advertHead ) ) {
 							);
 						}
 
-						if ( ! empty( $supporting_event_sponsor_url ) ) {
+						if ( ! empty( $supporting_event_sponsor['link'] ) ) {
 							echo '</a>';
 						}
 					}
