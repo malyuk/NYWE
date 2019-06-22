@@ -364,24 +364,20 @@ if ( ! empty( $advertHead ) ) {
 		$event_continued_intros = get_field( 'repeater_continued_intros' );
 		if ( ! empty( $event_continued_intros ) ) {
 			foreach( $event_continued_intros as $index => $intro ) {
-				$count = $index + 1;
-				$slug  = "event_intro{$count}";
 
-				echo '<div id="' . $slug . '">';
+				echo '<div class="event_intro">';
 
 					if ( ! empty( $intro['introduction_text'] ) || ! empty( $intro['heading'] ) ) {
-						echo '<div id="' . $slug . '_content">';
+						echo '<div class="event_intro_content">';
 
 							if ( ! empty( $intro['heading'] ) ) {
-								printf( '<h3 id="event_intro%s_heading">%s</h3>',
-									$count,
+								printf( '<h3 class="event_intro_heading">%s</h3>',
 									esc_html( $intro['heading'] )
 								);
 							}
 
 							if ( ! empty( $intro['introduction_text'] ) ) {
-								printf( '<div id="event_intro%s_text">%s</div>',
-									$count,
+								printf( '<div class="event_intro_text">%s</div>',
 									wp_kses_post( $intro['introduction_text'] )
 								);
 							}
@@ -391,8 +387,7 @@ if ( ! empty( $advertHead ) ) {
 
 					if ( ! empty( $intro['image'] ) ) {
 						echo \NYWE\generate_lazy_load_params(
-							sprintf( '<img id="event_intro%s_image" src="%s" srcset="%s" alt="New York Wine Events">',
-								$count,
+							sprintf( '<img class="event_intro_image" src="%s" srcset="%s" alt="New York Wine Events">',
 								wp_get_attachment_image_url( $intro['image'], 'large' ),
 								wp_get_attachment_image_srcset( $intro['image'] )
 							)
