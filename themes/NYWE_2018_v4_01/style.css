@@ -1319,6 +1319,10 @@ hr {
 	margin: 0 0 40px 0;
 }
 
+#footer_fineprint p {
+	margin-bottom: 10px;
+}
+
 #footer_fineprint a {
 	color: #999;
 }

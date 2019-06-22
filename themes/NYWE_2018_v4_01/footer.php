@@ -53,9 +53,32 @@
 
 		<div id="footer_fineprint">
 			<img src="<?php bloginfo( 'template_url' ); ?>/images/footer_fineprint.png" alt="New York Wine Events"/>
-			<p>&#169; New York Events 2018. All rights reserved. Read our <a
-						href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Terms &amp; Conditions</a>
-				&amp; <a href="<?php bloginfo( 'url' ); ?>/privacy-policy/">Privay Policy</a>.</p>
+			<?php
+			$footer_options   = get_field( 'footer', 'options' );
+			$global_text      = $footer_options['global_footer_text'] ?? '';
+			$conditional_text = $footer_options['conditional_footer_text'] ?? '';
+
+			if ( ! empty( $global_text ) ) :
+				echo wp_kses_post( $global_text );
+			else : ?>
+				<p>&#169; New York Events 2018. All rights reserved. Read our <a
+							href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Terms &amp; Conditions</a>
+					&amp; <a href="<?php bloginfo( 'url' ); ?>/privacy-policy/">Privay Policy</a>.</p>
+			<?php
+			endif;
+
+			if ( ! empty( $conditional_text ) ) {
+				foreach( $conditional_text as $data ) {
+					$page_ids = $data['page'] ?? [];
+					$text     = $data['text'] ?? '';
+
+					if ( empty( $text ) || ! in_array( get_the_ID(), $page_ids ) ) {
+						continue;
+					}
+
+					echo wp_kses_post( $text );
+				}
+			} ?>
 		</div>
 
 	</div><!-- center -->
