@@ -68,6 +68,10 @@
 			endif;
 
 			if ( ! empty( $conditional_text ) ) {
+
+				// Ensure that we have a clean query.
+				wp_reset_query();
+
 				foreach( $conditional_text as $data ) {
 					$page_ids = $data['page'] ?? [];
 					$text     = $data['text'] ?? '';
