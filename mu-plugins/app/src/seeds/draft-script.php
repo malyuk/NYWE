@@ -30,14 +30,22 @@ add_seed( [
 			]
 		]);
 
+		$count = 0;
+
 		if ( $posts->have_posts() ) {
 			while( $posts->have_posts() ) {
 				$posts->the_post();
-				wp_update_post([
+				$updated = wp_update_post([
 					'ID'          => get_the_ID(),
 					'post_status' => 'draft'
 				]);
+
+				if ( ! is_wp_error( $updated ) ) {
+					$count++;
+				}
 			}
 		}
+
+		echo $count . ' posts updated.';
 	}
 ] );
