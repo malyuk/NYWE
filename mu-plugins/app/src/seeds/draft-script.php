@@ -17,6 +17,7 @@ add_seed( [
 		$posts = new \WP_Query([
 			'post_type'   => 'events',
 			'post_status' => 'publish',
+			'posts_per_page' => -1,
 			'date_query'  => [
 				[
 					'before' => [
