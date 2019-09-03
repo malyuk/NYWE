@@ -43,10 +43,17 @@ $meta = get_post_meta( $post->ID );
 					echo '<div class="card-wrap">';
 
 					foreach ( $children as $page ) {
-						printf( '<a class="card-link" href="%s" aria-label="%s" rel="bookmark"><h3 class="card-link__title">%s</h3></a>',
+
+						$meta      = get_field( 'meta_information', $page->ID );
+						$telephone = ! empty( $meta['telephone'] ?? '' )
+							? sprintf( '<p>%s</p>', $meta['telephone'] )
+							: '';
+
+						printf( '<a class="card-link" href="%s" aria-label="%s" rel="bookmark"><h3 class="card-link__title">%s</h3> %s</a>',
 							esc_url( get_the_permalink( $page->ID ) ),
 							esc_attr( $page->post_title ),
-							esc_html( $page->post_title )
+							esc_html( $page->post_title ),
+							$telephone
 						);
 	                }
 

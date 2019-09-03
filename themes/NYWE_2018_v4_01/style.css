@@ -7621,6 +7621,7 @@ See Blog Page section above for parent
 	background: #eee;
 	border: 1px solid #ccc;
 	display: block;
+	font-size: 18px;
 	padding: 20px;
 	text-align: center;
 }
@@ -7631,12 +7632,17 @@ See Blog Page section above for parent
 	border-color: #2c007c;
 }
 
+.card-link p {
+	margin: 0;
+}
+
 .card-wrap .card-link {
 	margin: 10px;
 }
 
 .card-link__title {
-	font-size: 18px;
+	font-size: 22px;
+	margin: 0;
 }
 
 .card-link:focus .card-link__title,
@@ -7650,6 +7656,7 @@ See Blog Page section above for parent
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
 		padding: 40px;
 	}
 
