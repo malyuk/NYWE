@@ -7615,3 +7615,67 @@ See Blog Page section above for parent
 	}
 
 }
+
+/* NEW */
+.card-link {
+	background: #eee;
+	border: 1px solid #ccc;
+	display: block;
+	padding: 20px;
+	text-align: center;
+}
+
+.card-link:focus,
+.card-link:hover {
+	background: #2c007c;
+	border-color: #2c007c;
+}
+
+.card-wrap .card-link {
+	margin: 10px;
+}
+
+.card-link__title {
+	font-size: 18px;
+}
+
+.card-link:focus .card-link__title,
+.card-link:hover .card-link__title {
+	color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.card-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 40px;
+	}
+
+	.card-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 -10px;
+	}
+
+	.card-wrap .card-link {
+		width: calc( 33.333% - 20px );
+	}
+
+	@supports ( display: grid ) {
+		.card-wrap {
+			align-items: stretch;
+			display: grid;
+			grid-template-columns: repeat( 3, 1fr );
+			grid-gap: 20px;
+			margin: 0;
+		}
+
+		.card-wrap .card-link {
+			margin: 0;
+			width: auto;
+		}
+	}
+}
