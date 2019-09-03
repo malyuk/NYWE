@@ -23,6 +23,10 @@
 			"url": "https://repo.packagist.com/zeek/"
 		},
 		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
 			"packagist.org": false
 		}
 	],
@@ -49,6 +53,7 @@
 		"wpackagist-plugin/userway-accessibility-widget": "1.2",
 		"wpackagist-plugin/optinmonster": "^1",
 		"wpackagist-plugin/lazy-load": "^0.6",
+		"wpackagist-plugin/modula-best-grid-gallery": "2.1.5",
 		"zeek/wp-utils": "^2.10"
 
 	}
