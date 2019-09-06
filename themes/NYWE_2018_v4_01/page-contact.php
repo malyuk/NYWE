@@ -44,7 +44,7 @@ $meta = get_post_meta( $post->ID );
 
 					foreach ( $children as $page ) {
 
-						printf( '<a class="card-link" href="%s" aria-label="%s" rel="bookmark"><h3 class="card-link__title">%s</h3></a>',
+						printf( '<a class="card-link" href="%s" aria-label="%s" rel="bookmark"><p class="card-link__title">%s</p></a>',
 							esc_url( get_the_permalink( $page->ID ) ),
 							esc_attr( $page->post_title ),
 							esc_html( $page->post_title )

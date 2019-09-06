@@ -7621,7 +7621,6 @@ See Blog Page section above for parent
 	background: #eee;
 	border: 1px solid #ccc;
 	display: block;
-	font-size: 18px;
 	padding: 20px;
 	text-align: center;
 }
@@ -7641,7 +7640,6 @@ See Blog Page section above for parent
 }
 
 .card-link__title {
-	font-size: 22px;
 	margin: 0;
 }
 
@@ -7651,7 +7649,6 @@ See Blog Page section above for parent
 }
 
 .page-template-page-contact .card-wrap + p {
-	font-size: 18px;
 	margin: 20px 0;
 	text-align: center;
 }
