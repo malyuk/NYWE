@@ -7653,7 +7653,18 @@ See Blog Page section above for parent
 	text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1024px) {
+	.card-link,
+	.page-template-page-contact .card-wrap + p {
+		font-size: 18px;
+	}
+
+	.card-link__title {
+		font-size: 22px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
 
 	.card-link {
 		display: flex;
