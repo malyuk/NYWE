@@ -30,10 +30,11 @@ Template Name: Gallery
 
     <div class="blog_grid">
         <?php // LOOP:
-        $i = 1;             
+        $i = 1;
         $loop = new WP_Query( array( 'post_type' => 'gallery' ) ); 
         while ( $loop -> have_posts() ) {
             $loop -> the_post();
+            $post_id = get_the_ID();
             if ( $i <= 3 ) {
                 $i = $i + 1;
                 echo '<div class="loop_cell">';

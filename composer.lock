@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d31a5550cb5cda2533620b2b5507c0e4",
+    "content-hash": "c3648265e17ad87e7f4395a41eea2adc",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -180,16 +180,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+                "reference": "141b272484481432cda342727a427dc1e206bfa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
+                "reference": "141b272484481432cda342727a427dc1e206bfa0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -251,6 +251,7 @@
                 "RadPHP",
                 "SMF",
                 "Thelia",
+                "Whmcs",
                 "WolfCMS",
                 "agl",
                 "aimeos",
@@ -273,6 +274,7 @@
                 "installer",
                 "itop",
                 "joomla",
+                "known",
                 "kohana",
                 "laravel",
                 "lavalite",
@@ -302,7 +304,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2018-08-27T06:10:37+00:00"
+            "time": "2019-08-12T15:00:31+00:00"
         },
         {
             "name": "sentry/sentry",
@@ -483,8 +485,28 @@
             "homepage": "https://wordpress.org/plugins/lazy-load/"
         },
         {
+            "name": "wpackagist-plugin/modula-best-grid-gallery",
+            "version": "2.1.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/modula-best-grid-gallery/",
+                "reference": "tags/2.1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/modula-best-grid-gallery.2.1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/modula-best-grid-gallery/"
+        },
+        {
             "name": "wpackagist-plugin/optinmonster",
-            "version": "1.6.3",
+            "version": "1.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/optinmonster/",
@@ -492,7 +514,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1551730001",
+                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1566919341",
                 "reference": null,
                 "shasum": null,
                 "mirrors": [
@@ -645,16 +667,16 @@
         },
         {
             "name": "zeek/sso-client",
-            "version": "1.1",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/zeek-sso-client.git",
-                "reference": "afc1c5d82017acaa296ed40b54791ed895a2f8ab"
+                "reference": "334a0d594dbd43128a569f7761a1e04320b02bac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/zeek-sso-client/zipball/afc1c5d82017acaa296ed40b54791ed895a2f8ab",
-                "reference": "afc1c5d82017acaa296ed40b54791ed895a2f8ab",
+                "url": "https://api.github.com/repos/ZeekInteractive/zeek-sso-client/zipball/334a0d594dbd43128a569f7761a1e04320b02bac",
+                "reference": "334a0d594dbd43128a569f7761a1e04320b02bac",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -664,7 +686,7 @@
                 ]
             },
             "require": {
-                "a7/autoload": "2.0.9.1"
+                "a7/autoload": ">=2"
             },
             "type": "library",
             "autoload": {
@@ -690,23 +712,23 @@
             ],
             "description": "SSO client for the Zeek SSO system.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/zeek-sso-client/tree/1.1",
+                "source": "https://github.com/ZeekInteractive/zeek-sso-client/tree/1.1.1",
                 "issues": "https://github.com/ZeekInteractive/zeek-sso-client/issues"
             },
-            "time": "2018-12-09T02:06:27+00:00"
+            "time": "2019-03-28T11:33:32+00:00"
         },
         {
             "name": "zeek/wp-utils",
-            "version": "2.10.0",
+            "version": "2.12",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/wp-utils.git",
-                "reference": "25999ea8e7b0e9bf57f3181a05afd7f862a4fe05"
+                "reference": "7e6c2bee3e1477146405f8fc7d54eab631556292"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/25999ea8e7b0e9bf57f3181a05afd7f862a4fe05",
-                "reference": "25999ea8e7b0e9bf57f3181a05afd7f862a4fe05",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/7e6c2bee3e1477146405f8fc7d54eab631556292",
+                "reference": "7e6c2bee3e1477146405f8fc7d54eab631556292",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -756,19 +778,19 @@
             ],
             "description": "A collection of functions that provide utility functionality for WordPress.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/wp-utils/tree/2.10.0",
+                "source": "https://github.com/ZeekInteractive/wp-utils/tree/master",
                 "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
             },
-            "time": "2019-01-22T19:10:40+00:00"
+            "time": "2019-03-27T11:12:53+00:00"
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
-            "version": "5.7.13",
+            "version": "5.8.4",
             "dist": {
                 "type": "zip",
-                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.7.13",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.8.4",
                 "reference": null,
-                "shasum": "59e595a27ea9fbb2595924dc438539c41022f842",
+                "shasum": "7af60787703fc24deb6f49550a1bd3ce5b1f0ee5",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -783,10 +805,10 @@
             "notification-url": "https://repo.packagist.com/zeek/downloads/",
             "authors": {
                 "name": "Elliot Condon",
-                "homepage": "http://www.elliotcondon.com/"
+                "homepage": "https://www.advancedcustomfields.com"
             },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
-            "homepage": "https://www.advancedcustomfields.com/"
+            "homepage": "https://www.advancedcustomfields.com"
         },
         {
             "name": "zeekinteractive/instagram-feed-pro",
