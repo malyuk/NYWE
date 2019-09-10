@@ -7654,6 +7654,10 @@ See Blog Page section above for parent
 }
 
 @media only screen and (max-width: 1024px) {
+	.card-wrap .card-link {
+		margin: 10px 0;
+	}
+
 	.card-link,
 	.page-template-page-contact .card-wrap + p {
 		font-size: 18px;
