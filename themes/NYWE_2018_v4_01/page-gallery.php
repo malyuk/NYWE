@@ -32,9 +32,8 @@ Template Name: Gallery
         <?php // LOOP:
         $i = 1;
         $loop = new WP_Query( array( 'post_type' => 'gallery' ) ); 
-        while ( $loop -> have_posts() ) {
-            $loop -> the_post();
-            $post_id = get_the_ID();
+        while ( $loop->have_posts() ) {
+            $loop->the_post();
             if ( $i <= 3 ) {
                 $i = $i + 1;
                 echo '<div class="loop_cell">';
@@ -42,7 +41,7 @@ Template Name: Gallery
                     $x= get_post_custom_values('gallery_video');
                     if ( is_array($x) && end($x) != '' ) { echo 'video'; }                   
                     echo '" href="' . get_the_permalink() . '" title="Read the full Article.">';
-                    echo get_the_post_thumbnail( $post_id, array(480,480) );                
+                    the_post_thumbnail( array( 480, 480 ) );
                   echo '</a>';
                   echo '<h3 class="loop_cell_date">' . get_the_time('l, F jS, Y') . '</h3>';
                   echo '<a class="loop_cell_title" href="' . get_the_permalink() . '" title="Read the full Article">' . get_the_title() . '</a>';                
@@ -80,7 +79,7 @@ Template Name: Gallery
                   $x = get_post_custom_values('gallery_video');
                   if ( is_array($x) && end($x) != '' ) { echo 'video'; }                   
                   echo '" href="' . get_the_permalink() . '" title="Read the full Article.">';
-                  echo get_the_post_thumbnail( $post_id, array(480,480) );                
+	                the_post_thumbnail( array( 480, 480 ) );
                 echo '</a>';
                 echo '<h3 class="loop_cell_date">' . get_the_time('l, F jS, Y') . '</h3>';
                 echo '<a class="loop_cell_title" href="' . get_the_permalink() . '" title="Read the full Article">' . get_the_title() . '</a>';                
@@ -119,7 +118,7 @@ Template Name: Gallery
                   $x = get_post_custom_values('gallery_video');
                   if ( is_array($x) && end($x) != '' ) { echo 'video'; }                   
                   echo '" href="' . get_the_permalink() . '" title="Read the full Article.">';
-                  echo get_the_post_thumbnail( $post_id, array(480,480) );                
+	            the_post_thumbnail( array( 480, 480 ) );
                 echo '</a>';
                 echo '<h3 class="loop_cell_date">' . get_the_time('l, F jS, Y') . '</h3>';
                 echo '<a class="loop_cell_title" href="' . get_the_permalink() . '" title="Read the full Article">' . get_the_title() . '</a>';                
