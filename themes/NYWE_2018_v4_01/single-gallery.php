@@ -240,12 +240,11 @@ if ( ! empty( $has_gallery ) ) {
 			$loop = new WP_Query( array( 'post_type' => 'gallery' ) );
 			while ( $loop->have_posts() ) {
 				$loop->the_post();
-				$post_id = get_the_ID();
 				if ( $i <= 3 ) {
 					$i = $i + 1;
 					echo '<div class="loop_cell">';
 					echo '<a class="loop_cell_image" href="' . get_the_permalink() . '" title="Read the full Article.">';
-					echo get_the_post_thumbnail( $post_id, array( 480, 480 ) );
+					echo get_the_post_thumbnail( get_the_ID(), array( 480, 480 ) );
 					echo '</a>';
 					echo '<h3 class="loop_cell_date">' . get_the_time( 'l, F jS, Y' ) . '</h3>';
 					echo '<a class="loop_cell_title" href="' . get_the_permalink() . '" title="Read the full Article">' . get_the_title() . '</a>';
@@ -285,7 +284,7 @@ if ( ! empty( $has_gallery ) ) {
 					$i = $i + 1;
 					echo '<div class="loop_cell">';
 					echo '<a class="loop_cell_image" href="' . get_the_permalink() . '" title="Read the full Article.">';
-					echo get_the_post_thumbnail( $post_id, array( 480, 480 ) );
+					echo get_the_post_thumbnail( get_the_ID(), array( 480, 480 ) );
 					echo '</a>';
 					echo '<h3 class="loop_cell_date">' . get_the_time( 'l, F jS, Y' ) . '</h3>';
 					echo '<a class="loop_cell_title" href="' . get_the_permalink() . '" title="Read the full Article.">' . get_the_title() . '</a>';
