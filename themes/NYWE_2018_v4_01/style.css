@@ -3885,6 +3885,7 @@ a.event_tickets_purchase, .event_tickets_purchase:visited {
 .callout-box {
 	background: #370782;
 	border-radius: 4px;
+	clear: both;
 	text-align: center;
 	width: 80%;
 	margin: 0 auto 10%;

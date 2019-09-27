@@ -115,7 +115,7 @@ function my_gutenberg_can_edit_post_types( $can_edit, $post_type ) {
 
 add_action( 'wp_enqueue_scripts', function () {
 
-	$version = '4.8';
+	$version = '4.9';
 
 	wp_enqueue_script( 'jquery' );
 
@@ -149,7 +149,7 @@ function get_signup_form() {
 
 		<!-- SUBSCRIBE -->
 		<a class="button"
-		   href="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&id=d6c5ffde20" target="_blank">Sign Up</a>
+		   href="https://newyorkwineevents.subscribe.space/" target="_blank">Sign Up</a>
 
 	</div><!-- signup -->
 

@@ -128,7 +128,7 @@
 
 			<!-- SUBSCRIBE -->
 			<a id="head_tools_subscribe" class="button"
-			   href="https://newjerseywinefestivals.us6.list-manage.com/subscribe/post?u=da778b0b532a20f59d31779a3&id=d6c5ffde20" target="_blank">Subscribe</a>
+			   href="https://newyorkwineevents.subscribe.space/" target="_blank">Subscribe</a>
 
 			<!-- SOCIAL -->
 			<div id="head_tools_buttons">
