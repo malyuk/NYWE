@@ -26,14 +26,3 @@ add_action( 'after_body_open_tag', function () {
 
 	<?php
 } );
-
-add_action( 'wp_footer', function() {
-	?>
-	<script type='text/javascript'>
-		var zaius = window['zaius']||(window['zaius']=[]);zaius.methods=["initialize","onload","event","entity","identify","anonymize","dispatch"];zaius.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);zaius.push(t);return zaius}};(function(){for(var i=0;i<zaius.methods.length;i++){var method=zaius.methods[i];zaius[method]=zaius.factory(method)}var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"===document.location.protocol?"https://":"http://")+"d1igp3oop3iho5.cloudfront.net/v2/w81ZGFe69acnQOEZctJbsQ/zaius-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-
-		// Edits to this script should only be made below this line.
-		zaius.event('pageview');
-	</script>
-	<?php
-});
