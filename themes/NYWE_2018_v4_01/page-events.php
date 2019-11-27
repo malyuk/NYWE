@@ -2,6 +2,7 @@
 /*
 Template Name: Events v4
 */
+
 ?>
 
 <?php get_header(); ?>
@@ -29,13 +30,21 @@ Template Name: Events v4
         <div id="events_index">
             <?php 
             $events_index = new WP_Query( array( 'post_type' => 'events', 'posts_per_page' => 50 )); 
-            while ( $events_index->have_posts() ) : $events_index->the_post(); 
-            ?>
+            while ( $events_index->have_posts() ) : $events_index->the_post();
+
+	            $zaius_id   = get_field( 'zaius_id', get_the_ID() );
+	            $zaius_text = '';
+	            if ( ! empty( $zaius_id ) ) {
+		            $zaius_text = ' id="' . $zaius_id . '"';
+	            }
+
+
+	            ?>
                 <div class="events_index_cell">
                     <span class="events_index_cell_publish_date" style="display: none;">
 	                    <?php the_time('F j, Y'); ?>
                     </span>
-                    <a class="events_index_cell_link" href="#<?php the_ID(); ?>"><?php the_title(); ?></a>
+                    <a class="events_index_cell_link" href="#<?php the_ID(); ?>"<?= $zaius_text ?>><?php the_title(); ?></a>
                     <span class="events_index_cell_date">
 	                    <?php
 	                    $event_date = get_field( 'event_date', false, false );

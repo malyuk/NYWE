@@ -29,27 +29,38 @@
 	<!-- Facebook Pixel Code -->
 
 	<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f.fbq)f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '748361101852388');
-		fbq('track', 'PageView');
+		!function ( f, b, e, v, n, t, s ) {
+			if ( f.fbq ) return;
+			n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply( n, arguments ) : n.queue.push( arguments )
+			};
+			if ( !f.fbq ) f.fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement( e );
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName( e )[0];
+			s.parentNode.insertBefore( t, s )
+		}( window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js' );
+		fbq( 'init', '748361101852388' );
+		fbq( 'track', 'PageView' );
 	</script>
 
-	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=748361101852388&ev=PageView&noscript=1" /></noscript>
+	<noscript><img height="1" width="1" style="display:none"
+	               src="https://www.facebook.com/tr?id=748361101852388&ev=PageView&noscript=1"/></noscript>
 
 	<!-- End Facebook Pixel Code -->
 
 	<!-- Facebook Meta Tags -->
 	<?php
-	$page_banner = get_post_custom_values('page_banner');
-	if ( is_array($page_banner) && end($page_banner) != '' ) {
-		$page_banner = end($page_banner);
+	$page_banner = get_post_custom_values( 'page_banner' );
+	if ( is_array( $page_banner ) && end( $page_banner ) != '' ) {
+		$page_banner = end( $page_banner );
 	} else {
 		$page_banner = get_the_post_thumbnail_url( get_the_ID(), 'large' );
 	}
@@ -65,6 +76,14 @@
 
 </head>
 
+<?php
+$zaius_id = get_field( 'zaius_id', get_the_ID() );
+$zaius_text = '';
+if ( ! empty( $zaius_id ) ) {
+	$zaius_text = ' id="' . $zaius_id . '"';
+}
+?>
+
 <!-- EPIC BODY TAG  -->
 <!--[if IE 6]>
 <script type="text/javascript">window.onload = function () {
@@ -79,11 +98,11 @@
 <!--[if IE 9 ]>
 <body <?php body_class('ie9'); ?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<body <?php body_class( 'ie6' ); ?>> <!--<![endif]-->
+<body <?php body_class( 'ie6' ); ?><?= $zaius_text ?>> <!--<![endif]-->
 <!--[if lt IE 9]>  <a id="obsolete_browser_warning" href="http://www.firefox.com">You are using an outdated browser. For
 	a safer &amp; modern experience please upgrade for free. Click to continue.</a> <![endif]-->
 
-<?php do_action('after_body_open_tag'); ?>
+<?php do_action( 'after_body_open_tag' ); ?>
 
 <!-- HEADER -->
 <div id="header" <?php if ( is_home() ) {

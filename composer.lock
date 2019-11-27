@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3648265e17ad87e7f4395a41eea2adc",
+    "content-hash": "465122502663f813ca41b5298cdb853f",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -387,8 +387,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/amp.0.7.2.zip",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -414,8 +412,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/duplicate-post.3.2.2.zip",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -441,8 +437,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/fareharbor.3.5.zip",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -468,8 +462,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/lazy-load.0.6.1.zip",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -495,8 +487,12 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/modula-best-grid-gallery.2.1.5.zip",
-                "reference": null,
-                "shasum": null
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -506,7 +502,7 @@
         },
         {
             "name": "wpackagist-plugin/optinmonster",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/optinmonster/",
@@ -514,9 +510,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1566919341",
-                "reference": null,
-                "shasum": null,
+                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1574308195",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -542,8 +536,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/redirection.3.6.3.zip",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -569,8 +561,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/userway-accessibility-widget.zip?timestamp=1544559551",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -596,8 +586,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wufoo-shortcode.zip?timestamp=1443203214",
-                "reference": null,
-                "shasum": null,
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -785,12 +773,11 @@
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
-            "version": "5.8.4",
+            "version": "5.8.7",
             "dist": {
                 "type": "zip",
-                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.8.4",
-                "reference": null,
-                "shasum": "7af60787703fc24deb6f49550a1bd3ce5b1f0ee5",
+                "url": "https://wpp.zeeklabs.com/satispress/advanced-custom-fields-pro/5.8.7",
+                "shasum": "54298a02a1ce6a7a49b1cfa80a9a16404c35fada",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
@@ -816,7 +803,6 @@
             "dist": {
                 "type": "zip",
                 "url": "https://wpp.zeeklabs.com/satispress/instagram-feed-pro/4.0.9",
-                "reference": null,
                 "shasum": "d7788a0d7c1fbfe825eb5d35ccde617f665396d2",
                 "mirrors": [
                     {

@@ -3,6 +3,25 @@
     "title": "Event",
     "fields": [
         {
+            "key": "field_5dddc80918cc4",
+            "label": "Zaius ID",
+            "name": "zaius_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c40aa811e8c8",
             "label": "Event Sold Out?",
             "name": "event_sold_out",
@@ -871,5 +890,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556839062
+    "modified": 1574815773
 }
