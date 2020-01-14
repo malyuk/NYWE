@@ -2,10 +2,10 @@
 /*
 Template Name: Homepage
 */
-?>
-<?php get_header(); ?>
 
-<?php // SETUP FOR CUSTOM PAGE TEMPLATES:
+get_header();
+
+// SETUP FOR CUSTOM PAGE TEMPLATES:
     $meta = get_post_meta($post->ID);
     // Usage:
     // $x = $meta['about_zigzag_1_image'];
