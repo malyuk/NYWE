@@ -193,11 +193,15 @@ get_header();
 			$press = get_field( 'press_module', get_queried_object_id() );
 
 			if ( ! empty( $press ) ) :
-				echo '<ul>';
+				echo '<ul class="press-module">';
 				foreach ( $press as $item ) :
-					echo '<li>';
-					echo wp_get_attachment_image( $item['logo'] );
-					printf( '<p>%s</p>', esc_html( $item['text']));
+					echo '<li class="press-module-item">';
+					if ( ! empty( $item['logo'] ) ) {
+						printf( '<div>%s</div>', wp_get_attachment_image( $item['logo'], 'full' ) );
+					}
+					if ( ! empty( $item['text'] ) ) {
+						printf( '<p class="press-module-text">%s</p>', esc_html( $item['text'] ) );
+					}
 					echo '</li>';
 				endforeach;
 				echo '</ul>';

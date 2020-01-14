@@ -1657,33 +1657,28 @@ a#linkLove:hover {
 	}
 }
 
-#home_sub_featured_tasteVIP {
-	height: auto;
-	max-width: 100%;
-	margin: 0 0 15px 0;
+.press-module {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
 }
 
-#home_sub_featured_cell_right p {
-	font-size: 1.6em;
-	line-height: 1.35em;
-	margin: 0 0 20px 10px
+.press-module-item {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-#home_sub_featured_signup {
-	background: #fff;
-	color: #ff0022 !important;
-	display: block;
-	float: left;
-	clear: both;
-	margin: 10px 25px 10px 10px;
-	white-space: nowrap;
-}
-
-#home_sub_featured_per_year {
-	max-width: 100%;
-	margin: 5px 0 0 0;
-	float: left;
-	clear: right;
+.press-module-text {
+	margin-top: .25rem;
+	margin-bottom: 0;
 }
 
 /* HOME ADVERT */
