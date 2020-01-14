@@ -17,7 +17,7 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 0,
+            "max": 4,
             "layout": "table",
             "button_label": "Add Item",
             "sub_fields": [
@@ -84,5 +84,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579030565
+    "modified": 1579032695
 }
