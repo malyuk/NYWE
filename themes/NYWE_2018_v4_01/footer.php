@@ -61,8 +61,8 @@
 			if ( ! empty( $global_text ) ) :
 				echo wp_kses_post( $global_text );
 			else : ?>
-				<p>&#169; New York Events 2018. All rights reserved. Read our <a
-							href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Terms &amp; Conditions</a>
+				<p>&#169; New York Events <?php echo Date('Y'); ?>. All rights reserved. Read
+					our <a href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Terms &amp; Conditions</a>
 					&amp; <a href="<?php bloginfo( 'url' ); ?>/privacy-policy/">Privay Policy</a>.</p>
 			<?php
 			endif;
