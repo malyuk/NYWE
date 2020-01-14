@@ -4,7 +4,7 @@
 	<meta name="google-site-verification" content="xClhj8OjmujRbxAsBH0zGxKvGk8cU2G7oh4M86b18cQ"/>
 
 	<!-- TITLE -->
-	<title><?php wp_title( '' ); ?> | <?php bloginfo( 'name' ); ?></title>
+	<title><?php wp_title( '' ); ?> | <?php echo esc_html( get_bloginfo( 'name' ) ); ?></title>
 
 	<!-- META -->
 	<meta charset="utf-8">
