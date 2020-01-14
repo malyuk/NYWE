@@ -58,14 +58,11 @@
 			$global_text      = $footer_options['global_footer_text'] ?? '';
 			$conditional_text = $footer_options['conditional_footer_text'] ?? '';
 
-			if ( ! empty( $global_text ) ) :
+			if ( ! empty( $global_text ) ) {
+
 				echo wp_kses_post( $global_text );
-			else : ?>
-				<p>&#169; New York Events <?php echo Date('Y'); ?>. All rights reserved. Read
-					our <a href="<?php bloginfo( 'url' ); ?>/ticket-purchase-terms-conditions">Terms &amp; Conditions</a>
-					&amp; <a href="<?php bloginfo( 'url' ); ?>/privacy-policy/">Privay Policy</a>.</p>
-			<?php
-			endif;
+
+			};
 
 			if ( ! empty( $conditional_text ) ) {
 
@@ -83,6 +80,7 @@
 					echo wp_kses_post( $text );
 				}
 			} ?>
+			<p>&#169; New York Events <?php echo Date('Y'); ?>. All rights reserved.
 		</div>
 
 	</div><!-- center -->
