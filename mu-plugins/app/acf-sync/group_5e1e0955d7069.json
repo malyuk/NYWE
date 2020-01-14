@@ -42,7 +42,7 @@
                     "min_size": "",
                     "max_width": "",
                     "max_height": "",
-                    "max_size": "",
+                    "max_size": ".5",
                     "mime_types": ""
                 },
                 {
@@ -84,5 +84,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579027772
+    "modified": 1579030565
 }
