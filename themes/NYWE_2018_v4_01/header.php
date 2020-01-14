@@ -3,8 +3,8 @@
 <head>
 	<meta name="google-site-verification" content="xClhj8OjmujRbxAsBH0zGxKvGk8cU2G7oh4M86b18cQ"/>
 
-	<!-- TITLE -->
-	<title><?php wp_title( '' ); ?> | <?php echo esc_html( get_bloginfo( 'name' ) ); ?></title>
+	<?php
+	printf( '<title>%s</title>', esc_html( wp_get_document_title() ) ); ?>
 
 	<!-- META -->
 	<meta charset="utf-8">
