@@ -114,7 +114,7 @@ $subscribe_url = 'https://newyorkwineevents.subscribe.space/'; ?>
 } ?> style="border-top: 4px solid #000;">
 
 	<!-- LOGO -->
-	<a class="logo" href="<?php bloginfo( 'url' ); ?>/">
+	<a class="logo" href="<?php bloginfo( 'url' ); ?>/" title="Home" aria-label="Home">
 		<img src="<?php bloginfo( 'template_url' ); ?>/images/logo.png" alt="New York Wine Events"/>
 	</a>
 
