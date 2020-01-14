@@ -189,22 +189,19 @@ get_header();
 				reviews &rightarrow;</a>
 		</div><!-- cell -->
 		<div id="home_sub_featured_cell_right">
-			<!-- TASTE VIP -->
-			<img id="home_sub_featured_tasteVIP"
-				 src="<?php bloginfo( 'template_url' ); ?>/images/home_tasteVIP.png"
-				 alt="Taste the VIP"/>
-			<p>Become a TASTE VIP CLUB member and get two FREE general admission tickets, 20%
-				discount on all events, referral bonuses and occasional members-only events!</p>
 			<?php
-			// VIP Button
-			$x = $meta['home_tastevip'];
-			if ( is_array( $x ) && end( $x ) != '' ) {
-				echo '<a id="home_sub_featured_signup" class="button" href="' . end( $x ) . '">SIGN UP NOW!</a>';
-			}
-			?>
-			<img id="home_sub_featured_per_year"
-				 src="<?php bloginfo( 'template_url' ); ?>/images/home_per_year.png"
-				 alt="Taste the VIP"/>
+			$press = get_field( 'press_module', get_queried_object_id() );
+
+			if ( ! empty( $press ) ) :
+				echo '<ul>';
+				foreach ( $press as $item ) :
+					echo '<li>';
+					echo wp_get_attachment_image( $item['logo'] );
+					printf( '<p>%s</p>', esc_html( $item['text']));
+					echo '</li>';
+				endforeach;
+				echo '</ul>';
+			endif; ?>
 		</div><!-- cell -->
 	</div><!-- sub featured -->
 
