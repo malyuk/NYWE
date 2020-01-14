@@ -597,4 +597,5 @@ if( $options['global_advert_2']) {
 </div><!-- sponsors -->
 
 
-<?php get_footer(); ?>
+<?php
+get_footer();
