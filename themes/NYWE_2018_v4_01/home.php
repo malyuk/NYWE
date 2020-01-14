@@ -75,6 +75,7 @@ get_header();
 	<!-- SUB FEATURED -->
 	<div id="home_sub_featured">
 		<div id="home_sub_featured_cell_left">
+			<h2 class="home-sub-featured-headline">Customer Feedback</h2>
 			<!-- TESTIMONIALS -->
 			<?php // 1
 			$trigger = $meta['home_testimonial_name_1'];
@@ -193,6 +194,7 @@ get_header();
 			$press = get_field( 'press_module', get_queried_object_id() );
 
 			if ( ! empty( $press ) ) :
+				echo '<h2 class="home-sub-featured-headline">In The News</h2>';
 				echo '<ul class="press-module">';
 				foreach ( $press as $item ) :
 					echo '<li class="press-module-item">';
