@@ -32,7 +32,7 @@
           <a href="<?php bloginfo('url'); ?>/los-angeles">Los Angeles</a><br />
           <a href="<?php bloginfo('url'); ?>/new-york">New York</a><br />
           <a href="<?php bloginfo('url'); ?>/san-francisco">San Francisco</a><br />
-          <a href="<?php bloginfo('url'); ?>/washington">Washington D.C.</a> 
+          <a href="<?php bloginfo('url'); ?>/washington">Washington D.C.</a>
         */ ?>
 		</div><!-- footer section -->
 
