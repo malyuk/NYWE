@@ -102,7 +102,11 @@ if ( ! empty( $zaius_id ) ) {
 <!--[if lt IE 9]>  <a id="obsolete_browser_warning" href="http://www.firefox.com">You are using an outdated browser. For
 	a safer &amp; modern experience please upgrade for free. Click to continue.</a> <![endif]-->
 
-<?php do_action( 'after_body_open_tag' ); ?>
+<?php
+
+do_action( 'after_body_open_tag' );
+
+$subscribe_url = 'https://newyorkwineevents.subscribe.space/'; ?>
 
 <!-- HEADER -->
 <div id="header" <?php if ( is_home() ) {
@@ -146,8 +150,14 @@ if ( ! empty( $zaius_id ) ) {
 		<div id="head_tools">
 
 			<!-- SUBSCRIBE -->
-			<a id="head_tools_subscribe" class="button"
-			   href="https://newyorkwineevents.subscribe.space/" target="_blank">Subscribe</a>
+			<a
+				id="head_tools_subscribe"
+				class="button"
+				href="<?php echo esc_url( $subscribe_url ); ?>"
+				target="_blank"
+			>
+				Subscribe
+			</a>
 
 			<!-- SOCIAL -->
 			<div id="head_tools_buttons">
@@ -164,8 +174,13 @@ if ( ! empty( $zaius_id ) ) {
 	<!-- MOBILE NAVIGATION -->
 	<div id="mobile_navigation" style="display: none;">
 		<div id="mobile_navigation_controls">
-			<a id="mobile_navigation_subscribe" class="button"
-			   href="<?php bloginfo( 'url' ); ?>/subscribe">Subscribe</a>
+			<a
+				id="mobile_navigation_subscribe"
+				class="button"
+				href="<?php echo esc_url( $subscribe_url ); ?>"
+			>
+				Subscribe
+			</a>
 			<a id="mobile_navigation_toggle" href="#">NAV</a>
 			<script type="text/javascript">
 				jQuery( function () {
