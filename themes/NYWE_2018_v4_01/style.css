@@ -1693,6 +1693,11 @@ a#linkLove:hover {
 	margin-bottom: 0;
 }
 
+.press-module-image {
+	max-height: 100px;
+	width: auto;
+}
+
 /* HOME ADVERT */
 #googleAd2 {
 	width: 728px;

@@ -199,7 +199,14 @@ get_header();
 				foreach ( $press as $item ) :
 					echo '<li class="press-module-item">';
 					if ( ! empty( $item['logo'] ) ) {
-						printf( '<div>%s</div>', wp_get_attachment_image( $item['logo'], 'full' ) );
+						printf( '<div>%s</div>',
+							wp_get_attachment_image(
+								$item['logo'],
+								'full',
+								false,
+								[ 'class' => 'press-module-image' ]
+							)
+						);
 					}
 					if ( ! empty( $item['text'] ) ) {
 						printf( '<p class="press-module-text">%s</p>', esc_html( $item['text'] ) );
