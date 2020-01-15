@@ -1657,17 +1657,23 @@ a#linkLove:hover {
 	}
 }
 
-#home_sub_featured_cell_left .home-sub-featured-headline {
-	color: hsl(254.5, 57.6%, 80%);
-}
-
-#home_sub_featured_cell_right > .home-sub-featured-headline {
-	color: hsl(352, 100%, 95%);
-}
-
 .home-sub-featured-headline {
+	color: white;
 	font-weight: 400;
-	font-size: 1.5rem;
+	font-size: 1.875rem;
+}
+
+@media (min-width: 780px) {
+	.home-sub-featured-headline {
+		margin-bottom: 6rem;
+	}
+	#home_sub_featured_cell_right .home-sub-featured-headline {
+		margin-bottom: .5rem;
+	}
+
+	.press-module-item > div:nth-child(1) {
+		padding: 0 2rem;
+	}
 }
 
 .press-module {
