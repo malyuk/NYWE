@@ -1664,13 +1664,6 @@ a#linkLove:hover {
 }
 
 @media (min-width: 780px) {
-	.home-sub-featured-headline {
-		margin-bottom: 6rem;
-	}
-	#home_sub_featured_cell_right .home-sub-featured-headline {
-		margin-bottom: .5rem;
-	}
-
 	.press-module-item > div:nth-child(1) {
 		padding: 0 2rem;
 	}
