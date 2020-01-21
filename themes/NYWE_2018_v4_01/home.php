@@ -194,26 +194,55 @@ get_header();
 			$press = get_field( 'press_module', get_queried_object_id() );
 
 			if ( ! empty( $press ) ) :
+
 				echo '<h2 class="home-sub-featured-headline">In The News</h2>';
+
 				echo '<ul class="press-module">';
-				foreach ( $press as $item ) :
-					echo '<li class="press-module-item">';
-					if ( ! empty( $item['logo'] ) ) {
-						printf( '<div>%s</div>',
-							wp_get_attachment_image(
-								$item['logo'],
-								'full',
-								false,
-								[ 'class' => 'press-module-image' ]
-							)
-						);
-					}
-					if ( ! empty( $item['text'] ) ) {
-						printf( '<p class="press-module-text">%s</p>', esc_html( $item['text'] ) );
-					}
-					echo '</li>';
-				endforeach;
+
+					foreach ( $press as $item ) :
+
+						echo '<li class="press-module-item">';
+
+							if ( ! empty( $item['logo'] ) ) {
+
+								$url = $item['url'];
+
+								if ( ! empty( $url ) ) {
+									printf( '<a aria-label="%s" href="%s" style="display:block;">',
+										esc_attr( $item['link_text'] ),
+										esc_url( $url )
+									);
+								} else {
+									echo '<div>';
+								}
+
+								echo wp_get_attachment_image(
+									$item['logo'],
+									'full',
+									false,
+									[ 'class' => 'press-module-image' ]
+								);
+
+
+								if ( ! empty( $url ) ) {
+									echo '</a>';
+								} else {
+									echo '</div>';
+								}
+							}
+
+							if ( ! empty( $item['text'] ) ) {
+								printf( '<p class="press-module-text">%s</p>',
+									esc_html( $item['text'] )
+								);
+							}
+
+						echo '</li>';
+
+					endforeach;
+
 				echo '</ul>';
+
 			endif; ?>
 		</div><!-- cell -->
 	</div><!-- sub featured -->
