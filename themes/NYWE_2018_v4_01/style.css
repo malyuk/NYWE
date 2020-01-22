@@ -1501,6 +1501,9 @@ a#linkLove:hover {
 		margin: 0;
 		clear: both;
 		overflow: hidden;
+		left: 0;
+		bottom: 0;
+		width: 100%;
 	}
 
 	.featured_content h3 {
