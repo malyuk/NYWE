@@ -115,7 +115,7 @@ function my_gutenberg_can_edit_post_types( $can_edit, $post_type ) {
 
 add_action( 'wp_enqueue_scripts', function () {
 
-	$version = '4.9';
+	$version = '4.9.1';
 
 	wp_enqueue_script( 'jquery' );
 
