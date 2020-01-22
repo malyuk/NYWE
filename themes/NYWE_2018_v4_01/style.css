@@ -1420,15 +1420,22 @@ a#linkLove:hover {
 .featured {
 	margin: 0;
 	padding: 0;
-	max-height: calc( 100vh - 205px ); /* Height of header */
 	width: 100%;
 	background: #110027;
 	position: relative;
 	overflow: hidden;
 }
 
-.admin-bar .featured {
-	max-height: calc( 100vh - 237px );
+
+
+@media (min-width: 1024px) {
+	.featured {
+		max-height: calc( 100vh - 205px ); /* Height of header */
+ 	}
+
+	.admin-bar .featured {
+		max-height: calc( 100vh - 237px );
+	}
 }
 
 .featured img {
