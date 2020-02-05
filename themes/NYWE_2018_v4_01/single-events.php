@@ -71,7 +71,7 @@ if ( ! empty( $advertHead ) ) {
 
 						<?php
 						$event_sold_out = get_field( 'event_sold_out' );
-						$purchase_tickets_text = get_field('purchase_tickets_text') ? get_field('purchase_tickets_text') : 'PURCHASE TICKETSs';
+						$purchase_tickets_text = get_field('purchase_tickets_text') ? get_field('purchase_tickets_text') : 'PURCHASE TICKETS';
 						if ( $event_sold_out ) {
 							echo '<a class="events_list_cell_card_purchase sold_out" href="#event_tickets">SOLD OUT</a>';
 						} else {
