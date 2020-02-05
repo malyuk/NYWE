@@ -54,7 +54,8 @@
 		"wpackagist-plugin/optinmonster": "^1",
 		"wpackagist-plugin/lazy-load": "^0.6",
 		"wpackagist-plugin/modula-best-grid-gallery": "2.1.5",
-		"zeek/wp-utils": "^2.10"
+		"zeek/wp-utils": "^2.10",
+		"wpackagist-plugin/404page": "11.2.1"
 
 	}
 }

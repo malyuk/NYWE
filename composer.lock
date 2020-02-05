@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "465122502663f813ca41b5298cdb853f",
+    "content-hash": "74fb1c220cdac45936329f52e4a83885",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -377,6 +377,31 @@
             "time": "2018-11-09T12:27:19+00:00"
         },
         {
+            "name": "wpackagist-plugin/404page",
+            "version": "11.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/404page/",
+                "reference": "tags/11.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/404page.11.2.1.zip",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "homepage": "https://wordpress.org/plugins/404page/"
+        },
+        {
             "name": "wpackagist-plugin/amp",
             "version": "0.7.2",
             "source": {
@@ -498,6 +523,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
             "homepage": "https://wordpress.org/plugins/modula-best-grid-gallery/"
         },
         {
