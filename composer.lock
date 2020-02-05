@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74fb1c220cdac45936329f52e4a83885",
+    "content-hash": "2e52f4c2d747db993a7984bd3be538f4",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -305,6 +305,58 @@
                 "zikula"
             ],
             "time": "2019-08-12T15:00:31+00:00"
+        },
+        {
+            "name": "firebase/php-jwt",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": " 4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://repo.packagist.com/zeek/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2017-06-27T22:17:23+00:00"
         },
         {
             "name": "sentry/sentry",
@@ -681,16 +733,16 @@
         },
         {
             "name": "zeek/sso-client",
-            "version": "1.1.1",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ZeekInteractive/zeek-sso-client.git",
-                "reference": "334a0d594dbd43128a569f7761a1e04320b02bac"
+                "reference": "5931ac274441b0be0d49abdb1abbb2890d882156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/zeek-sso-client/zipball/334a0d594dbd43128a569f7761a1e04320b02bac",
-                "reference": "334a0d594dbd43128a569f7761a1e04320b02bac",
+                "url": "https://api.github.com/repos/ZeekInteractive/zeek-sso-client/zipball/5931ac274441b0be0d49abdb1abbb2890d882156",
+                "reference": "5931ac274441b0be0d49abdb1abbb2890d882156",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -700,7 +752,8 @@
                 ]
             },
             "require": {
-                "a7/autoload": ">=2"
+                "a7/autoload": ">=2",
+                "firebase/php-jwt": "^5.0"
             },
             "type": "library",
             "autoload": {
@@ -726,23 +779,23 @@
             ],
             "description": "SSO client for the Zeek SSO system.",
             "support": {
-                "source": "https://github.com/ZeekInteractive/zeek-sso-client/tree/1.1.1",
+                "source": "https://github.com/ZeekInteractive/zeek-sso-client/tree/2.0.1",
                 "issues": "https://github.com/ZeekInteractive/zeek-sso-client/issues"
             },
-            "time": "2019-03-28T11:33:32+00:00"
+            "time": "2019-04-09T11:02:46+00:00"
         },
         {
             "name": "zeek/wp-utils",
-            "version": "2.12",
+            "version": "3.7",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ZeekInteractive/wp-utils.git",
-                "reference": "7e6c2bee3e1477146405f8fc7d54eab631556292"
+                "url": "https://github.com/ZeekInteractive/wp-utils.git",
+                "reference": "d153c98a4f21d29a756e4b7601d3cf8569a4f0c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/7e6c2bee3e1477146405f8fc7d54eab631556292",
-                "reference": "7e6c2bee3e1477146405f8fc7d54eab631556292",
+                "url": "https://api.github.com/repos/ZeekInteractive/wp-utils/zipball/d153c98a4f21d29a756e4b7601d3cf8569a4f0c6",
+                "reference": "d153c98a4f21d29a756e4b7601d3cf8569a4f0c6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -752,10 +805,11 @@
                 ]
             },
             "require": {
-                "a7/autoload": "2.0.9.1",
+                "a7/autoload": ">=2",
                 "arrilot/dotenv-php": "^1.0",
                 "php": ">=7.0",
-                "sentry/sentry": "^1.9"
+                "sentry/sentry": "^1.9",
+                "zeek/php-utils": ">=2"
             },
             "require-dev": {
                 "10up/wp_mock": "^0.3.0",
@@ -767,6 +821,11 @@
             "autoload": {
                 "files": [
                     "package.php"
+                ]
+            },
+            "autoload-dev": {
+                "files": [
+                    "package-dev.php"
                 ]
             },
             "notification-url": "https://repo.packagist.com/zeek/downloads/",
@@ -795,7 +854,7 @@
                 "source": "https://github.com/ZeekInteractive/wp-utils/tree/master",
                 "issues": "https://github.com/ZeekInteractive/wp-utils/issues"
             },
-            "time": "2019-03-27T11:12:53+00:00"
+            "time": "2019-12-17T14:36:21+00:00"
         },
         {
             "name": "zeekinteractive/advanced-custom-fields-pro",
