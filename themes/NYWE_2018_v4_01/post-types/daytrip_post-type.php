@@ -124,6 +124,7 @@ function daytrip_meta_box_cb( $post ) {
 	$daytripTicket                = isset( $values['daytripTicket'] ) ? esc_attr( $values['daytripTicket'][0] ) : '';
 	$daytripTicketPrice           = isset( $values['daytripTicketPrice'] ) ? esc_attr( $values['daytripTicketPrice'][0] ) : '';
 	$daytripTicketText            = isset( $values['daytripTicketText'] ) ? esc_attr( $values['daytripTicketText'][0] ) : '';
+	$daytripTicketButtonText      = isset( $values['daytripTicketButtonText'] ) ? esc_attr( $values['daytripTicketButtonText'][0] ) : '';
 	$daytripTicketHeading         = isset( $values['daytripTicketHeading'] ) ? esc_attr( $values['daytripTicketHeading'][0] ) : '';
 	$daytripTicketTimelineTime_1  = isset( $values['daytripTicketTimelineTime_1'] ) ? esc_attr( $values['daytripTicketTimelineTime_1'][0] ) : '';
 	$daytripTicketTimelineText_1  = isset( $values['daytripTicketTimelineText_1'] ) ? esc_attr( $values['daytripTicketTimelineText_1'][0] ) : '';
@@ -165,7 +166,7 @@ function daytrip_meta_box_cb( $post ) {
 		<?php if ( $daytripSoldout == 'on' ) : ?>
 			<h3>EVENT SOLD OUT?</h3>
 			CURRENT STATUS - <input type="checkbox" name="daytripSoldout"
-			                        id="daytripSoldout" <?php if ( $daytripSoldout == 'on' ) {
+									id="daytripSoldout" <?php if ( $daytripSoldout == 'on' ) {
 				echo 'CHECKED';
 			} ?> />
 			<strong><?php print_r( $daytripSoldout ); ?></strong>
@@ -174,7 +175,7 @@ function daytrip_meta_box_cb( $post ) {
 		<?php if ( $daytripSoldout != 'on' ) : ?>
 			<h3>EVENT SOLD OUT?</h3>
 			CURRENT STATUS - <input type="checkbox" name="daytripSoldout"
-			                        id="daytripSoldout" <?php if ( $daytripSoldout == 'on' ) {
+									id="daytripSoldout" <?php if ( $daytripSoldout == 'on' ) {
 				echo 'CHECKED';
 			} ?> />
 			<strong><?php print_r( $daytripSoldout ); ?></strong>
@@ -194,7 +195,7 @@ function daytrip_meta_box_cb( $post ) {
 	<div style="margin: 0px 0px 40px 0px; padding: 1em 2em 2em; background: #eff2f5;">
 		<h3>Daytrip Time Preview (SHORT)</h3>
 		<textarea name="daytripTimePreview" id="daytripTimePreview" cols="65"
-		          rows="1"><?php echo $daytripTimePreview; ?></textarea>
+				  rows="1"><?php echo $daytripTimePreview; ?></textarea>
 		<br/>
 		<em>* This will show up on the Daytrip page image header. Example: 7 - 11pm</em>
 	</div><!-- city -->
@@ -213,7 +214,7 @@ function daytrip_meta_box_cb( $post ) {
 	<div style="margin: 0px 0px 40px 0px; padding: 1em 2em 2em; background: #eff2f5;">
 		<h3>Desktop Banner Image</h3>
 		<input id="daytrip_image" type="text" size="36" style="max-width: 90%;" name="daytrip_image"
-		       value="<?php echo $daytrip_image; ?>"/>
+			   value="<?php echo $daytrip_image; ?>"/>
 		<input id="upload_daytrip_image" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image proportion of (16:9). Biggest size of 1920 x 1080 pixels, smaller images will also
 			work. ALWAYS OPTIMIZE FOR WEB! AND SAVE AS JPG.</em>
@@ -228,34 +229,34 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytrip_image' ).click( function ( e ) {
-					e.preventDefault();
-					//If the uploader object has already been created, reopen the dialog
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					//Extend the wp.media object
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					//When a file is selected, grab the URL and set it as the text field's value
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytrip_image' ).val( attachment.url );
-					} );
-					//Open the uploader dialog
-					custom_uploader.open();
-					//Open the uploader dialog
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytrip_image' ).click( function ( e ) {
+                    e.preventDefault();
+                    //If the uploader object has already been created, reopen the dialog
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    //Extend the wp.media object
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    //When a file is selected, grab the URL and set it as the text field's value
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytrip_image' ).val( attachment.url );
+                    } );
+                    //Open the uploader dialog
+                    custom_uploader.open();
+                    //Open the uploader dialog
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 	</div>
 
@@ -264,7 +265,7 @@ function daytrip_meta_box_cb( $post ) {
 	<div style="margin: 0px 0px 40px 0px; padding: 1em 2em 2em; background: #eff2f5;">
 		<h3>Logo Image (optional)</h3>
 		<input id="daytrip_image_logo" type="text" size="36" style="max-width: 90%;" name="daytrip_image_logo"
-		       value="<?php echo $daytrip_image_logo; ?>"/>
+			   value="<?php echo $daytrip_image_logo; ?>"/>
 		<input id="upload_daytrip_image_logo" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 200 x 200 pixels max, smaller images will also work.</em>
 
@@ -278,29 +279,29 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytrip_image_logo' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytrip_image_logo' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytrip_image_logo' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytrip_image_logo' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 	</div>
 
@@ -310,7 +311,7 @@ function daytrip_meta_box_cb( $post ) {
 		<h3>INTRODUCTION MODULE</h3>
 		<h3>Daytrip Intro Image</h3>
 		<input id="daytripIntroImage" type="text" size="36" style="max-width: 90%;" name="daytripIntroImage"
-		       value="<?php echo $daytripIntroImage; ?>"/>
+			   value="<?php echo $daytripIntroImage; ?>"/>
 		<input id="upload_daytripIntroImage" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 740 x 740 pixels.</em>
 		<!-- Preview: -->
@@ -321,55 +322,55 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripIntroImage' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripIntroImage' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripIntroImage' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripIntroImage' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<!-- Heading -->
 		<h3>Daytrip Intro Heading</h3>
 		<textarea name="daytripIntroHeading" id="daytripIntroHeading" cols="65"
-		          rows="1"><?php echo $daytripIntroHeading; ?></textarea>
+				  rows="1"><?php echo $daytripIntroHeading; ?></textarea>
 		<br/><em>Example: Introduction</em>
 		<!-- Text -->
 		<h3>Daytrip Intro Text</h3>
 		<textarea name="daytripIntroText" id="daytripIntroText" cols="65"
-		          rows="4"><?php echo $daytripIntroText; ?></textarea>
+				  rows="4"><?php echo $daytripIntroText; ?></textarea>
 		<!-- Item Heading -->
 		<h3>Daytrip Intro Item 1 - Heading</h3>
 		<textarea name="daytripIntroItem1_heading" id="daytripIntroItem1_heading" cols="65"
-		          rows="1"><?php echo $daytripIntroItem1_heading; ?></textarea>
+				  rows="1"><?php echo $daytripIntroItem1_heading; ?></textarea>
 		<!-- Item text -->
 		<h3>Daytrip Intro Item 1 - Text</h3>
 		<textarea name="daytripIntroItem1_text" id="daytripIntroItem1_text" cols="65"
-		          rows="4"><?php echo $daytripIntroItem1_text; ?></textarea>
+				  rows="4"><?php echo $daytripIntroItem1_text; ?></textarea>
 		<!-- Item2 Heading -->
 		<h3>Daytrip Intro Item 2 - Heading</h3>
 		<textarea name="daytripIntroItem2_heading" id="daytripIntroItem2_heading" cols="65"
-		          rows="1"><?php echo $daytripIntroItem2_heading; ?></textarea>
+				  rows="1"><?php echo $daytripIntroItem2_heading; ?></textarea>
 		<!-- Item2 txt -->
 		<h3>Daytrip Intro Item 2 - Text</h3>
 		<textarea name="daytripIntroItem2_text" id="daytripIntroItem2_text" cols="65"
-		          rows="4"><?php echo $daytripIntroItem2_text; ?></textarea>
+				  rows="4"><?php echo $daytripIntroItem2_text; ?></textarea>
 	</div><!-- daytripIntro -->
 
 
@@ -380,61 +381,61 @@ function daytrip_meta_box_cb( $post ) {
 		<!-- Heading -->
 		<h3>Heading 1</h3>
 		<textarea name="daytripTicksInc_heading_1" id="daytripTicksInc_heading_1" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_1; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_1; ?></textarea>
 		<!-- Text -->
 		<h3>Text 1</h3>
 		<textarea name="daytripTicksInc_text_1" id="daytripTicksInc_text_1" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_1; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_1; ?></textarea>
 		<hr/>
 		<!-- 2 -->
 		<!-- Heading -->
 		<h3>Heading 2</h3>
 		<textarea name="daytripTicksInc_heading_2" id="daytripTicksInc_heading_2" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_2; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_2; ?></textarea>
 		<!-- Text -->
 		<h3>Text 2</h3>
 		<textarea name="daytripTicksInc_text_2" id="daytripTicksInc_text_2" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_2; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_2; ?></textarea>
 		<hr/>
 		<!-- 3 -->
 		<!-- Heading -->
 		<h3>Heading 3</h3>
 		<textarea name="daytripTicksInc_heading_3" id="daytripTicksInc_heading_3" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_3; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_3; ?></textarea>
 		<!-- Text -->
 		<h3>Text 3</h3>
 		<textarea name="daytripTicksInc_text_3" id="daytripTicksInc_text_3" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_3; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_3; ?></textarea>
 		<hr/>
 		<!-- 4 -->
 		<!-- Heading -->
 		<h3>Heading 4</h3>
 		<textarea name="daytripTicksInc_heading_4" id="daytripTicksInc_heading_4" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_4; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_4; ?></textarea>
 		<!-- Text -->
 		<h3>Text 4</h3>
 		<textarea name="daytripTicksInc_text_4" id="daytripTicksInc_text_4" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_4; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_4; ?></textarea>
 		<hr/>
 		<!-- 5 -->
 		<!-- Heading -->
 		<h3>Heading 5</h3>
 		<textarea name="daytripTicksInc_heading_5" id="daytripTicksInc_heading_5" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_5; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_5; ?></textarea>
 		<!-- Text -->
 		<h3>Text 5</h3>
 		<textarea name="daytripTicksInc_text_5" id="daytripTicksInc_text_5" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_5; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_5; ?></textarea>
 		<hr/>
 		<!-- 6 -->
 		<!-- Heading -->
 		<h3>Heading 6</h3>
 		<textarea name="daytripTicksInc_heading_6" id="daytripTicksInc_heading_6" cols="65"
-		          rows="1"><?php echo $daytripTicksInc_heading_6; ?></textarea>
+				  rows="1"><?php echo $daytripTicksInc_heading_6; ?></textarea>
 		<!-- Text -->
 		<h3>Text 6</h3>
 		<textarea name="daytripTicksInc_text_6" id="daytripTicksInc_text_6" cols="65"
-		          rows="4"><?php echo $daytripTicksInc_text_6; ?></textarea>
+				  rows="4"><?php echo $daytripTicksInc_text_6; ?></textarea>
 	</div><!-- tickets include -->
 
 
@@ -444,46 +445,46 @@ function daytrip_meta_box_cb( $post ) {
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Heading - Card 1</h3>
 			<textarea name="daytripFeedback_heading_1" id="daytripFeedback_heading_1" cols="65"
-			          rows="1"><?php echo $daytripFeedback_heading_1; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_heading_1; ?></textarea>
 			<h3>Client - Card 1</h3>
 			<textarea name="daytripFeedback_client_1" id="daytripFeedback_client_1" cols="65"
-			          rows="1"><?php echo $daytripFeedback_client_1; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_client_1; ?></textarea>
 			<h3>Date - Card 1</h3>
 			<textarea name="daytripFeedback_date_1" id="daytripFeedback_date_1" cols="65"
-			          rows="1"><?php echo $daytripFeedback_date_1; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_date_1; ?></textarea>
 			<h3>Testimonial - Card 1</h3>
 			<textarea name="daytripFeedback_excerpt_1" id="daytripFeedback_excerpt_1" cols="65"
-			          rows="5"><?php echo $daytripFeedback_excerpt_1; ?></textarea>
+					  rows="5"><?php echo $daytripFeedback_excerpt_1; ?></textarea>
 		</div>
 		<hr/>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Heading - Card 1</h3>
 			<textarea name="daytripFeedback_heading_2" id="daytripFeedback_heading_2" cols="65"
-			          rows="1"><?php echo $daytripFeedback_heading_2; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_heading_2; ?></textarea>
 			<h3>Client - Card 1</h3>
 			<textarea name="daytripFeedback_client_2" id="daytripFeedback_client_2" cols="65"
-			          rows="1"><?php echo $daytripFeedback_client_2; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_client_2; ?></textarea>
 			<h3>Date - Card 1</h3>
 			<textarea name="daytripFeedback_date_2" id="daytripFeedback_date_2" cols="65"
-			          rows="1"><?php echo $daytripFeedback_date_2; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_date_2; ?></textarea>
 			<h3>Testimonial - Card 1</h3>
 			<textarea name="daytripFeedback_excerpt_2" id="daytripFeedback_excerpt_2" cols="65"
-			          rows="5"><?php echo $daytripFeedback_excerpt_2; ?></textarea>
+					  rows="5"><?php echo $daytripFeedback_excerpt_2; ?></textarea>
 		</div>
 		<hr/>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Heading - Card 1</h3>
 			<textarea name="daytripFeedback_heading_3" id="daytripFeedback_heading_3" cols="65"
-			          rows="1"><?php echo $daytripFeedback_heading_3; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_heading_3; ?></textarea>
 			<h3>Client - Card 1</h3>
 			<textarea name="daytripFeedback_client_3" id="daytripFeedback_client_3" cols="65"
-			          rows="1"><?php echo $daytripFeedback_client_3; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_client_3; ?></textarea>
 			<h3>Date - Card 1</h3>
 			<textarea name="daytripFeedback_date_3" id="daytripFeedback_date_3" cols="65"
-			          rows="1"><?php echo $daytripFeedback_date_3; ?></textarea>
+					  rows="1"><?php echo $daytripFeedback_date_3; ?></textarea>
 			<h3>Testimonial - Card 1</h3>
 			<textarea name="daytripFeedback_excerpt_3" id="daytripFeedback_excerpt_3" cols="65"
-			          rows="5"><?php echo $daytripFeedback_excerpt_3; ?></textarea>
+					  rows="5"><?php echo $daytripFeedback_excerpt_3; ?></textarea>
 		</div>
 	</div><!-- feedback -->
 
@@ -505,7 +506,7 @@ function daytrip_meta_box_cb( $post ) {
 		<h3>DAYTRIP MAP (directions)</h3>
 		<h3>Image</h3>
 		<input id="daytripMap" type="text" size="36" style="max-width: 90%;" name="daytripMap"
-		       value="<?php echo $daytripMap; ?>"/>
+			   value="<?php echo $daytripMap; ?>"/>
 		<input id="upload_daytripMap" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1920x 400 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -517,29 +518,29 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripMap' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripMap' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripMap' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripMap' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<h3>Map URL (Directions)</h3>
 		<textarea name="daytripMapUrl" id="daytripMapUrl" cols="65" rows="1"><?php echo $daytripMapUrl; ?></textarea>
@@ -552,7 +553,7 @@ function daytrip_meta_box_cb( $post ) {
 		<h3>SLIDES</h3>
 		<h3>Slide 1</h3>
 		<input id="daytripSlide_1" type="text" size="36" style="max-width: 90%;" name="daytripSlide_1"
-		       value="<?php echo $daytripSlide_1; ?>"/>
+			   value="<?php echo $daytripSlide_1; ?>"/>
 		<input id="upload_daytripSlide_1" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1500x 800 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -564,34 +565,34 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripSlide_1' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripSlide_1' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripSlide_1' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripSlide_1' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<hr/>
 		<h3>Slide 2</h3>
 		<input id="daytripSlide_2" type="text" size="36" style="max-width: 90%;" name="daytripSlide_2"
-		       value="<?php echo $daytripSlide_2; ?>"/>
+			   value="<?php echo $daytripSlide_2; ?>"/>
 		<input id="upload_daytripSlide_2" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1500x 800 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -603,34 +604,34 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripSlide_2' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripSlide_2' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripSlide_2' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripSlide_2' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<hr/>
 		<h3>Slide 3</h3>
 		<input id="daytripSlide_3" type="text" size="36" style="max-width: 90%;" name="daytripSlide_3"
-		       value="<?php echo $daytripSlide_3; ?>"/>
+			   value="<?php echo $daytripSlide_3; ?>"/>
 		<input id="upload_daytripSlide_3" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1500x 800 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -642,34 +643,34 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripSlide_3' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripSlide_3' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripSlide_3' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripSlide_3' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<hr/>
 		<h3>Slide 4</h3>
 		<input id="daytripSlide_4" type="text" size="36" style="max-width: 90%;" name="daytripSlide_4"
-		       value="<?php echo $daytripSlide_4; ?>"/>
+			   value="<?php echo $daytripSlide_4; ?>"/>
 		<input id="upload_daytripSlide_4" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1500x 800 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -681,34 +682,34 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripSlide_4' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripSlide_4' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripSlide_4' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripSlide_4' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 		<hr/>
 		<h3>Slide 5</h3>
 		<input id="daytripSlide_5" type="text" size="36" style="max-width: 90%;" name="daytripSlide_5"
-		       value="<?php echo $daytripSlide_5; ?>"/>
+			   value="<?php echo $daytripSlide_5; ?>"/>
 		<input id="upload_daytripSlide_5" class="button" type="button" value="Upload Image"/>
 		<br/><em> - Recommended image size of 1500x 800 pixels. Save as JPG image, ** Always ** Optimize for web
 			(minimum 60% compression).</em>
@@ -720,29 +721,29 @@ function daytrip_meta_box_cb( $post ) {
 		?>
 		<!-- Logic: -->
 		<script type="text/javascript">
-			jQuery( document ).ready( function () {
-				var custom_uploader;
-				jQuery( '#upload_daytripSlide_5' ).click( function ( e ) {
-					e.preventDefault();
-					if ( custom_uploader ) {
-						custom_uploader.open();
-						return;
-					}
-					custom_uploader = wp.media.frames.file_frame = wp.media( {
-						title: 'Choose Image',
-						button: {
-							text: 'Choose Image'
-						},
-						multiple: false
-					} );
-					custom_uploader.on( 'select', function () {
-						attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
-						jQuery( '#daytripSlide_5' ).val( attachment.url );
-					} );
-					custom_uploader.open();
-					custom_uploader.open();
-				} );
-			} );
+            jQuery( document ).ready( function () {
+                var custom_uploader;
+                jQuery( '#upload_daytripSlide_5' ).click( function ( e ) {
+                    e.preventDefault();
+                    if ( custom_uploader ) {
+                        custom_uploader.open();
+                        return;
+                    }
+                    custom_uploader = wp.media.frames.file_frame = wp.media( {
+                        title: 'Choose Image',
+                        button: {
+                            text: 'Choose Image'
+                        },
+                        multiple: false
+                    } );
+                    custom_uploader.on( 'select', function () {
+                        attachment = custom_uploader.state().get( 'selection' ).first().toJSON();
+                        jQuery( '#daytripSlide_5' ).val( attachment.url );
+                    } );
+                    custom_uploader.open();
+                    custom_uploader.open();
+                } );
+            } );
 		</script>
 	</div>
 	<!-- slides -->
@@ -754,17 +755,20 @@ function daytrip_meta_box_cb( $post ) {
 		<h3>Purchase Button URL</h3>
 		<textarea name="daytripTicket" id="daytripTicket" cols="65" rows="1"><?php echo $daytripTicket; ?></textarea>
 		<br/><em>Example: https://www.eventpurchaseticket.com</em>
+		<h3>Purchase Button Text</h3>
+		<textarea name="daytripTicketButtonText" id="daytripTicketButtonText" cols="65" rows="1"><?php echo $daytripTicketButtonText; ?></textarea>
+		<br/><em>Example: PURCHASE TICKETS</em>
 		<h3>Ticket Price</h3>
 		<textarea name="daytripTicketPrice" id="daytripTicketPrice" cols="65"
-		          rows="1"><?php echo $daytripTicketPrice; ?></textarea>
+				  rows="1"><?php echo $daytripTicketPrice; ?></textarea>
 		<br/><em>Example: $99</em>
 		<h3>Ticket Heading</h3>
 		<textarea name="daytripTicketHeading" id="daytripTicketHeading" cols="65"
-		          rows="1"><?php echo $daytripTicketHeading; ?></textarea>
+				  rows="1"><?php echo $daytripTicketHeading; ?></textarea>
 		<br/><em>Example: GET YOUR TICKETS NOW!</em>
 		<h3>Ticket Intro Text</h3>
 		<textarea name="daytripTicketText" id="daytripTicketText" cols="65"
-		          rows="3"><?php echo $daytripTicketText; ?></textarea>
+				  rows="3"><?php echo $daytripTicketText; ?></textarea>
 		<br/><em>Example: Get early access to the event and enjoy a welcome.. (Best not to exceed 2 sentences)</em>
 	</div><!-- ticket -->
 
@@ -775,101 +779,101 @@ function daytrip_meta_box_cb( $post ) {
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 1 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_1" id="daytripTicketTimelineTime_1" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_1; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_1; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 1 - Text</h3>
 			<textarea name="daytripTicketTimelineText_1" id="daytripTicketTimelineText_1" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_1; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_1; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 2 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_2" id="daytripTicketTimelineTime_2" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_2; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_2; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 2 - Text</h3>
 			<textarea name="daytripTicketTimelineText_2" id="daytripTicketTimelineText_2" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_2; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_2; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 3 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_3" id="daytripTicketTimelineTime_3" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_3; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_3; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 3 - Text</h3>
 			<textarea name="daytripTicketTimelineText_3" id="daytripTicketTimelineText_3" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_3; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_3; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 4 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_4" id="daytripTicketTimelineTime_4" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_4; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_4; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 4 - Text</h3>
 			<textarea name="daytripTicketTimelineText_4" id="daytripTicketTimelineText_4" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_4; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_4; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 5 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_5" id="daytripTicketTimelineTime_5" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_5; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_5; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 5 - Text</h3>
 			<textarea name="daytripTicketTimelineText_5" id="daytripTicketTimelineText_5" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_5; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_5; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 6 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_6" id="daytripTicketTimelineTime_6" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_6; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_6; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 6 - Text</h3>
 			<textarea name="daytripTicketTimelineText_6" id="daytripTicketTimelineText_6" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_6; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_6; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 7 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_7" id="daytripTicketTimelineTime_7" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_7; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_7; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 7 - Text</h3>
 			<textarea name="daytripTicketTimelineText_7" id="daytripTicketTimelineText_7" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_7; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_7; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 8 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_8" id="daytripTicketTimelineTime_8" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_8; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_8; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 8 - Text</h3>
 			<textarea name="daytripTicketTimelineText_8" id="daytripTicketTimelineText_8" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_8; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_8; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 9 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_9" id="daytripTicketTimelineTime_9" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_9; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_9; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 9 - Text</h3>
 			<textarea name="daytripTicketTimelineText_9" id="daytripTicketTimelineText_9" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_9; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_9; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 		<div style="padding: 2%; border: 2px solid #eee; background: #f9f9f9;">
 			<h3>Entry 10 - Hour</h3>
 			<textarea name="daytripTicketTimelineTime_10" id="daytripTicketTimelineTime_10" cols="65"
-			          rows="1"><?php echo $daytripTicketTimelineTime_10; ?></textarea>
+					  rows="1"><?php echo $daytripTicketTimelineTime_10; ?></textarea>
 			<br/><em>Example: 8:30 AM</em>
 			<h3>Entry 10 - Text</h3>
 			<textarea name="daytripTicketTimelineText_10" id="daytripTicketTimelineText_10" cols="65"
-			          rows="4"><?php echo $daytripTicketTimelineText_10; ?></textarea>
+					  rows="4"><?php echo $daytripTicketTimelineText_10; ?></textarea>
 			<br/><em>Example: Gather at the bus terminal at corner of 23rd Street and 5th Avenue.</em>
 		</div>
 	</div><!-- timeline -->
@@ -1085,8 +1089,6 @@ function daytrip_meta_box_save( $post_id ) {
 	if ( isset( $_POST['daytripSlide_5'] ) ) {
 		update_post_meta( $post_id, 'daytripSlide_5', $_POST['daytripSlide_5'] );
 	}
-
-
 	if ( isset( $_POST['daytripTicket'] ) ) {
 		update_post_meta( $post_id, 'daytripTicket', $_POST['daytripTicket'] );
 	}
@@ -1095,6 +1097,9 @@ function daytrip_meta_box_save( $post_id ) {
 	}
 	if ( isset( $_POST['daytripTicketText'] ) ) {
 		update_post_meta( $post_id, 'daytripTicketText', $_POST['daytripTicketText'] );
+	}
+	if ( isset( $_POST['daytripTicketButtonText'] ) ) {
+		update_post_meta( $post_id, 'daytripTicketButtonText', $_POST['daytripTicketButtonText'] );
 	}
 	if ( isset( $_POST['daytripTicketHeading'] ) ) {
 		update_post_meta( $post_id, 'daytripTicketHeading', $_POST['daytripTicketHeading'] );

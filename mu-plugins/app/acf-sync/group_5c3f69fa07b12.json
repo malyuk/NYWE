@@ -160,6 +160,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_5e3b2c8eaf9fd",
+            "label": "Purchase Tickets Text",
+            "name": "purchase_tickets_text",
+            "type": "text",
+            "instructions": "* This is the text to the 'Purchase Tickets' button button on the Event specific page. \r\n* If its left blank, the button text will default to \"Purchase Tickets\".",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "PURCHASE TICKETS",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c40ab931e8ce",
             "label": "Presenting Sponsor Image",
             "name": "event_presenting_sponsor",
@@ -890,5 +909,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574815773
+    "modified": 1580936565
 }

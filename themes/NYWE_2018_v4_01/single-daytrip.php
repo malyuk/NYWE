@@ -45,13 +45,14 @@
 							<div class="daytrip_list_cell_card_excerpt"><?php the_excerpt(); ?></div>
 							<?php // SOLD OUT?
 							$daytripSoldout = get_post_custom_values( 'daytripSoldout' );
+							$daytripTicketButtonText = get_post_custom_values( 'daytripTicketButtonText') ?  get_post_custom_values( 'daytripTicketButtonText') : "PURCHASE TICKETS";
 							$daytripSoldout = $daytripSoldout[0];
 							if ( $daytripSoldout == 'on' ) {
 								echo '<a class="daytrip_list_cell_card_purchase" href="#">SOLD OUT</a>';
 							} else {
 								$link = get_post_custom_values( 'daytripTicket' );
 								if ( is_array( $link ) && end( $link ) != '' ) {
-									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">'.$daytripTicketButtonText.'</a>';
 								}
 							}
 
