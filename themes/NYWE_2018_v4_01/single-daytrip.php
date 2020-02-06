@@ -1,5 +1,10 @@
 <?php get_header(); ?>
+<?php
 
+$daytripTicketButtonText = get_post_custom_values( 'daytripTicketButtonText') ?  get_post_custom_values( 'daytripTicketButtonText')[0] : "PURCHASE TICKETS";
+
+
+?>
 	<!-- CONTENT -->
 	<div id="daytrip" style="width: 100%;">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -46,12 +51,13 @@
 							<?php // SOLD OUT?
 							$daytripSoldout = get_post_custom_values( 'daytripSoldout' );
 							$daytripSoldout = $daytripSoldout[0];
+
 							if ( $daytripSoldout == 'on' ) {
 								echo '<a class="daytrip_list_cell_card_purchase" href="#">SOLD OUT</a>';
 							} else {
 								$link = get_post_custom_values( 'daytripTicket' );
 								if ( is_array( $link ) && end( $link ) != '' ) {
-									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+									echo '<a class="daytrip_list_cell_card_purchase" href="' . end( $link ) . '">'.$daytripTicketButtonText.'</a>';
 								}
 							}
 
@@ -152,7 +158,7 @@
 						} else {
 							$link = get_post_custom_values( 'daytripTicket' );
 							if ( is_array( $link ) && end( $link ) != '' ) {
-								echo '<a id="daytrip_intro_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+								echo '<a id="daytrip_intro_purchase" href="' . end( $link ) . '">'.$daytripTicketButtonText.'</a>';
 							}
 						} ?>
 					</div><!-- content -->
@@ -256,7 +262,7 @@
 					} else {
 						$link = get_post_custom_values( 'daytripTicket' );
 						if ( is_array( $link ) && end( $link ) != '' ) {
-							echo '<a id="daytrip_tickets_include_purchase" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+							echo '<a id="daytrip_tickets_include_purchase" href="' . end( $link ) . '">'.$daytripTicketButtonText.'</a>';
 						}
 					} ?>
 				</div><!-- tickets include -->
@@ -648,7 +654,7 @@
 						} else {
 							$link = get_post_custom_values( 'daytripTicket' );
 							if ( is_array( $link ) && end( $link ) != '' ) {
-								echo '<a id="daytrip_ticket_purchase_button" href="' . end( $link ) . '">PURCHASE TICKETS</a>';
+								echo '<a id="daytrip_ticket_purchase_button" href="' . end( $link ) . '">'.$daytripTicketButtonText.'</a>';
 							}
 						}
 						?>

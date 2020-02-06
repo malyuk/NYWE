@@ -1,6 +1,8 @@
 <?php get_header();
 
 $event_purchase_link = get_field( 'event_purchase_link' );
+$purchase_tickets_text = get_field('purchase_tickets_text') ? get_field('purchase_tickets_text') : 'PURCHASE TICKETS';
+
 ?>
 
 	<!-- ADVERT OVERRIDE -->
@@ -9,6 +11,8 @@ $advertHead = get_field( 'advert_head' );
 if ( ! empty( $advertHead ) ) {
 	echo $advertHead;
 } ?>
+
+
 
 	<!-- CONTENT -->
 	<div id="event" class="content" style="width: 100%;">
@@ -71,10 +75,11 @@ if ( ! empty( $advertHead ) ) {
 
 						<?php
 						$event_sold_out = get_field( 'event_sold_out' );
+
 						if ( $event_sold_out ) {
 							echo '<a class="events_list_cell_card_purchase sold_out" href="#event_tickets">SOLD OUT</a>';
 						} else {
-							echo '<a class="events_list_cell_card_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
+							echo '<a class="events_list_cell_card_purchase" href="' . esc_url( $event_purchase_link ) . '">'. esc_html($purchase_tickets_text) .'</a>';
 						} ?>
 
 					</div><!-- card -->
@@ -211,7 +216,7 @@ if ( ! empty( $advertHead ) ) {
 					if ( $event_sold_out ) {
 						echo '<a id="event_intro_purchase" href="#event_tickets" style="opacity: 0.25;">SOLD OUT</a>';
 					} else {
-						echo '<a id="event_intro_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
+						echo '<a id="event_intro_purchase" href="' . esc_url( $event_purchase_link ) . '">'. $purchase_tickets_text .'</a>';
 					} ?>
 				</div><!-- content -->
 			</div><!-- intro module-->
@@ -336,7 +341,7 @@ if ( ! empty( $advertHead ) ) {
 		if ( $event_sold_out ) {
 			echo '<a id="event_midpage_purchase" href="#event_tickets" style="opacity: 0.25;">SOLD OUT</a>';
 		} else {
-			echo '<a id="event_midpage_purchase" href="' . esc_url( $event_purchase_link ) . '">PURCHASE TICKETS</a>';
+			echo '<a id="event_midpage_purchase" href="' . esc_url( $event_purchase_link ) . '">'. $purchase_tickets_text .'</a>';
 		}
 
 		// Video embed.
@@ -455,7 +460,7 @@ if ( ! empty( $advertHead ) ) {
 							<span class="event_tickets_price"><?= esc_html( $ticket['price'] ); ?></span>
 							<?php
 							if ( ! empty( $ticket['purchase_link'] ) ) {
-								printf( '<a class="event_tickets_purchase" href="%s">PURCHASE TICKETS</a>',
+								printf( '<a class="event_tickets_purchase" href="%s">'. $purchase_tickets_text .'</a>',
 									esc_url( $ticket['purchase_link'] )
 								);
 							} else {
