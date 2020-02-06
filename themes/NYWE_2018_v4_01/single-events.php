@@ -183,7 +183,7 @@ if ( ! empty( $advertHead ) ) {
 					$event_intro_text = get_field( 'event_intro_text' );
 					if ( ! empty( $event_intro_text ) ) {
 						printf( '<p id="event_intro_text">%s</p>',
-							esc_html( $event_intro_text )
+							wp_kses_post( $event_intro_text )
 						);
 					}
 
@@ -205,7 +205,7 @@ if ( ! empty( $advertHead ) ) {
 							if ( ! empty( $item['text'] ) ) {
 								printf( '<p class="%s" id="event_intro_item_1_text">%s</p>',
 									esc_attr( $slug . "_text" ),
-									esc_html( $item['text'] )
+									wp_kses_post( $item['text'] )
 								);
 							}
 
