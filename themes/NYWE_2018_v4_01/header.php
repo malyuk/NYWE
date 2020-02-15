@@ -106,7 +106,7 @@ if ( ! empty( $zaius_id ) ) {
 
 do_action( 'after_body_open_tag' );
 
-$subscribe_url = 'https://newyorkwineevents.subscribe.space/'; ?>
+$subscribe_url = 'https://manage.kmail-lists.com/subscriptions/subscribe?a=HwvMhp&g=KZrTJS'; ?>
 
 <!-- HEADER -->
 <div id="header" <?php if ( is_home() ) {
