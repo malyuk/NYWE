@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e52f4c2d747db993a7984bd3be538f4",
+    "content-hash": "1d98f7c676263d60b6df672aa60e169d",
     "packages": [
         {
             "name": "a7/admin-notices",
@@ -51,16 +51,16 @@
         },
         {
             "name": "a7/autoload",
-            "version": "2.0.9.1",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/a7/autoload.git",
-                "reference": "c1ff4ae98b389164b578793e2d87b2bf6b7f8b15"
+                "reference": "2d4a63c88150869883e43ad04e04b81125b55fd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a7/autoload/zipball/c1ff4ae98b389164b578793e2d87b2bf6b7f8b15",
-                "reference": "c1ff4ae98b389164b578793e2d87b2bf6b7f8b15",
+                "url": "https://api.github.com/repos/a7/autoload/zipball/2d4a63c88150869883e43ad04e04b81125b55fd9",
+                "reference": "2d4a63c88150869883e43ad04e04b81125b55fd9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -90,7 +90,7 @@
                 }
             ],
             "description": "Automatically and recursively require_once all php files in a given directory.",
-            "time": "2018-02-05T20:00:27+00:00"
+            "time": "2019-03-28T11:26:32+00:00"
         },
         {
             "name": "a7/seeder",
@@ -180,16 +180,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0"
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -243,6 +243,7 @@
                 "Kanboard",
                 "Lan Management System",
                 "MODX Evo",
+                "MantisBT",
                 "Mautic",
                 "Maya",
                 "OXID",
@@ -297,6 +298,7 @@
                 "shopware",
                 "silverstripe",
                 "sydes",
+                "sylius",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -304,20 +306,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2019-08-12T15:00:31+00:00"
+            "time": "2020-02-07T10:39:20+00:00"
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v5.0.0",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
+                "reference": "4566062c68f76f43d44f1643f4970fe89757d4c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
-                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/4566062c68f76f43d44f1643f4970fe89757d4c6",
+                "reference": "4566062c68f76f43d44f1643f4970fe89757d4c6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -330,7 +332,7 @@
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": " 4.8.35"
+                "phpunit/phpunit": "^4.8|^5"
             },
             "type": "library",
             "autoload": {
@@ -356,20 +358,20 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2017-06-27T22:17:23+00:00"
+            "time": "2020-02-24T23:15:03+00:00"
         },
         {
             "name": "sentry/sentry",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "b2b8ffe1560b9fb0110b02993594a4b04a511959"
+                "reference": "159eeaa02bb2ef8a8ec669f3c88e4bff7e6a7ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/b2b8ffe1560b9fb0110b02993594a4b04a511959",
-                "reference": "b2b8ffe1560b9fb0110b02993594a4b04a511959",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/159eeaa02bb2ef8a8ec669f3c88e4bff7e6a7ffe",
+                "reference": "159eeaa02bb2ef8a8ec669f3c88e4bff7e6a7ffe",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -387,7 +389,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^1.8.0",
-                "monolog/monolog": "*",
+                "monolog/monolog": "^1.0",
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "suggest": {
@@ -402,7 +404,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10.x-dev"
+                    "dev-master": "1.11.x-dev"
                 }
             },
             "autoload": {
@@ -426,7 +428,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2018-11-09T12:27:19+00:00"
+            "time": "2020-02-12T18:38:11+00:00"
         },
         {
             "name": "wpackagist-plugin/404page",
@@ -580,7 +582,7 @@
         },
         {
             "name": "wpackagist-plugin/optinmonster",
-            "version": "1.9.0",
+            "version": "1.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/optinmonster/",
@@ -588,7 +590,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1574308195",
+                "url": "https://downloads.wordpress.org/plugin/optinmonster.zip?timestamp=1576685815",
                 "mirrors": [
                     {
                         "url": "https://repo.packagist.com/zeek/dists/%package%/%version%/%reference%.%type%",
